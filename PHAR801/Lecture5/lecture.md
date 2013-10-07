@@ -9,17 +9,28 @@
 * Glucagon Signaling
 * Pathophysiology related to glucose control
 
+# Diabetes in the United States
+
+![County Level Prevalence in Type II Diabetes](figures/diabetes_2010_map.png)
+
 # Acute regulation of circulating glucose
 
-* maintained in narrow range
+Glucose is maintained in a very narrow range
 
 ## Primary control mechanisms
 * postprandially regulated by insulin
 * under starvation regulated by glucagon
 
-## Consequences of dysfunctional glucose homeostasis
-* hyperglycemia
-* hypoglycemia
+# Consequences of dysfunctional glucose homeostasis
+
+## Hyperglycemia
+* Chronic hyperglycemia leads to glycation of membrane proteins.  This leads to damaged nerves, kidneys, eyes, circulatory system (amputation) and Alzheimer's disease.
+* Hyperglycemic hyperosmolar nonketotic syndrome.
+
+## Hypoglycemia
+* Feinting, dizziness
+* Diabetic ketoacidosis
+
 
 # Mechanisms of glucose control
 * Glucose production
@@ -58,6 +69,7 @@
 * Counterinflammatory responses
 
 # Common Pharmacological Interventions for Insulin Resistance
+* Primary intervention is diet and exercise alteration
 
 ## Insulin sensitizers
 * Thiazolidinediones
