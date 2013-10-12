@@ -36,7 +36,7 @@ For the purposes of the acute maintenance of glucose homeostasis, four organs ar
 
 ![Effects of a dog pancreas isolate on blood glucose levels in a 14 year old diabetic child [@Banting1922a].](figures/banting-insulin.png)
 
-Insulin was discovered by Frederick Banting and Charles Best at the University of Toronto in 1921.  They performed experiments in which they injected extracts from pancreas fractions into dogs which had their pancreas' surgically removed.  They showed that a secreted substance from the pancreas lowered blood glucose in these dogs [@Banting1922].  They were then able to confirm that this treatment was also effective in children with diabetes [@Banting1922a].
+Insulin was discovered by Frederick Banting and his colleagues at the University of Toronto in 1921.  They performed experiments in which they injected extracts from pancreas fractions into dogs which had their pancreas' surgically removed.  They showed that a secreted substance from the pancreas lowered blood glucose in these dogs [@Banting1922].  They were then able to confirm that this treatment was also effective in children with diabetes [@Banting1922a].  This work led to Banting and John Macleod winning the Nobel Prize in Medicine and Physiology in 1923.
 
 
 
@@ -73,8 +73,14 @@ When glucose levels are raised, such as after a meal, insulin has four main func
 # Pathophysiology related to glucose control
 
 ## Type I Diabetes Mellitus
-* Loss of insulin producing cells
-* Treatment options
+
+### Loss of Insulin Producing Cells
+### Insulin Administration
+The amino acid sequence of insulin was determined by Frederick Sanger, which led to him winning the Nobel Prize in Chemistry in 1958 [@Sanger1951].  This eventually allowed for recombinant production and manipulation of insulin, rather than using purified porcine, ovine or bovine insulin.
+
+#### Short and Long Acting Insulin
+
+#### Insulin Pumps
 
 ## Insulin Resistance and Type II Diabetes Mellitus
 
