@@ -4,14 +4,22 @@
 
 # Lecture Outline
 
+This lecture will cover the roles of insulin and glucagon in normal and pathophyiological states, especially diabetes.  It will focus on pharmacological interventions for both of these pathologies.  This lecture will cover the following four topics.
+
 * Physiological regulation of blood glucose
 * Insulin Signaling
 * Glucagon Signaling
 * Pathophysiology related to glucose control
+    * Type I Diabetes
+    * Type II Diabetes
 
-# Diabetes in the United States
+# Diabetes in the United States.
 
 ![County Level Prevalence in Type II Diabetes](figures/diabetes_2010_map.png)
+
+As of 2011, diabetes affects 25.8 million people or 8.3% of the population.  This includes approximately 7 million undiagnosed individuals.  In addition to this, 79 million Americans over the age of 20 are estimated to be pre-diabetic.  As of 2007, diabetes is estimated to cost $116 billion in direct and $58 billion in indirect costs [@CDC2011].
+
+Diabetes is especially prevalent in this region.  As shown in the map, there is a higher percentage of diabetics in the mid and deep south regions of the United States.
 
 # Acute regulation of circulating glucose
 
