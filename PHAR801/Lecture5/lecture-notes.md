@@ -42,6 +42,10 @@ Insulin was discovered by Frederick Banting and his colleagues at the University
 
 ### Insulin Secretion
 
+![Regulation of insulin secretion by beta cells in pancreatic islets. [@Dean2004].](figures/insulin-secretion.png)
+
+Beta cells in the pancreas generate insulin and store it in pre-formed secretory granules.  After glucose mediated depolarization of beta cells in response to insulin, these secretory granules are exocytosed and their contentes are released into the blood.
+
 ### Physiological effects of insulin 
 When glucose levels are raised, such as after a meal, insulin has four main functions:
 
