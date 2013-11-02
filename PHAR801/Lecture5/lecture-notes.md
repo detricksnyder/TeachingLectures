@@ -57,6 +57,13 @@ The rate limiting enzymes in gluconeogenesis are Phosphoenolpyruvate Carboxykina
 
 ### Glycogenesis 
 
+As an alternative to glycolysis, glucose can also be stored in esterified form as glycogen.  To form glycogen, glucose must first be converted through Glucose-1-Phosphate into UDP-Glucose.  This activated form of glucose is then added onto existing glycogen chains through the activity of an enzyme named Glycogen Synthase.  In addition to being regulated by protein phosphorylation and sub-cellular location, Glycogen synthase is also allosterically activated by Glucose-6-Phosphate, promoting increased glycogen synthesis when glucose levels in the cell are high.
+
+### Glycogenolysis
+
+To liberate glucose from stored glycogen, glycogen phosphorylase is activated.  This enzyme hydrolyses glycogen releasing glucose-1-phosphate, which can then be dephophorylated into glucose for glycolysis or release into the blood stream.  In addition to post-translational modifications and recruitment to the glycogen pellet by accessory proteins, glycogen phosphorylase is allosterically activated by energy stress such as increases in AMP, or negatively by increases in Glucose-6-Phosphate levels.
+
+
 <!--- ### Lipogenesis --->
 
 <!--- ### Lipolysis and Lipid Oxidation --->
