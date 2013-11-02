@@ -1,18 +1,14 @@
-% Insulin, glucagon and diabetes mellitus
-% Dave Bridges, Ph.D.
-% November 5, 2013
-
 # Lecture Outline
 
 This lecture will cover the roles of insulin and glucagon in normal and pathophyiological states, especially diabetes.  It will focus on pharmacological interventions for both of these pathologies.  This lecture will cover the following four topics.
 
 * Physiological regulation of blood glucose
-* Insulin Signaling
-* Glucagon Signaling
+    * Insulin Signaling
+    * Glucagon Signaling
 * Pathophysiology related to glucose control
     * Type I Diabetes
     * Type II Diabetes
-* Common Pharmacological Interventions for Insulin Resistance
+* Common Pharmacological Interventions for Diabetes
 
 #Diabetes
 
@@ -92,14 +88,32 @@ Beta cells in the pancreas generate insulin and store it in pre-formed secretory
 
 ### What Are the Mechanisms of Glucose
 
-
 ## Glucagon Signaling
 
 ### Physiological effects of glucagaon
  When glucose levels are low, glucagon promotes the breakdown of glycogen stores in liver and muscle, and the generation of glucose from gluconeogenic precursors primarily in the liver.  
  
 ### Regulation of glucagon release
-### Effects of glucagon on the liver
+
+### Glucagon signaling
+
+### Effects of glucagon on gluconeogenesis
+
+### How does glucagon promote gluconeogenesis
+
+## Exercise and Sympathetic Tone
+
+### Adrenaline and the Sympathetic Nervous System
+
+Since glucagon works primarily on liver tissue, different hormonal messengers function to stimulate catabolism in muscle and fat tissue.  The activation of PKA by GPCR and cAMP signaling pathways leads to glycogen breakdown in muscle via similar mechanisms as those in liver.  Adrenaline also leads to enhanced lipid and glucose oxidation in muscle primarily as an energy source.
+
+In adipose tissue, these pathways induce lipolysis, via phosphorylation and activation of Hormone Sensitive Lipase (HSL), Perilipin and Adipocyte Triglyceride Lipase (ATGL).  These proteins function to mobilize triglycerides into free fatty acids for use in other tissues, especially muscle.  For more information on the regulation of lipolysis, see [@Young2013].  At an acute level, these do not contribute much to glucose homeostasis.
+
+### The AMPK Activated Protein Kinase
+
+Intracellularly, when levels of ATP decrease and correspondingly, the levels of AMP rise, a protein kinase called the AMP Activated Protein Kinase is turned on.  AMPK is like a cellular fuel gauge, so that when ATP levels are decreased, energy producing pathways are activated and energy using pathways are reduced [@Hardie2012].
+
+# Pathophysiology related to glucose control
 
 ## Consequences of dysfunctional glucose homeostasis
 
@@ -111,18 +125,10 @@ Beta cells in the pancreas generate insulin and store it in pre-formed secretory
 * Chronic hyperglycemia leads to glycation of membrane proteins.  This leads to damaged nerves, kidneys, eyes, circulatory system (amputation) and Alzheimer's disease.
 * Hyperglycemic hyperosmolar nonketotic syndrome.
 
-# Pathophysiology related to glucose control
-
 ## Type I Diabetes Mellitus
 
 ### Loss of Insulin Producing Cells
 
-### Insulin Administration
-The amino acid sequence of insulin was determined by Frederick Sanger, which led to him winning the Nobel Prize in Chemistry in 1958 [@Sanger1951].  This eventually allowed for recombinant production and manipulation of insulin, rather than using purified porcine, ovine or bovine insulin.
-
-#### Short and Long Acting Insulin
-
-#### Insulin Pumps
 
 ## Insulin Resistance and Type II Diabetes Mellitus
 
@@ -153,8 +159,15 @@ Obese individuals respond poorly to insulin, including less insulin stimulated g
 
 ## Treatments for Type I Diabetes
 
-* Insulin injection
-* Islet transplantation
+### Insulin Administration
+
+The amino acid sequence of insulin was determined by Frederick Sanger, which led to him winning the Nobel Prize in Chemistry in 1958 [@Sanger1951].  This eventually allowed for recombinant production and manipulation of insulin, rather than using purified porcine, ovine or bovine insulin.
+
+#### Short and Long Acting Insulin
+
+#### Insulin Pumps
+
+### Islet Transplantation
 
 ## Treatments for Type II Diabetes
 
@@ -172,12 +185,10 @@ Obese individuals respond poorly to insulin, including less insulin stimulated g
 * Anti-inflammatories
 
 ## Glucose Utilization
-* Metformin
-* Beige Fat
 
-## Potential Future Interventions for Insulin Resistance
+One class of drugs called biguanides is a common therapeutic for Type II Diabetes.  These drugs, such as phenformin and metformin (marketed as Glucophage) function by disrupting mitochondrial function.   These leads to energy stress and activation of AMPK due to the increases in intracellular AMP [@Zhou2001].  The activation of AMPK leads to activation of energy producing pathways, including glucose uptake and oxidation and lipid oxidation.
+The effects of this are to reduce circulating glucose, while also burning fat.
 
-### Generation of Beige Fat
-### Anti-inflammatory Interventions
+![Mechanism of Action of Biguanides.](figures/Metformin-Action.png)
 
 # Further Reading
