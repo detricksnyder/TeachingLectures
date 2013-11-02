@@ -14,7 +14,9 @@ This lecture will cover the roles of insulin and glucagon in normal and pathophy
     * Type II Diabetes
 * Common Pharmacological Interventions for Insulin Resistance
 
-# Diabetes in the United States.
+#Diabetes
+
+## Diabetes in the United States.
 
 ![County Level Prevalence in Type II Diabetes](figures/diabetes_2010_map.png)
 
@@ -22,23 +24,47 @@ As of 2011, diabetes affects 25.8 million people or 8.3% of the population.  Thi
 
 Diabetes is especially prevalent in this region.  As shown in the map, there is a higher percentage of diabetics in the mid and deep south regions of the United States.
 
-# Acute regulation of circulating glucose
+##Complications of Diabetes
 
-![Schematic of glucose and insulin levels throughout the day.   [@Suckale2008].](figures/glucose-insulin-daily.png)
+The major complications of diabetes include retinopathy, nephropathy, neuropathy and cardiovascular disease including heart attacks and stroke.  These events are primarily due to excessive glycation of extracellular and intracellular targets preventing their function.
 
-Glucose is maintained in a very narrow range, between 4.4 to 6.1 mmol/L.  These levels need to be re-established after changes in feeding status, or energy utilization.  In general, when glucose levels decrease, glucagon is released from alpha cells of the pancreas to promote glucose production, either from glycogen breakdown or gluconeogenesis.  Alternately, after a meal when glucose levels increase, insulin is secreted from beta cells of the pancreas causing glucose levels to decrease.
-
-## Mechanisms of glucose control
-
-For the purposes of the acute maintenance of glucose homeostasis, four organs are the most important; the pancreas, liver, muscle and adipose tissue.  The pancreas senses changes in glucose levels and responds by releasing either glucagon or insulin.  
-
-## Insulin Signaling
+## The Discovery of Insulin
 
 ![Effects of a dog pancreas isolate on blood glucose levels in a 14 year old diabetic child [@Banting1922a].](figures/banting-insulin.png)
 
 Insulin was discovered by Frederick Banting and his colleagues at the University of Toronto in 1921.  They performed experiments in which they injected extracts from pancreas fractions into dogs which had their pancreas' surgically removed.  They showed that a secreted substance from the pancreas lowered blood glucose in these dogs [@Banting1922].  They were then able to confirm that this treatment was also effective in children with diabetes [@Banting1922a].  This work led to Banting and John Macleod winning the Nobel Prize in Medicine and Physiology in 1923.
 
+# Normal regulation of circulating glucose
 
+Glucose is maintained in a very narrow range, between 4.4 to 6.1 mmol/L.  These levels need to be re-established after changes in feeding status, or energy utilization.  In general, when glucose levels decrease, glucagon is released from alpha cells of the pancreas to promote glucose production, either from glycogen breakdown or gluconeogenesis.  Alternately, after a meal when glucose levels increase, insulin is secreted from beta cells of the pancreas causing glucose levels to decrease.
+
+## Mechanisms of glucose control
+
+For the purposes of the acute maintenance of glucose homeostasis, four organs are the most important; the pancreas, liver, muscle and adipose tissue.  The pancreas senses changes in glucose levels and responds by releasing either glucagon or insulin. 
+
+### Glucose Uptake
+
+### Gluconeogenesis
+
+### Glycogenesis 
+
+### Glycolysis
+
+<!--- ### Lipogenesis --->
+
+<!--- ### Lipolysis and Lipid Oxidation --->
+
+## Endocrine Control of Blood Glucose
+
+## Insulin Functions
+
+When glucose levels are raised, such as after a meal, insulin has four main functions:
+
+1. Promotes the uptake of glucose from the blood into muscle and adipose tissue.  
+2. Enhances the synthesis of glycogen and triglycerides in liver, adipose and muscle.  
+3. Insulin inhibits gluconeogenesis, or the production of glucose from non-glucose precursors such as amino acids and lipids.
+
+## Insulin Signal Transduction
 
 ### Insulin Secretion
 
@@ -46,15 +72,26 @@ Insulin was discovered by Frederick Banting and his colleagues at the University
 
 Beta cells in the pancreas generate insulin and store it in pre-formed secretory granules.  After glucose mediated depolarization of beta cells in response to insulin, these secretory granules are exocytosed and their contentes are released into the blood.
 
-### Physiological effects of insulin 
-When glucose levels are raised, such as after a meal, insulin has four main functions:
+### Insulin Stimulated Glucose Uptake
 
-1. Promotes the uptake of glucose from the blood into muscle and adipose tissue.  
-2. Enhances the synthesis of glycogen in liver, adipose and muscle.  
-3. Accelerates the synthesis of triglycerides in fat, and to a lesser extent muscle and liver.  
-4. Insulin inhibits gluconeogenesis, or the production of glucose from non-glucose precursors such as amino acids and lipids.
+### How Does Insulin Stimulate Glycogenesis
 
-### Insulin signal transduction
+<!--- ### What are the Mechanisms of Insulin Stimulated Lipogenesis --->
+
+<!--- ### How Does Insulin Suppress Lipolysis and Lipid Oxidation --->
+
+### How Does Insulin Suppress Gluconeogenesis
+
+## How Is Blood Glucose Increased
+
+### Glucagon Secretion
+
+### Glucagon Signaling
+
+### How Does Glucagon Regulated Glyogenolysis
+
+### What Are the Mechanisms of Glucose
+
 
 ## Glucagon Signaling
 
@@ -79,6 +116,7 @@ When glucose levels are raised, such as after a meal, insulin has four main func
 ## Type I Diabetes Mellitus
 
 ### Loss of Insulin Producing Cells
+
 ### Insulin Administration
 The amino acid sequence of insulin was determined by Frederick Sanger, which led to him winning the Nobel Prize in Chemistry in 1958 [@Sanger1951].  This eventually allowed for recombinant production and manipulation of insulin, rather than using purified porcine, ovine or bovine insulin.
 
@@ -88,32 +126,54 @@ The amino acid sequence of insulin was determined by Frederick Sanger, which led
 
 ## Insulin Resistance and Type II Diabetes Mellitus
 
-### Mechanisms Underlying Insulin Resistance
-* Inflammatory mediators of insulin resistance
-* Mediation of insulin resistance by mTORC1
+### Obesity and Insulin Sensitivity
+
+### Why Insulin Resistance
+
+### Molecular mechanisms of insulin resistance
+
+Obese individuals respond poorly to insulin, including less insulin stimulated glucose uptake, and less insulin suppression of glucose production in the liver.  Biochemical measurements were done to dissect these processes.  These studies showed the activity of the PI3K signaling pathways were reduced in obese states [@Goodyear1995][@Saad1992].  This is thought to occur via serine phosphorylation of insulin receptor substrate proteins [@Takayama1984][@White1985].  This prevents these substrates from being phosphorylated by the insulin receptor tyrosine kinase and prevents the activation of the PI3K signal transduction cascade.
+
+### IRS Serine Phosphorylation
+
+### Mechanisms of Insulin Resistance
+
+#### Nutrient overload induced insulin resistance
+#### Lipid mediated insulin resistance
+#### Inflammation associated insulin resistance
+
+### How Does Insulin Resistance Lead to Hyperglycemia and Diabetes?
 
 ### Adaptations to Insulin Resistance
-* Hyperinsulinemia
-* Pancreatic Failure
-
-### Other Control Circuits Related to Glucose Control
+* Hyperinsulinemia -> Pancreatic Failure
 * Regulation of food intake
-* Hypothalamic regulation of glucose release
-* Counterinflammatory responses
 
-# Common Pharmacological Interventions for Insulin Resistance
+# Common Pharmacological Interventions for Diabetes
 * Primary intervention is diet and exercise alteration
 
-## Insulin sensitizers
-* Thiazolidinediones
-* Mechanism of action
+## Treatments for Type I Diabetes
 
-## Insulin secretagogues: 
+* Insulin injection
+* Islet transplantation
+
+## Treatments for Type II Diabetes
+
+### Excretion of circulating glucose
+
+### Storage of circulating glucose
+
+#### Insulin administration and insulin secretagogues
+
 * Sulfonylureas
+
+#### Drugs that promote insulin sensitivity
+
+* Thiazolidinediones
+* Anti-inflammatories
 
 ## Glucose Utilization
 * Metformin
-* Mechanism of action
+* Beige Fat
 
 ## Potential Future Interventions for Insulin Resistance
 
