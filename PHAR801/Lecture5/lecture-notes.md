@@ -40,11 +40,22 @@ For the purposes of the acute maintenance of glucose homeostasis, four organs ar
 
 ### Glucose Uptake
 
-### Gluconeogenesis
-
-### Glycogenesis 
+Glucose is taken up down a concentration gradient into most tissues including liver, pancreas, kidneys and the brain.  However, for glucose to enter into muscle and fat tissue, insulin is required.  
 
 ### Glycolysis
+
+The major route for energy production is glycolysis, the TCA cycle and oxidative respiration in the mitochondria.  This pathway converts glucose and other carbohydrates first into pyruvate, then into components used in the electron transport chain to generate ATP in the mitochondria.  
+
+Glycolysis is regulated both by allosteric activators and inhibitors, as well as by protein phosphorylation in response to extracellular and intracellular signals.
+
+
+### Gluconeogenesis
+
+Gluconeogenesis is the generation of glucose from non-carbohydrate precursor molecules.  These typically include amino acids, lactate and the products of fatty acid oxidation.  The vast majority of gluconeogenesis occurs in the liver.  This process is similar to reverse glycolysis though in several cases different enzymes are used.  
+
+The rate limiting enzymes in gluconeogenesis are Phosphoenolpyruvate Carboxykinase, Fructose-1,6-bisphosphatase and Glucose-6-Phosphatase.  These enzymes are under both transcriptional and post-translational control as described below.
+
+### Glycogenesis 
 
 <!--- ### Lipogenesis --->
 
@@ -69,6 +80,10 @@ When glucose levels are raised, such as after a meal, insulin has four main func
 Beta cells in the pancreas generate insulin and store it in pre-formed secretory granules.  After glucose mediated depolarization of beta cells in response to insulin, these secretory granules are exocytosed and their contentes are released into the blood.
 
 ### Insulin Stimulated Glucose Uptake
+
+In fat and muscle tissue, insulin promotes the movement of a facilitative glucose transporter named GLUT4.  Normally GLUT4 resides in intracellular compartments, but in response to insulin vesicles form these compartments fuse with the plasma membrane, inserting GLUT4 into the extracellular surface.  This allows for glucose to enter fat and muscle cells [@Leto2012].
+
+In both fat and muscle, the PI3K/Akt dependent signaling pathways are absolutely required for insulin stimulated glucose uptake [@Okada1994].  The major targets of Akt in this signaling pathway are AS160 and RGC1/2, two proteins which regulate the activity of small GTPases involved in GLUT4 translocation [@Leto2012].
 
 ### How Does Insulin Stimulate Glycogenesis
 
