@@ -122,28 +122,36 @@ The activation of glucose uptake and glycolysis leads to increased levels of sev
 
 In addition to these effects, both G6Pase and PEPCK, two other rate limiting enzymes are regulated transcriptionally.  Akt phosphorylates and inactivates the transcription factor FOXO which would normally drive the expression of these enzymes.  Therefore when insulin activate the PI3K/Akt cascade, FOXO mediated transcription of G6Pase and PEPCK is decreased and the levels of these enzymes are reduced, decreasing gluconeogenesis.
 
-## How Is Blood Glucose Increased
-
-### Glucagon Secretion
-
-### Glucagon Signaling
-
-### How Does Glucagon Regulated Glyogenolysis
-
-### What Are the Mechanisms of Glucose
-
-## Glucagon Signaling
+## How Is Blood Glucose Increased?
 
 ### Physiological effects of glucagaon
- When glucose levels are low, glucagon promotes the breakdown of glycogen stores in liver and muscle, and the generation of glucose from gluconeogenic precursors primarily in the liver.  
+ When glucose levels are low, glucagon is released from alpha cells in the pancreas.  This promotes the breakdown of glycogen stores in liver and muscle, and the generation of glucose from gluconeogenic precursors.  Glucagon receptors exist mainly in the liver, so glucagon does not exert its catabolic effects on either adipose or muscle tissue [@Drucker2003]. 
  
 ### Regulation of glucagon release
 
+The mechanisms which underlie hypoglycemia induced glucagon are incompletely understood.  What is clear however, is that when blood glucose levels decrease, glucagon is released from the alpha cells of the pancreas into the portal vein.
+
 ### Glucagon signaling
 
-### Effects of glucagon on gluconeogenesis
+Adrenergic-receptor coupled mediated cAMP synthesis was the first example of a hormonal second messenger.  Earl Sutherland was interested in the regulation of glycogenolysis and he noticed that if he added adrenaline to intact cells, he could accelerate glycogen breakdown, but if he added it to lysed cells he could not.  In his key experiment he treated one set of livers with adrenaline, then lysed them.  He then added that lysate to a second set of livers which had already been broken.  He found that there was an internal factor (later identified by cAMP) in the stimulated tissues, that could accelerate glycogenolysis in the other tissues [@Rall1956].  For this work, Sutherland won the Nobel Prize in Medicine and Physiology in 1971.
+
+In metabolism, the main effector of cAMP in cells is Protein Kinase A (PKA).  This protein kinase is allosterically activated by cAMP and phosphorylates a wide variety of important metabolic substrates.  The identification of PKA and its role in carbohydrate homeostasis led to Fisher and Krebs winning the Nobel Prize in Medicine and Physiology in 1992.  The major role of glucagon is to stimulate glucose release, both by mobilizing glycogen stores and inducing gluconeogenesis.
+
+### Effects of glucagon on glycolysis.
+
+As described above, glucagon stimulates the breakdown of glycogen.  This proceeds via protein phosphorylation of both glycogen phosphorylase (which activates the enzyme) and glycogen synthase (which inactivates the enzyme).  In combination, this leads to a breakdown of glycogen into glucose.
+
+PKA is the primary mediator of the activation of glycogen phosphorylase.  Once activated by adrenergic signaling, PKA phosphorylates and activates glycogen phosphorylase kinase.  This kinase in turn, phosphorylates and activates glycogen phosphorylase [@Krebs1956].  PKA also directly phosphorylates glycogen synthase, which in concert with the activation of the other glycogen synthase kinases (notably GSK3 and AMPK) leads to increased phosphorylation and inactivation of glycogen synthase.
+
+In addition to the activation of these protein kinases, there is a reduction of glycogen associated protein phosphatase activity.  As a balance, this leads to more highly phosphorylated and therefore more glycogenolytic activities.
 
 ### How does glucagon promote gluconeogenesis
+
+In addition to the decreased flux of glycolytic intermediates which allosterically activate gluconeogenesis, there are both post-translational and transcriptional mechanisms by which adrenergic signaling promotes gluconeogenesis.  
+
+Post-translationally, the best studied route by which PKA activates gluconeogenesis is through inactivation of phosphofructokinase-2.  PFK-2 normally generates the carbohydrate Fructose-2,6,-bisphosphate which is a positive regulator of glycolysis and a negative regulator of gluconeogenesis.  The alleviation of this inhibition allows for promotion of the gluconeogenic metabolism.
+
+Transcriptionally, the transcription factor CREB is phosphorylated by PKA where it plays a role in transcriptionally activating the rate limiting gluconeogenic enzymes PEPCK, FPBase and G6Pase.
 
 ## Exercise and Sympathetic Tone
 
