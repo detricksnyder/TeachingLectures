@@ -107,7 +107,7 @@ Allosterically, the other functions of insulin, including promoting glucose upta
 
 In addition to these allosteric activators, both glycogen synthase and glycogen phosphorylase are regulated by protein phosphorylation.  In the case of glycogen synthase, the phosphorylated form is relatively inactive, and is resistant to allosteric activation by glucose-6-phosphate [@Friedman1963].  Glycogen synthase is phosphorylated by several protein kinases including AMPK and GSK-3 [@Parker1982].  In addition to inactivating the upstream kinases, insulin also activates a protein phosphatase, which removes the phosphate groups.  
 
-![Regulation of glycogen synthesis by insulin and protein phosphorylation.](figures/glycogen-synthesis-insulin.png)
+![Regulation of glycogen synthesis by insulin and protein phosphorylation.](figures/glycogen-synthesis-insulin.pdf)
 
 
 In a co-ordinated way, protein phosphorylation activates glycogen phosphorylase [@Krebs1964].  This means that when these enzymes are phosphorylated, the balance tips towards glycogenolysis, and when they are dephosphorylated glycogen is synthesized.
@@ -233,6 +233,6 @@ The amino acid sequence of insulin was determined by Frederick Sanger, which led
 One class of drugs called biguanides is a common therapeutic for Type II Diabetes.  These drugs, such as phenformin and metformin (marketed as Glucophage) function by disrupting mitochondrial function.   These leads to energy stress and activation of AMPK due to the increases in intracellular AMP [@Zhou2001].  The activation of AMPK leads to activation of energy producing pathways, including glucose uptake and oxidation and lipid oxidation.
 The effects of this are to reduce circulating glucose, while also burning fat.
 
-![Mechanism of Action of Biguanides.](figures/Metformin-Action.png)
+![Mechanism of Action of Biguanides.](figures/Metformin-Action.pdf)
 
 # Further Reading
