@@ -145,7 +145,7 @@ PKA is the primary mediator of the activation of glycogen phosphorylase.  Once a
 
 In addition to the activation of these protein kinases, there is a reduction of glycogen associated protein phosphatase activity.  As a balance, this leads to more highly phosphorylated and therefore more glycogenolytic activities.
 
-### How does glucagon promote gluconeogenesis
+### How does glucagon promote gluconeogenesis?
 
 In addition to the decreased flux of glycolytic intermediates which allosterically activate gluconeogenesis, there are both post-translational and transcriptional mechanisms by which adrenergic signaling promotes gluconeogenesis.  
 
@@ -167,32 +167,25 @@ Intracellularly, when levels of ATP decrease and correspondingly, the levels of 
 
 # Pathophysiology related to glucose control
 
-## Consequences of dysfunctional glucose homeostasis
-
-### Hypoglycemia
-* Feinting, dizziness
-* Diabetic ketoacidosis
-
-### Hyperglycemia
-* Chronic hyperglycemia leads to glycation of membrane proteins.  This leads to damaged nerves, kidneys, eyes, circulatory system (amputation) and Alzheimer's disease.
-* Hyperglycemic hyperosmolar nonketotic syndrome.
-
 ## Type I Diabetes Mellitus
 
-### Loss of Insulin Producing Cells
-
+Type I Diabetes is typically caused by autoimmune destruction of pancreatic beta cells.  Without these cells, the pancreas is unable to produce insulin and without careful monitoring and exogenous insulin, blood glucose levels will rise.
 
 ## Insulin Resistance and Type II Diabetes Mellitus
 
-### Obesity and Insulin Sensitivity
+Type II diabetes occurs as a result of a multi-step process starting with negative feedback loops on insulin signaling.  As more nutrients are stored, metabolic tissues become resistant to the effects of insulin, likely as a way to protect against excessive lipid storage.
+
+As tissues become more insulin resistant, more insulin must be secreted by the pancreas to maintain normoglycemia.  If insulin resistance proceeds, more and more insulin will need to be produced and secreted by beta cells.  Eventually the beta cells will be unable to keep up with this demand and glucose levels will rise as the amount of endogenous or exogenous insulin is less and less effective.
 
 ### Why Insulin Resistance
+
+Insulin resistance is a standard negative feeback loop, common in most endocrine pathways.  Normally, it serves to ensure that anabolic pathways are not over-active.  Evolutionarily, it has been hypothesized that our carbohydrate and lipid homeostatic mechanisms are wired to promote lipid storage since during the majority of human existence, excessive nutrient storage was not problematic [@Neel1999]. 
+
+There is both an adaptive and a genetic component to the extent of insulin resistance.  Some obese individuals are able to maintain insulin sensitivity to a greater extent, while others progress from moderate insulin resistance to pancreatic failure rather quickly.  These variations, which are largely consistent between ethnic groups underlie how rapidly and severely individuals may progress towards Type II diabetes.
 
 ### Molecular mechanisms of insulin resistance
 
 Obese individuals respond poorly to insulin, including less insulin stimulated glucose uptake, and less insulin suppression of glucose production in the liver.  Biochemical measurements were done to dissect these processes.  These studies showed the activity of the PI3K signaling pathways were reduced in obese states [@Goodyear1995][@Saad1992].  This is thought to occur via serine phosphorylation of insulin receptor substrate proteins [@Takayama1984][@White1985].  This prevents these substrates from being phosphorylated by the insulin receptor tyrosine kinase and prevents the activation of the PI3K signal transduction cascade.
-
-### IRS Serine Phosphorylation
 
 ### Mechanisms of Insulin Resistance
 
