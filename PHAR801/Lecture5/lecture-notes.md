@@ -210,14 +210,13 @@ Resistance to the effects of insulin, associated with obesity can contribute to 
 
 This is best illustrated in liver specific insulin receptor knockout mice.  These mice are genetically engineered to not be able to respond to insulin in their liver tissues and as such have impaired insulin suppression of gluconeogenesis.  As a consequence these animals become hyperglycemic and hyperinsulinemic [@Michael2000][@Fisher2003].
 
-### Adaptations to Insulin Resistance
-* Hyperinsulinemia -> Pancreatic Failure
-* Regulation of food intake
-
 # Common Pharmacological Interventions for Diabetes
-* Primary intervention is diet and exercise alteration
+
+Depending on the etiology of the disease (Type I or Type II) there are vastly different treatments, underscoring the different pathologies of these diseases.
 
 ## Treatments for Type I Diabetes
+
+Since the work of Banting and Best, the primary treatment for type I diabetes is to provide exogenous insulin.  Originally purified from pork or bovine pancreas, now most insulin is made recombinantly.
 
 ### Insulin Administration
 
@@ -225,24 +224,37 @@ The amino acid sequence of insulin was determined by Frederick Sanger, which led
 
 #### Short and Long Acting Insulin
 
+Insulin is most often administred in conjunction with monitoring of blood glucose levels.  There are different chemical variations of insulin which work either quickly or are released slowly during the course of a day.
+
 #### Insulin Pumps
+
+In order to alleviate the constant monitoring of blood glucose and injection of insulin, insulin pumps have been developed.  These pumps are either able to inject insulin at a set time, or occasionally are able to monitor blood glucose in real time, adjusting insulin dosage as a pancreas would.
 
 ### Islet Transplantation
 
+Since Type I diabetes is caused by loss of islet cells, another intervention which is gaining popularity is islet transplantation.  In this case, pancreatic islets are taken from a donor and implanted into a recipient.  If successful, these transplanted islets are able to sense and secrete insulin without further monitoring.
+
 ## Treatments for Type II Diabetes
 
-### Excretion of circulating glucose
+Broadly there are three types of ways that a type II diabetic can reduce their blood glucose levels.  They can store it out of the blood and into their tissues, they can excrete it out of their bodies or they can burn the excess glucose.
 
 ### Storage of circulating glucose
 
-#### Insulin administration and insulin secretagogues
+Similar to a type I diabetic, you can reduce blood glucose levels by providing exogenous insulin, or by tricking the pancreas to release more insulin.  By increasing the amount of insulin, you are able to reduce blood glucose by normal mechanisms to a point, but as people become more insulin resistant, extra insulin exacerbates the problem.  Eventually, if no other interventions take place type II diabetes will no longer respond to either manipulation.
 
-* Sulfonylureas
+#### Insulin secretagogues
 
-#### Drugs that promote insulin sensitivity
+One way in which drugs can cause the pancreas to release more insulin is through a class of drugs called sulfonylureas.  The mechanism of these drugs is to inhibit the function of the beta cell potassium channel.  Normally this channel is inhibited by the increased ATP levels associated with increased blood glucose.  Sulfonylureas mimic this effect, causing depolarization of the beta cell and activating the voltage gated calcium channels which regulate insulin secretion.  Some commonly used sulfonylureas include Tolbutamide and Glyburide.
 
-* Thiazolidinediones
-* Anti-inflammatories
+
+#### Drugs which promote insulin sensitivity
+
+Another way to promote the disposal of circulating glucose is to resensitize tissues to insulin.  The best characterized insulin sensitizer is a class of drugs known as Thiazolidinediones.  These drugs activate a transcription factor known as PPAR gamma.  This transcription factor regulates genes involved in three important processes.  These genes have several functions but the main role is to stimulate the formation of new adipocytes.  These cells are now able to soak up the excess blood glucose and store it as fat.  This alleviates the excess fat infiltration in muscle and liver tissue, resensitizing those tissues to the effects of insulin.
+
+### Excretion of circulating glucose
+
+Another way a diabetic patient can have their blood glucose levels normalized is to allow for the excess blood glucose to be excreted in the urine.  Normally the kidney efficiently retrieves glucose out of the urine and keeps it in the blood via transporters known as sodium/glucose cotransporters.  Drugs which inhibit these transporters block this re-absorbtion, effectively reducing blood glucose levels.
+
 
 ## Glucose Utilization
 
