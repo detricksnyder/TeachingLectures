@@ -206,6 +206,10 @@ The third proposed mechanism by which insulin resistance is established in respo
 
 ### How Does Insulin Resistance Lead to Hyperglycemia and Diabetes?
 
+Resistance to the effects of insulin, associated with obesity can contribute to hyperglycemia through a variety of mechanisms including reduced glycolysis and reduced insulin stimulated glucose uptake.  The primary mechanism however is the reduced ability of the liver to suppress gluconeogenesis when insulin is present.  This uncontrolled gluconeogenesis, along with the abundant supply of gluconeogenic precursors in obese states leads to a constant over production of glucose which cannot be properly disposed of in tissues.  
+
+This is best illustrated in liver specific insulin receptor knockout mice.  These mice are genetically engineered to not be able to respond to insulin in their liver tissues and as such have impaired insulin suppression of gluconeogenesis.  As a consequence these animals become hyperglycemic and hyperinsulinemic [@Michael2000][@Fisher2003].
+
 ### Adaptations to Insulin Resistance
 * Hyperinsulinemia -> Pancreatic Failure
 * Regulation of food intake
