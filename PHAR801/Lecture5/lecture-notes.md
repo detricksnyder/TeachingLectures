@@ -189,9 +189,20 @@ Obese individuals respond poorly to insulin, including less insulin stimulated g
 
 ### Mechanisms of Insulin Resistance
 
+There have been three primary mechanisms suggested in recent years by which insulin receptor substrate serine phosphorylation is stimulated.  These involve the activation of  mTORC1/S6K, PKC and JNK protein kinase cascades.  None of these has been conclusively proven to be the physiologically relevant primary pathway, and intensive research is still being done in this area.  These cascades are also overlapping at times, so it is possible that insulin resistance associated IRS serine phosphorylation is multi-factoral.
+
 #### Nutrient overload induced insulin resistance
+
+The nutrient sensing kinase mTORC1 is regulated by a variety of nutritional cues including energy status (via AMPK), insulin signaling (via Akt/TSC), amino acid levels and inflammatory cues.  When activated by high nutrient levels, mTORC1 activates another protein kinase named S6K.  Associated with the activation of S6K by mTORC1 is enhanced serine phosphorylation of IRS1 and therefore reduced insulin signaling.  S6K has been shown to phosphorylate IRS1 *in vivo* and the knockout of this kinase results in animals which are lean and insulin sensitive [@Um2004a].
+
+
 #### Lipid mediated insulin resistance
+
+Intracellular triglyceride levels have also been shown to be associated with insulin resistant tissues in some but not all cases.  One of the pathways by which these intracellular lipids has been proposed to result in insulin resistance is via the activation of PKC theta and serine phosphorylation of IRS [@Samuel2012b].  PKC is activated by diacylglycerol (triaclyglycerol with one fatty acid removed), so it has been proposed that increased lipids (mainly diacylglycerol) activate PKC inducing insulin resistance.  This has been supported by data showing that knockout mice without PKC theta have reduced lipid-induced insulin resistance [@Kim2004a].
+
 #### Inflammation associated insulin resistance
+
+The third proposed mechanism by which insulin resistance is established in response to nutrient excess is linked to the finding that obesity is also a state of chronic low grade inflammation [@Lumeng2011].  Compelling evidence now exists that in obese states, adipose muscle and liver tissues become infiltrated with inflammatory cells including macrophages.  These cells secrete pro-inflammatory cytokines such as IL6 and TNFa which in turn are able to signal to the adjacent cells.  These cytokines activate pathways including JNK and IKK signaling cascades and these kinases have been proposed to enhance serine phosphorylation of IRS1 [@Gregor2010].
 
 ### How Does Insulin Resistance Lead to Hyperglycemia and Diabetes?
 
