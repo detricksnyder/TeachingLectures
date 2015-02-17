@@ -5,5 +5,5 @@
 3. Hypothalamic releasing hormones and anterior pituitary gland control; basic aspects of anterior pituitary gland hormones (1 hr)
 4. Growth hormone; hormonal control of growth (1 hr)
 5. Adrenal gland: medulla and cortex and their hormones (1 hr)
-6. Pancreas: insulin and glucagon  (0.5 hr)
+6. Pancreas: insulin and glucagon  (1 hr)
 7. Clinical Case "A"

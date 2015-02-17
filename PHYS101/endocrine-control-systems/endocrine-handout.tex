@@ -49,6 +49,10 @@
 \noindent This lecture covers general principles of endocrine control systems.  It covers the following pages in the textbook: 12; 121-124; 319-332\cite{Widmaier2013}.  The goals of this lecture are to demonstrate the basic concepts of endocrinology including what hormones do, how they are classified and generally how they function.  This is the first of seven lectures, the next six of which will go into various endocrine systems in much more detail.  The concepts in this lecture are essential to the understanding of the rest of the lecture.
 \end{abstract}
 
+\tableofcontents
+
+\pagebreak
+
 \section{Learning Objectives}
 For this lecture, the learning objectives are:
 \begin{itemize}
@@ -65,8 +69,6 @@ For this lecture, the learning objectives are:
 \item Describe negative and positive feedback system using an example.
 \end{itemize}
 
-\pagebreak
-
 \section{General Hormonal Principles}
 \newthought{A major advantage of multicellularity}, is that biological roles are divided into specialized organs and tissues.  In a single cellular organism, such as \textit{Saccharomyces cerevisiae}\sidenote{also known as brewer's yeast}, all cells need to autonomously be able to sense the environment, cellular conditions and respond appropriately.  Multicellular organisms are able to use more sophisticated mechanisms to sense the environment and make these decisions.  Essential to this division of labor is the ability of these organ systems to communicate efficiently and effectively with each other.  This is accomplished through hormones, which are secreted from one organ to another.
 
@@ -76,7 +78,7 @@ There are hundreds, if not thousands hormones, if defined loosely to mean \emph{
 
 \newthought{Chemically,} hormones can be small molecules such as amino acids or lipids, or can be small polypeptides, or even large proteins with three dimensional structures (see Figure \ref{fig:chemical-classification}).  Often, an endocrine organ only releases hormones of a particular chemical class.  An example of this is the adrenal gland which secretes several steroid hormones, each of which have different roles and target tissues.
 
-\begin{marginfigure}[-4in]
+\begin{marginfigure}
   \includegraphics{figures/hormone-classification}
   \caption{Chemical classification of hormones.}
     \label{fig:chemical-classification}
@@ -103,19 +105,80 @@ There are hundreds, if not thousands hormones, if defined loosely to mean \emph{
 \newthought{Functionally,} one can group hormones together based on collective regulation  of a set of organs.  These are often considered \emph{axes} and some examples include the hypothalamic-pituitary-adrenal (HPA) axis, gut-liver-brain axis or the sympathetic -adrenal-medullary (SAM) axis. 
 
 \section{Hormonal Signaling Concepts}
-\subsection{Principles of Hormone Receptors}
+
+All hormones can be understood best from a general framework of understanding what regulates the levels of the hormone in the body, and how and where it exerts its actions.
+
 \subsection{Regulation of Hormone Levels}
+
+Most signaling events are controlled at the level of hormonal secretion.  When the pancreas wants to communicate with the liver, it can secrete insulin or glucagon from storage vesicles.  This can occur very rapidly, as long as sufficient hormone is present in the storage vesicles and the liver receptors are sufficiently prepared to respond.
+
+\newthought{Synthesis and processing of hormones} generally occurs from a specific cell type in a particular gland.  Normally endocrine glands\sidenote{as opposed to an exocrine gland, which releases its contents externally.  These would include salivary, mammary and sweat glands} allow for release of stored hormones into the blood in response to a particular signal.  Typically these glands synthesize the hormone, process it into an active form and store it in a state where it can be released on demand.  The major glands that release hormones are the pineal, pituitary, thyroid and parathyroid glands, as well as the pancreas, ovaries, testes, hypothalamus and adrenal glands.  Peptide and protein hormones can be regulated at the transcriptional level, translational level or via regulation of post-translational processing.  Steroid hormones are often controlled by enzymatic activation of their synthetic pathways.  
+
+\begin{marginfigure}
+  \includegraphics{figures/insulin-secretion}
+  \caption{Mechanisms of glucose-induced insulin secretion from pancreatic $\beta$-cells.}
+    \label{fig:insulin-secretion}
+\end{marginfigure}
+
+\newthought{Some hormones are secreted upon stimulation, wheras others are released basally and without stimulus.}  In the case of basal secretion, the hormone is released at all times, as soon as it is made and processed.  Some examples of constitutive secretion are growth hormone\sidenote{As we will discuss in lecture 4, GH is actually a mixture of basal secretion along with secretion regulated by GHRH (Growth Hormone Releasing Hormone) and somatostatin} and prolactin release.  In these cases this maintains a steady level of hormone release, often to maintain long-term processes such as growth.  As is the case with both GHRH and prolactin, basal secretion can also be augmented if necessary by other signals.
+
+\newthought{Regulated secretion of hormones} occurs in response to an initiating signal.  In these cases the hormone is synthesized and stored in prepration for a secretion signal.  For example, in the case of insulin the pancreatic $\beta$-cells sense increases in blood glucose levels, causing a depolarization of the plasma membrane via ATP-sensitive potassium channels and allowing for exocytosis of insulin storage granules.  This is described in Figure \ref{fig:insulin-secretion}.  This can continue as long as there is enough insulin storage granules.  Most hormones have specific signaling/sensing pathways that regulate their synthesis and secretion.
+% mention that some hormones may not only traffic through the blood
+
+\subsection{Principles of Hormone Receptors}
+
+\newthought{All hormones have receptors}, either on the surface of the cell (if the hormone is not membrane soluble) or on the inside of the cell (if the hormone can cross the plasma membrane).  Receptors have two key features, they must \emph{recognize} the hormone and they must be able to \emph{transmit} that recognition event.
+
+\newthought{Hormones are recognized} by specific receptors, and can be thought of as key/lock pairs.  For example the feeding hormone Leptin binds to the Leptin Receptor in the hypothalamus, causing suppression of appetite.  If either of these genes are mutated then the subject is hyperphagic.  Some hormones can bind to several receptors, and some receptors are capable of binding one or more hormones, increasing the potential complexity of the signaling system.  When trying to understand a hormonal signaling event, it is useful to think of what the receptors are, and where they are located.
+
+\newthought{The tissue distribution of hormone receptors} is key to understanding what physiological effects the hormone may exert.  As an example, insulin receptors cause dramatically different physiological effects depending on the target tissue (see Table \ref{tab:insulin-tissue-roles}).
+
+
+\begin{table}
+  \centering
+  \begin{tabular}{ll}
+    \toprule
+    Tissue & Effect \\
+    \midrule
+    Pancreas & Blocks insulin secretion \\
+    Liver & Prevents gluconeogenesis, promotes glycogenesis\\
+    Fat & Glucose uptake, lipid synthesis \\
+    Hypothalamus & Reduces appetite \\
+    \bottomrule
+  \end{tabular}
+  \caption{Some examples of tissue-specific effects of insulin in various tissues.}
+  \label{tab:insulin-tissue-roles}
+  %\zsavepos{pos:normaltab}
+\end{table}
+
+Understanding what a hormone does, therefore is highly dependent on the tissue what it is acting on.
+
+\newthought{Hormones can regulate} a wide variety of cellular processes.  Two of these include changing metabolism rapidly via post-translational modification of key enzymes, and directing the synthesis of new transcripts, resulting in longer lasting changes in cellular physiology.
+% come up with some examples of short term and long term changes
+
+
 \subsection{Negative and Positive Feedback of Hormones}
-\subsection{Neuroendocrinology}
+
+\newthought{Negative feedback of signal transduction events} is the primary mechanism by which a target cell can stop responding to a hormone.  
+
+\newthought{Reduction of serum hormone levels...}
+
+\newthought{Most endocrine loops have built-in negative feedback circuits.}
+
+\newthought{Some hormones induce positive-feedback loops.}
+% often unstable
+
+\section{Neuroendocrinology}
+
 Many hormonal signaling events involve the brain, which could be considered the most complex and central endocrine organ.  The primary role of the brain is to integrate external sensory cues with internal signals and to decide, often subconsciously the most appropriate response.  The key parts of the brain that are involved in endocrine responses are the hypothalamus and the pituitary (Figure \ref{fig:pituitary-hypothalamus}).
 
-\begin{marginfigure}[-4in]
+\begin{marginfigure}
   \includegraphics{figures/pituitary-hypothalamus}
   \caption{Location of the pituitary and hypothalamus in the human brain.}
     \label{fig:pituitary-hypothalamus}
 \end{marginfigure}
 
-\newthought{The Hypothalamus\sidenote{Under the thalamus}} often responds to hormones sent from either the periphery or the rest of the brain.  This makes it the link between the nervous and the endocrine systems.  The hypothalamus is a central node for the regulation of appetite, circadian rhythyms, body temperature and behaviors.  The hypothalamus can signal to other parts of the brain, including the pituitary gland.  Several endocrine circuits exploit the proximity of these two brain regions (see Table \ref{tab:pituitary-axes}):
+\newthought{The Hypothalamus\sidenote{Under the thalamus}} often responds to hormones sent from either the periphery or the rest of the brain.  This makes it the link between the nervous and the endocrine systems.  The hypothalamus is a central node for the regulation of appetite, circadian rhythyms, body temperature and behaviors.  The hypothalamus can signal to other parts of the brain, including the pituitary gland making it the crossover point of the endocrine and nervous systems.  We will discuss the role of the hypothalamus more in the second and third lectures.  Several endocrine circuits exploit the proximity of these two brain regions (see Table \ref{tab:pituitary-axes}):
 
 \begin{table}
   \centering
@@ -124,7 +187,7 @@ Many hormonal signaling events involve the brain, which could be considered the 
     Axis & Hypothalamic & Pituitary & Function \\
     \midrule
     HPA & CRH & ACTH & Glucocorticoids \\
-    HPG & GnRH & FHS/LH & Reproductive hormones \\
+    HPG & GnRH & FSH/LH & Reproductive hormones \\
     HPT & TRH & TSH & Thyroid hormones \\
     \bottomrule
   \end{tabular}
@@ -138,6 +201,10 @@ Many hormonal signaling events involve the brain, which could be considered the 
 \section{Endocrine pathophysiology}
 
 Many diseases are the result of either too little or too much hormones in circulation.  For example, tumors in the pituitary which cause excessive release in growth hormone or ACTH cause acromegaly\cite{Marie1907} and Cushing's disease\cite{Cushing1932} respectively while the destruction of the cells that produce insulin or cortisol result in type I diabetes\cite{Banting1922b} and Addison's disease\cite{Addison1855}.  Hormonal deficiencies can often be corrected by providing patients with hormones produced and purified externally, while hormonal over-production requires  more complicated therapies.  Understanding the normal roles of these hormones is central to connecting the phenotypes associated with hormonal deficiencies or hyper-secretion to the mechanisms of disease progression.
+
+\listoffigures
+\listoftables
+
 \bibliography{library}
 \bibliographystyle{plainnat}
 
