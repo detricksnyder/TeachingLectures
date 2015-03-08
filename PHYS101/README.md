@@ -12,7 +12,7 @@ Below are the learning objectives for each of the lectures.
 * Describe negative and positive feedback system using an example.
 * Explain with examples neuroendocrine integration.
 
-## Neuroendocrinology and the posterior pituitary gland (0.5 hr)
+## Neuroendocrinology and the posterior pituitary gland
 
 * Recall anatomical, biochemical, and functional evidence showing intimate relationships between hypothalamus and neurohypophysis.
 * Describe how hormones are sensed by the neurons of the hypothalamus, and the role that the blood brain barrier and transport mechanisms play.
@@ -26,11 +26,12 @@ Below are the learning objectives for each of the lectures.
 * Describe the control of vasopressin release.
 * Describe the function of oxytocin with respect to delivery and lactation.
 
-## Hypothalamic releasing hormones and anterior pituitary gland control; basic aspects of anterior pituitary gland hormones (1 hr)
+## Hypothalamus and Endocrine Control of Appetite
 
-##  Growth hormone; hormonal control of growth (1 hr)
+## Endocrine Control of Growth
 
-## Adrenal gland: medulla and cortex and their hormones (1 hr)
+## Adrenals and Stress Hormones
 
-## Pancreas: insulin and glucagon  (1 hr)
+## Pancreatic Hormones and Metabolic Control
+
 ## Clinical Case "A"
