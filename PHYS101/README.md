@@ -28,6 +28,14 @@ Below are the learning objectives for each of the lectures.
 
 ## Endocrine and Hypothalamic Control of Appetite
 
+* Describe the appetite-regulating hormones secreted from the gut, how they are regulated and under what conditions they are released.
+* Describe the AgRP/POMC circuit and its relationship to both circulating factors and neuropeptides.
+* Understand the relationship between adipose mass and appetite regulation, including how adipokines are regulated and what role they play.
+* List the effects of insulin on appetite and what the neurological targets of insulin are.
+* Describe the role of the blood-brain barrier in the regulation of appetite and how it is altered in obesity.
+* Describe how hypothalamic feeding circuits integrate with other pleasure and reward circuits in the brain.
+* Explain how neuroendocrine obesity differs from idiopathic obesity and how they might be treated in different ways.
+
 ## Endocrine Control of Growth
 
 * List the hormones important for growth at key times in a person’s life.
