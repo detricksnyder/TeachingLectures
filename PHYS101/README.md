@@ -2,7 +2,7 @@
 
 Below are the learning objectives for each of the lectures.
 
-## Endocrine control systems
+## Endocrine Control Systems
 
 * Define endocrine, paracrine, autocrine, and exocrine systems, define neuro-secretory cells by giving a few examples.
 * List major categories of hormones and give several examples that belong to each class.
@@ -12,7 +12,7 @@ Below are the learning objectives for each of the lectures.
 * Describe negative and positive feedback system using an example.
 * Explain with examples neuroendocrine integration.
 
-## Neuroendocrinology and the posterior pituitary gland
+## Neuroendocrinology and the Posterior Pituitary Gland
 
 * Recall anatomical, biochemical, and functional evidence showing intimate relationships between hypothalamus and neurohypophysis.
 * Describe how hormones are sensed by the neurons of the hypothalamus, and the role that the blood brain barrier and transport mechanisms play.
