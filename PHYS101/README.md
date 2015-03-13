@@ -5,7 +5,7 @@ Below are the learning objectives for each of the lectures.
 ## Endocrine Control Systems
 
 * Define endocrine, paracrine, autocrine, and exocrine systems, define neuro-secretory cells by giving a few examples.
-* List major categories of hormones and give several examples that belong to each class.
+* List major chemical categories of hormones and give several examples that belong to each class.
 * List important factors that determine hormone levels in circulation.
 * Explain cellular actions of hormones via membrane and nuclear receptors, including an understanding of the rates by which these processes can affect cells.
 * Define basal secretion and stimulated secretion of endocrine glands.
@@ -14,12 +14,12 @@ Below are the learning objectives for each of the lectures.
 
 ## Neuroendocrinology and the Posterior Pituitary Gland
 
-* Recall anatomical, biochemical, and functional evidence showing intimate relationships between hypothalamus and neurohypophysis.
+* Recall anatomical, biochemical, and functional evidence showing intimate relationships between hypothalamus and pituitary.
 * Describe how hormones are sensed by the neurons of the hypothalamus, and the role that the blood brain barrier and transport mechanisms play.
 * Recall how the central nervous system can integrate with the hypothalamus and modify both hormonal secretions and executive function.
 * Describe the differences in how hypothalamic signals are passed to the posterior and anterior pituitary glands.
 * List the known hypothalamic hormones which cause release (and release-inhibition) of anterior pituitary hormones, including their acronymns. 
-* Name two major posterior pituitary hormones in man, name their chemical category, and succinctly describe their secretory mechanism.
+* Name two major posterior pituitary hormones, their chemical category, and succinctly describe their secretory mechanism.
 * Describe cellular actions of vasopressin in terms of site of actions, receptors, and cellular signals.
 * Discuss briefly aquaporin water channels and relation to vasopressin. 
 * Predict what the changes are expected in urine volume and osmolality and in ECF volume when vasopressin synthesis or secretion is severely impaired. Predict what will happen to water intake. Explain why there can be transient diabetes insipidus following a whiplash injury, and the rationale for therapy during this time. 
@@ -69,7 +69,7 @@ Below are the learning objectives for each of the lectures.
 * Explain briefly the mechanism of glucose uptake into the muscle.
 * Name the tissues in which insulin facilitates glucose uptake and those in which insulin does not facilitate glucose uptake.
 * List the major factors that stimulate or inhibit insulin secretion.
-* Draw an oral glucose tolerance test (oGTT)  (glucose, insulin, and glucagon levels) and explain the conditions and describe what is occurring and why.  Explain how the two hormones act to promote glucose homeostasis in the plasma and in the key target tissues for each of these hormones.
+* Draw an oral glucose tolerance test (oGTT)  (glucose, insulin, and glucagon levels) and and describe what is occurring and why.  Explain how the two hormones act to promote glucose homeostasis in the plasma.
 * State which nutrient storages are preferably used for short-term regulation of energy metabolism if no nutrients are available from the GI tract.
 * Discuss the hormones involved, fuel storage capacity, fuel storage consumption, and glucose (or fatty acid) levels during 1) the postprandial period, 2) the post-absorptive period, 3) fasting.
 * List the insulin-counteracting hormones and their roles in glucose homeostasis. Discuss the hormones involved in minute-to-minute regulation and long-term regulation of glucose homeostasis.
