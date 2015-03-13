@@ -39,7 +39,7 @@ Below are the learning objectives for each of the lectures.
 ## Endocrine Control of Growth
 
 * List the hormones important for growth at key times in a person’s life.
-* Describe the functions of human growth hormone [hGH; somatotrop(h)in] on growth (bones and soft tissues), and on metabolism, and the regulation of its secretion.  Explain what “rhGH” means.
+* Describe the functions of human growth hormone on growth (bones and soft tissues), and on metabolism, and the regulation of its secretion.  Explain what “rhGH” means.
 * State the “dual effector hypothesis” for GH actions, and the relative roles of GH and IGF-1 in growth control. 
 * Describe the interactions among all the key growth-regulating hormones at key times of a person’s life: in utero, neonatally, childhood, puberty, adulthood, and senescence.
 
@@ -62,15 +62,13 @@ Below are the learning objectives for each of the lectures.
 ## Pancreatic Hormones and Metabolic Control
 
 * Name the cell types of the Islets of Langerhans and name the hormones secreted by them.
-* Describe the target tissue(s) and function(s) of glucagon.
+* Describe the main targets and functions of glucagon.
 * List the major factors that stimulate or inhibit glucagon and insulin.
-* List the chemical group name(s) of glucagon and insulin.
 * Describe the important physiological roles of insulin.
 * List the major actions of insulin in muscle, adipose tissue, and liver.
 * Explain briefly the mechanism of glucose uptake into the muscle.
 * Name the tissues in which insulin facilitates glucose uptake and those in which insulin does not facilitate glucose uptake.
 * List the major factors that stimulate or inhibit insulin secretion.
-* Discuss the neural regulation of insulin.
 * Draw an oral glucose tolerance test (oGTT)  (glucose, insulin, and glucagon levels) and explain the conditions and describe what is occurring and why.  Explain how the two hormones act to promote glucose homeostasis in the plasma and in the key target tissues for each of these hormones.
 * State which nutrient storages are preferably used for short-term regulation of energy metabolism if no nutrients are available from the GI tract.
 * Discuss the hormones involved, fuel storage capacity, fuel storage consumption, and glucose (or fatty acid) levels during 1) the postprandial period, 2) the post-absorptive period, 3) fasting.
