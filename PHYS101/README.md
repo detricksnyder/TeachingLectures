@@ -26,22 +26,13 @@ Below are the learning objectives for each of the lectures.
 * Describe the control of vasopressin release.
 * Describe the function of oxytocin with respect to delivery and lactation.
 
-## Endocrine and Hypothalamic Control of Appetite
-
-* Describe the appetite-regulating hormones secreted from the gut, how they are regulated and under what conditions they are released.
-* Describe the AgRP/POMC circuit and its relationship to both circulating factors and neuropeptides.
-* Understand the relationship between adipose mass and appetite regulation, including how adipokines are regulated and what role they play.
-* List the effects of insulin on appetite and what the neurological targets of insulin are.
-* Describe the role of the blood-brain barrier in the regulation of appetite and how it is altered in obesity.
-* Describe how hypothalamic feeding circuits integrate with other pleasure and reward circuits in the brain.
-* Explain how neuroendocrine obesity differs from idiopathic obesity and how they might be treated in different ways.
-
 ## Endocrine Control of Growth
 
 * List the hormones important for growth at key times in a person’s life.
 * Describe the functions of human growth hormone on growth (bones and soft tissues), and on metabolism, and the regulation of its secretion.  Explain what “rhGH” means.
 * State the “dual effector hypothesis” for GH actions, and the relative roles of GH and IGF-1 in growth control. 
 * Describe the interactions among all the key growth-regulating hormones at key times of a person’s life: in utero, neonatally, childhood, puberty, adulthood, and senescence.
+* Describe the daily regulation of GH levels and the physiological relevance of these cycles.
 
 ## Adrenals and Stress Hormones
 
@@ -58,6 +49,15 @@ Below are the learning objectives for each of the lectures.
 * List the major metabolic actions of catecholamines.
 * Contrast the thresholds for actions vs. plasma levels of epi and NE under common conditions, like exercise, and in the disease pheochromocytoma
 
+## Endocrine and Hypothalamic Control of Appetite
+
+* Describe the appetite-regulating hormones secreted from the gut, how they are regulated and under what conditions they are released.
+* Describe the AgRP/POMC circuit and its relationship to both circulating factors and neuropeptides.
+* Understand the relationship between adipose mass and appetite regulation, including how adipokines are regulated and what role they play.
+* List the effects of insulin on appetite and what the neurological targets of insulin are.
+* Describe the role of the blood-brain barrier in the regulation of appetite and how it is altered in obesity.
+* Describe how hypothalamic feeding circuits integrate with other pleasure and reward circuits in the brain.
+* Explain how neuroendocrine obesity differs from idiopathic obesity and how they might be treated in different ways.
 
 ## Pancreatic Hormones and Metabolic Control
 
