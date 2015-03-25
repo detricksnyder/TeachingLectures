@@ -41,6 +41,10 @@
 \newcommand{\doccls}[1]{\texttt{#1}}% document class name
 \newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
 
+%line break in cell
+\newcommand{\specialcell}[2][c]{%
+  \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+
 \begin{document}
 
 \maketitle% this prints the handout title, author, and date
@@ -64,19 +68,47 @@ For this lecture, the learning objectives are:
 
 \end{itemize}
 
-There are several hormones that are involved in normal growth.  The most important is growth hormone, but insulin, thyroid hormones, Vitamin D and sex hormones are also very important.  These are covered in separate lectures.  Generally proper growth (length and mass increase) requires proper nutrition\sidenote{both macro- and micronutrients} and a good psychosocial environment.   
+\pagebreak
 
-\newthought{Humans undergo two major growth phases.}  During the first two years there is a dramatic increase in bone, muscle and other organ size.  The second major growth phase, which occurs during puberty is at 12-20 years old.  Sex hormones\sidenote{estrogen and testosterone} cause this growth spurt by increasing the levels of both GH and IGF-1.
+There are several hormones that are involved in normal growth.  The most important is growth hormone, but insulin, thyroid hormones, cortisol, Vitamin D and sex hormones are also very important.  These are covered in separate lectures.  Generally proper growth (length and mass increase) requires proper nutrition\sidenote{both macro- and micronutrients} and a good psychosocial environment.   
+
+\newthought{Humans undergo two major growth phases.}  During the first two years there is a dramatic increase in bone, muscle and other organ size.  The second major growth phase, which occurs during puberty is at 12-20 years old.  Sex hormones\sidenote{estrogen and testosterone} cause this growth spurt by increasing the levels of both GH\sidenote{Growth hormone, or when generated recombinantly known as rhGH.} and IGF-1\sidenote{Insulin-like growth factor-1.}.  The hormones required at each stage are shown in Table \ref{tab:hormone-requirements}.  Vitamin D and the thyroid hormones will be discussed in future lectures.
+
+\begin{table}
+  \centering
+  \begin{tabular}{lll}
+    \toprule
+Stage & Age & Hormonal Requirements \\
+\midrule
+Prenatal & (9 months) & Insulin \\
+Infantile & 0-1 & Insulin \\
+Juvenile & 1-12 years & GH, Insulin, T$_3$, Vitamin D \\
+Adolescent  & \specialcell[t]{10-14 (F) \\ and 12-16 (M)} & \specialcell[t]{GH, insulin, T$_3$, Vitamin D \\ and Sex Steroids} \\
+Adult & Puberty - 100 & Normally limited growth \\
+    \bottomrule
+  \end{tabular}
+  \caption{Hormones required at different stages of growth.}
+  \label{tab:hormone-requirements}
+  %\zsavepos{pos:normaltab}
+\end{table}
+
 
 \section{Regulation of Growth Hormone and IGF-1 Levels}
 
-The main regulator of growth are GH and IGF-1, which is regulated by GH.  These hormones are under control of the hypothalamus and pituitary.
+The main regulator of growth are GH and IGF-1.  IGF-1 is regulated by GH, similar to the way that ACTH can promote the release of cortisol.  The primary difference is that \emph{both} GH and IGF-1 have important peripheral functions\sidenote{This is known as the \emph{dual-effector hypothesis}, which means that you require both GH and IGF-1 to be functional to see the effects of growth hormone}.  These hormones are under control of the hypothalamus and pituitary.
 
 \subsection{Hypothalamic and Pituitary Control of Growth Hormone}
 
-Growth hormone is released from the somatotroph cells in the anterior pituitary.  These cells secrete growth hormone into the circulation upon PKA activation.  The two primary regulators of GH secretion are the two hypothalamic hormones GHRH\sidenote{growth hormone releasing hormone} and somatostatin which are secreted into the hypophyseal portal system.  The GPCR receptors of these hormones are Gs and Gi linked receptors respectively, so either promote or inhibit the activation of PKA.
+Growth hormone is released from the somatotroph cells in the anterior pituitary.  These cells secrete growth hormone into the circulation upon PKA activation.  The two primary regulators of GH secretion are the two hypothalamic hormones GHRH\sidenote{growth hormone releasing hormone.} and somatostatin\sidenote{Sometimes called growth hormone inhibiting hormone or GHIH.} which can both be secreted into the hypophyseal portal system from the hypothalamus.  The GPCR receptors of these hormones are Gs and Gi linked receptors respectively, so either promote or inhibit the activation of PKA.  This process is summarized in Figure \ref{fig:gh-igf1}.
 
-\newthought{Growth hormone is highest during youth while people are actively growing.}  As a person ages, the amount of growth hormone decreases.  Growth hormone also undergoes a normal diurnal rhythm.  GH levels are highest shortly after going to sleep and lower during the day.  Because of this, most growth occurs during sleeping when nutrients can be used for that purpose and are not needed for normal activities.
+
+\begin{marginfigure}
+  \includegraphics{figures/gh-igf1}
+  \caption{Regulation of GH and IGF-1 levels.}
+    \label{fig:gh-igf1}
+\end{marginfigure}
+
+\newthought{Growth hormone is highest during youth while people are actively growing.}  As a person ages, the amount of growth hormone decreases.  This is primarily due to decreases in GHRH secretion from the hypothalamus and not due to an insensitivity of cells to GHRH, GH or IGF-1.  Growth hormone also undergoes a normal diurnal rhythm.  GH levels are highest shortly after going to sleep and lower during the day.  Because of this, most growth occurs during sleeping when nutrients can be used for that purpose and are not needed for normal activities.
 
 \subsection{Growth Hormone Regulates IGF-1 Secretion}
 
@@ -85,33 +117,41 @@ While growth hormone has some effects on growth, several important effects are m
 
 \section{Effects of Growth Hormone}
 
-The main role of the GH/IGF-1 axis is to encourage muscle, bone and other organ growth and to divert important nutrients such as proteins, carbohydrates and lipids towards that end.  As such, GH/IGF-1 has catabolic actions in storage tissues such as adipose, but anabolic actions in growing bones and muscles.
+The main role of the GH/IGF-1 axis is to encourage muscle, bone and other organ growth and to divert important nutrients such as proteins, carbohydrates and lipids towards that end.  As such, GH/IGF-1 has catabolic actions in storage depots such as adipose tissue, but anabolic actions in growing bones and muscles.  In this way GH/IGF-1 function both anabolically (in growing muscle and bone) and catabolically (in storage tissues).
 
 \subsection{Growth Hormone and IGF-1 Signaling}
 
-GH functions through a receptor\sidenote{The Growth Hormone Receptor.} of the JAK/STAT family.  These receptors function primarily by phosphorylating a class of transcription factors known as STATs\sidenote{Signal Transducer and Activator of Transcription} which then produce new mRNAs.  IGF-1 on the other hand functions through a receptor tyrosine kinase, similar to insulin.  This can result in rapid activation of enzymes that are important for distributing nutrients towards growing tissues.
+GH functions through a receptor\sidenote{The Growth Hormone Receptor.} of the JAK/STAT family.  These receptors function primarily by phosphorylating a class of transcription factors known as STATs\sidenote{Signal Transducer and Activator of Transcription.   For GH signaling, the most important is STAT5.} which then produce new mRNAs by binding to specific DNA binding sites on promoters of those genes.  IGF-1 on the other hand functions through a receptor tyrosine kinase, similar to insulin.  This can result in rapid activation of enzymes that are important for distributing nutrients towards growing tissues.
 
 \subsection{Bone and Soft Tissue Growth}
 
-Bones grow via expansion of a region known as the epiphysial growth plate.  A specialized cell type known as osteoblasts form bone at the edge of the plate in concert with chondrocytes, which lay down cartilage in the interior.
+Bones grow via expansion of a region known as the epiphysial growth plate.  A specialized cell type known as osteoblasts form bone at the edge of the plate in concert with chondrocytes, which lay down cartilage in the interior.  This is shown in Figure \ref{fig:bone-growth}.
 
-\newthought{Muscle growth occurs primarily via two mechanisms, the induction of protein synthesis and the generation of new muscle cells\sidenote{This is known as myogenesis.}}  Both of these processes are primarily controlled by IGF-1, which activates a nutrient sensing protein kinase called mTORC1\sidenote{mechanistic target of rapamycin}.  The signaling pathway by which IGF-1 activates mTORC1 is very similar to the insulin signaling pathway we will discuss in the next lecture.
+\begin{figure}
+\centering
+  \includegraphics[width=0.8\textwidth]{figures/bone-growth}
+  \caption{Growth of bone from the growth plate.}
+    \label{fig:bone-growth}
+\end{figure}
+
+
+\newthought{Muscle growth occurs primarily via two mechanisms, the induction of protein synthesis and the generation of new muscle cells\sidenote{This is known as myogenesis.}}  Both of these processes are primarily controlled by IGF-1, which activates a nutrient sensing protein kinase called mTORC1\sidenote{mechanistic target of rapamycin}.  The signaling pathway by which IGF-1 activates mTORC1 is very similar to the insulin signaling pathway we will discuss in the lecture on the pancreas and insulin action.  Once activated mTORC1 mediates both myogenesis and muscle growth.
 
 \subsection{Regulation of Metabolism}
 
-In addition to promoting protein synthesis in muscle, GH/IGF-1 signaling has several other important peripheral effects.  In order to provide substrates for bone and soft tissue growth, GH induces liver gluconeogenesis and promotes lipid breakdown in adipose tissue.  In addition to these effects, IGF-1 stimulates glucose uptake in muscle as well as promotes glycogen and lipid storage in these tissues.
+In addition to promoting protein synthesis in muscle, GH/IGF-1 signaling has several other important peripheral effects.  In order to provide substrates for bone and soft tissue growth, GH induces liver gluconeogenesis and promotes lipid breakdown in adipose tissue, to provide substrates for further gluconeogenesis.  To allow for glucose to enter the muscle, IGF-1 stimulates glucose uptake in muscle and promotes glycogen and lipid storage in these tissues.  The mechanism for this is the same as insulin action, which will be discussed in the lecture on pancreatic function.
 
 \section{Integration of GH with Other Endocrine Factors}
 
-Several other hormones work with, or against GH in the control of growth.  As stated above, nutrient status is extremely important for growth hormone signaling but insulin and thyroid hormones also enhance GH signaling.
+Several other hormones work with, or against GH  to regulate growth.  As stated above, nutrient status is extremely important for growth hormone signaling but insulin and thyroid hormones also enhance GH signaling.  These are summarized in Table XXX.
 
-\newthought{In addition to the direct effects of T$_3$ on bone growth}, thryroid hormone\sidenote{This will be covered by Dr. Parthasarathi in his lectures on the thyroid gland} is absolutely required for growth hormone synthesis in the pituitary.  This occurs via direct activation of GH transcription in the pituitary somatotropes.
+\newthought{In addition to the direct effects of T$_3$ on bone growth}, thryroid hormone\sidenote{This will be covered by Dr. Parthasarathi in his lectures on the thyroid gland} is absolutely required for growth hormone synthesis in the pituitary.  This occurs via direct activation of GH transcription in the pituitary somatotropes in response to T$_3$.  Without this input, one of the major consequences of hypothyroidism is reduced GH levels and stunted growth.
 
-\newthought{In contrast to the helpful effects of the sex hormones, thyroid hormones and insulin, cortisol antagonizes many of the effects of GH/IGF-1 signaling}.  In times of stress, when cortisol is elevated nutrients are required for essential functions and growth is interrupted.  
+\newthought{In contrast to the growth-promoting effects of the sex hormones, thyroid hormones and insulin, cortisol antagonizes many of the effects of GH/IGF-1 signaling}.  In times of stress, when cortisol is elevated nutrients are required for essential functions and growth is interrupted.  This relationship is complex though, as cortisol blocks the release of GHRH in the hypothalamus but also promotes GH synthesis.  This is so that after the stress (and cortisol levels) are resolved, sufficient GH is available to resume normal function.
 
 \section{Pathologies Associated with Growth Hormone Signaling}
 
-While growth hormone decreases dramatically with age, the effects of GH on bone growth and muscle development also decrease.  This, while part of the normal aging process is one of the reasons that the elderly are at higher risk for sarcopenia\sidenote{degenerative muscle loss} and fractures.  In addition to these normal aging effects there are two diseases that are associated with altered GH signaling.  This relationship is complex though, as cortisol blocks the release of GHRH in the hypothalamus but also promotes GH synthesis.  This is so that after the stress (and cortisol levels) are resolved, sufficient GH is available to resume normal function.
+While growth hormone decreases dramatically with age, the effects of GH on bone growth and muscle development also decrease.  This, while part of the normal aging process is one of the reasons that the elderly are at higher risk for sarcopenia\sidenote{degenerative muscle loss} and fractures.  In addition to these normal aging effects there are two diseases that are associated with altered GH signaling.  
 
 \subsection{Acromegaly}
 
