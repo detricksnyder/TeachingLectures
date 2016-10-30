@@ -1,0 +1,35 @@
+---
+title: "Amino Acid Composition Assignment"
+output: html_notebook
+---
+
+```{r data-entry}
+datafile <- 'Amino Acid Composition.csv'
+data <- read.csv(datafile, row.names='X')
+```
+
+# Heatmap
+
+```{r heatmap}
+library(gplots)
+heatmap.2(as.matrix(data), 
+          cexRow=0.75,
+          cexCol=0.75,
+          trace='none',
+          main="Raw Data")
+
+heatmap.2(as.matrix(data), 
+          cexRow=0.75,
+          cexCol=0.75,
+          scale="column",
+          trace='none',
+          main="Normalized Per Food")
+
+heatmap.2(as.matrix(data), 
+          cexRow=0.75,
+          cexCol=0.75,
+          scale="row",
+          trace='none',
+          main="Normalized to Amino Acids")
+
+```
