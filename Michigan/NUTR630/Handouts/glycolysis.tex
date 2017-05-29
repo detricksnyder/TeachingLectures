@@ -70,13 +70,23 @@
 \pagebreak
 
 \section{Glycolysis converts glucose to pyruvate}
+
+Glycolysis is the process by which glucose is catabolized to pyruvate.  It is the first step to full oxidation of glucose to carbon dioxide, or can end with pyruvate being released as lactate.  This is the backbone of human metabolism, and as most carboydrate, amino acid and lipid metabolic pathways involve glycolysis in one way or another.  For a refresher on glycolysis, I recommend the textbooks on reserve at the Shapiro library \citep{Berg2013,Ferrier2017}\sidenote{The relevant chapter of Berg is also available free here: \url{https://www.ncbi.nlm.nih.gov/books/NBK22395/}.}.
+
 \subsection{How does glucose enter cells?}
-\newthought{Glycolysis occurs in the cytoplasm of cells}
+
+Glucose, much like amino acids, lactate and glycerol is normally impermeable to the plasma membrane of cells.  Therefore, in order to enter the cell, specific transporters are required.  In the case of glucose, three transporters are the most relevant;  GLUT2 and GLUT4.  All three of these are passive transporters that only allow glucose to follow its concentration gradient.  In the liver, GLUT2 is typically expressed and present at the membrane of the hepatocyte.  This allows glucose to enter the hepatocyte (for example after a meal) or to exit the cell (for example during glycogenolysis or gluconeogenesis\sidenote{The production of glucose from precursors to maintain blood glucose levels}).
+
+GLUT4 on the other hand is the main transporter in muscle and adipocyte cells.  GLUT4 is normally present on intracellular vesicles within the cell.  When insulin is present, these vesicles fuse with the plasma membrane of these cells, placing GLUT4 transporters on the plasma membrane, and allowing for glucose to enter down its concentration gradient.  GLUT4 trafficking is the first regulated step for glucose oxidation and storage in muscle and fat cells.  For more details on how GLUT4 trafficking is regulated see \citep{Leto2013}.
+
+
+\newthought{Glycolysis occurs in the cytoplasm of cells.}  All of glycolysis occurs in the cytoplasm of cells, unlike the TCA cycle or the electron transport chain, which require mitochondria.  As we will discuss later in the semester, mitochondria are also required for the oxidation of fatty acids and some amino acids.  This means that cells with little or few mitochondria (fast-twitch muscle fibers, or red blood cells for example) are highly dependent on glycolysis to generate ATP.
+
 \subsection{The conversion of glucose to glucose-6-phosphate}
 
 \newthought{There are two enzymes that catalyse the first step after glucose enters the cell.}   This step phosphorylates glucose at the 6 position, generating glucose-6-phosphate (G6P):
 
-\begin{equation}
+\begin{equation}\label{eq:glucokinase}
 Glucose + ATP \rightarrow Glucose-6-Phosphate
 \end{equation}
 
@@ -118,8 +128,9 @@ The most important regulatory step that controls flow through glycolysis is cata
 \begin{equation}
 Glucose-6-Phosphate \leftrightarrow Fructose-6-phosphate
 \end{equation}
-\begin{equation}
-Fructose-6-phosphate \rightarrow Fructose-1,6-bisphosphate
+
+\begin{equation}\label{eq:pfk1}
+Fructose-6-phosphate + ATP \rightarrow Fructose-1,6-bisphosphate
 \end{equation}
 
 \begin{margintable}
@@ -148,15 +159,15 @@ Because this is such an important regulatory node, there are several facets to t
 
 \newthought{The next several steps of glycolysis are neither regulated or rate limiting.}  In general, the F16bP molecule is broken in two by aldolase, then each part rapidly is converted into phosphoenolpyruvate via the following reactions:
 
-\begin{equation}
-F16bP \leftrightarrow DHAP+ G3P
+\begin{equation}\label{eq:aldolase-a}
+F16bP \leftrightarrow DHAP+ GA3P
 \end{equation}
 
 \begin{equation}
-G3P + NAD+ \leftrightarrow 1,3bPG  + NADH
+GA3P + NAD+ \leftrightarrow 1,3bPG  + NADH
 \end{equation}
 
-\begin{equation}
+\begin{equation}\label{eq:pgk}
 1,3bPG + ADP \leftrightarrow 3PG + ATP
 \end{equation}
 
@@ -168,19 +179,19 @@ G3P + NAD+ \leftrightarrow 1,3bPG  + NADH
 2PG \leftrightarrow Phosphoenolpyruvate
 \end{equation}
 
-While these steps are not regulated, or associated with known nutrient deficiencies or inborn errors of metabolism, there is two key facts about steps 5 and 6, the generation of NADH and ATP respectively\sidenote{Remember, since glucose was broken in two pieces at step 4, one glucose generates two ATP at this step.}.  ATP is the primary fuel source in cells, and NADH is converted into 1.5 molecules of ATP in the electron transport chain\sidenote{Discussed next lecture.}.  The second point, which we will come back to near the end of the semester, is that the glycerol backbone, needed to generate triglycerides is derived from DHAP, and when glycerol is broken down, it becomes DHAP and enters the glycolytic pathway.
+While these steps are not regulated, or associated with known nutrient deficiencies or inborn errors of metabolism, there are two key points about steps 5 and 6, the generation of NADH and ATP respectively\sidenote{Remember, since glucose was broken in two pieces at step 4, one glucose generates two ATP at this step.}.  ATP is the primary fuel source in cells, and one molecule NADH is converted into 2.5 molecules of ATP in the electron transport chain\sidenote{Discussed next lecture.}.  The second point, which we will come back to near the end of the semester, is that the glycerol backbone, needed to generate triglycerides is derived from DHAP, and when glycerol is broken down, it becomes DHAP and enters the glycolytic pathway.
 
 \subsection{Pyruvate kinase regulates conversion to pyruvate}
 
-\begin{equation}
+\begin{equation}\label{eq:pk}
 Phosphoenolpyruvate + ADP \rightarrow Pyruvate + ATP
 \end{equation}
 
-The last step catalyzes the irreversible reaction of phosphoenolpyruvate (PEP) to pyruvate is catalysed by Pyruvate Kinase.  This is also the last main point of regulation in glycolysis.  Table \ref{tab:pk-regulators} describes the allosteric regulators of pyruvate kinase activity.  Fructose-1,6-bisphosphate (F1,6bP) is the product of PFK1, and functions as a \emph{feed-forward} regulator of pyruvate kinase activity.  ATP, similar to its inhibitory role on PFK1, reduces glycolytic flux when energy is not needed.  Alanine on the other hand is an amino acid that is easily interconverted with pyruvate by the enzyme alanine aminotransferase (ALT)\sidenote{This will be discussed in the amino acid catabolism lecture in the middle of the semester.}.  As a surrogate for both protein breakdown (and amino acid availability) and pyruvate levels, alanine reduces Pyruvate kinase activity when amino acids are high, and there is less of a need to use glucose as fuel.
+The last step catalyzes the irreversible reaction of phosphoenolpyruvate (PEP) to pyruvate is catalysed by Pyruvate Kinase.  This is also the last main point of regulation in glycolysis.  Table \ref{tab:pk-regulators} describes the allosteric regulators of pyruvate kinase activity.  Fructose-1,6-bisphosphate (F1,6bP) is the product of PFK1, and functions as a \emph{feed-forward} regulator of pyruvate kinase activity.  ATP, similar to its inhibitory role on PFK1, reduces glycolytic flux when energy is not needed.  Alanine on the other hand is an amino acid that is easily interconverted with pyruvate by the enzyme Alanine Aminotransferase (ALT)\sidenote{This will be discussed in the amino acid catabolism lecture in the middle of the semester.}.  As a surrogate for both protein breakdown (and amino acid availability) and pyruvate levels, Alanine reduces liver Pyruvate kinase activity when amino acids are high, and there is less of a need to use glucose as fuel\sidenote{The muscle isoforms of pyruvate kinase is \emph{not} inhibited by ATP or Alanine, but is still subject to feed-forward regulation by F1,6bP.  The adipocyte isoform (PKM2) is also activated by Serine \citep{Christofk2008a} and is expressed in a variety of tumors.}.
 
 \begin{margintable}
 \centering
-\caption{Regulators of Pyruvate Kinase activity}
+\caption{Regulators of Pyruvate Kinase activity.  Note that ATP and Alanine are only negative regulators in liver cells.}
 \label{tab:pk-regulators}
 \begin{tabular}{cc}
 \hline
@@ -197,33 +208,99 @@ Alanine & Negative \\
 
 \subsection{The fate of pyruvate}
 
-Pyruvate can go in one of three directions in the cell, depending on the activity of Pyruvate dehydrogenase (PDH) and the relative levels of alanine in the cell.  The regulation of PDH is very important for aerobic respiration, and will be discussed next lecture.  These fates are described in Table \ref{tab:pyruvate-fates}.  In general, if alanine is in sufficient and PDH activity is low or absent, then pyruvate is converted to lactate via Lactate Dehydrogenase and released from the cell.  This is known as anaerobic respiration and is important for fast-twitch muscle fibers and in conditions where oxygen levels are low.
+Pyruvate can go in one of three directions in the cell, depending on the activity of Pyruvate dehydrogenase (PDH) and the relative levels of alanine in the cell.  The regulation of PDH is very important for aerobic respiration, and will be discussed next lecture.  These fates are described in Table \ref{tab:pyruvate-fates}.  In general, if alanine is in sufficient and PDH activity is low or absent, then pyruvate is converted to lactate via Lactate Dehydrogenase and released from the cell.  This is known as anaerobic respiration and is important for fast-twitch muscle fibers and in conditions where oxygen levels are low.  Pyruvate can also be easily converted to and from Alanine, an important amino acid\sidenote{We will cover how amino acids are synthesized in the second unit of this course.}.  Finally, as we will cover in the lectures on the TCA cycle, when acetyl-CoA levels are high\sidenote{Indicating reduced TCA/ETC flux, but sufficient acetyl-CoA production.}, pyruvate can be converted to oxaloacetate, a process known as anaplerosis.
 
 \begin{table}
 \centering
-\caption{Regulators of PFK1 activity}
+\caption{Potential fates of pyruvate.  While several of these enzymes and processes have not been covered yet, we will discuss all of these later in the semester.}
 \label{tab:pyruvate-fates}
-\begin{tabular}{cc}
+\begin{tabular}{ccc}
 \hline
-\textbf {Fate} & \textbf{Conditions}  \\
+\textbf {Pyruvate Fate} & \textbf{Conditions}  & \textbf{Key Enzyme} \\
 \hline
-TCA cycle & High PDH Activity \\
-Lactate & Low PDH Activity \\
-Alanine & Low Alanine \\
+TCA cycle & High PDH Activity & Pyruvate Dehydrogenase \\
+Lactate & Low PDH Activity & Pyruvate Dehydrogenase \\
+Alanine & Low Ala, High Glu & Alanine Aminotransferase\\
+Oxaloacetate & High Acetyl-CoA & Pyruvate Carboxylase \\
 \hline
 \end{tabular}
 \end{table}
 
+\section{Energy production by glycolysis}
+
+Glycolysis occurs in three phases:
+
+\begin{enumerate}
+\item An investment phase, which uses two molecules of ATP (see steps \ref{eq:glucokinase} and \ref{eq:pfk1}) are consomed.  This "charges" the glucose molecule, providing it with enough energy to be split into two-3 carbon molecules.  \textbf{At this stage there is a net usage of two ATP molecules.}
+\item The cleavage step, performed by aldolase A, immediately after the highly regulated PFK1 step (see step \ref{eq:aldolase-a}).  This is a very energetically costly step, as breaking a carbon-carbon bond is quite difficult\sidenote{The standard free energy of this step is +28 kcal/mol, making it highly endothermic.  For more details on how Fructose-1,6-bisphosphate buildup allows this difficult reaction to occur, see \url{http://sandwalk.blogspot.com/2007/10/aldolase-reaction-and-steady-state.html}}.  This cleavage means that one glucose molecule will generate \textbf{two} pyruvate molecules.
+\item The catabolism of each molecule of glyceraldehyde-3-phosphate (GA3P) to pyruvate generates two molecules of ATP via substrate-level phosphorylation\sidenote{Substrate level phosphorylation is the production of ATP by direct transfer from another phosphorylated compound.} (see steps \ref{eq:pgk} and \ref{eq:pk}).  There is also the reduction of one NAD+ molecule into NADH.  NADH, as we will discuss in the unit on the electron transport chain is equivalent to 2.5 ATP molecules.  Therefore this phase produces a total of 4.5 ATP molecules per GA3P, or \textbf{9 molecules per glucose molecule}.
+\end{enumerate}
+
+Glycolysis down to the level of pyruvate therefore uses up two glucose molecules, and generates the equivalent of 9 glucose molecules for a \textbf{net gain of 7 molecules of ATP per molecule of glucose.}  Full oxidation of glucose to CO\textsubscript{2} will eventually produce 36 molecules of ATP/glucose so at this stage there is quite a lot of energy remaining in pyruvate.
+
 \subsection{Hormonal regulation of glycolysis}
 
-\newthought{Glycolysis is regulated differently in muscle than in liver tissues}
+\newthought{Insulin promotes glycolysis by several mechanisms.}  First, in muscle and adipose tissue, insulin promotes the translocation of GLUT4 to the plasma membrane, allowing for glucose entry into the cell\sidenote{see \citet{Leto2013} for a recent review on how insulin promotes GLUT4 translocation.}.  This increases the levels of glucose, and glucose-6-phosphate in the cell.  Insulin also promotes the dephosphoryation of both PFK2 and Pyruvate kinase \citep{PROBST1985}. Recall that in both cases, the dephosphorylated forms are \emph{more active}, so this increases the flux by which glucose gets converted to pyruvate or lactate.  The mechanisms by which insulin promotes these dephosphorylation events are still murky.
+
+\newthought{Glycolysis is regulated differently in muscle than in liver tissues.}  There are several splice variants\sidenote{Splice variants are different mRNA's which lead to different proteins, transcribed from the same gene.} of PFK2 that are expressed in a tissue specific manner.  As described above, in liver tissue the L-PFK2 isoform can be phosphorylated and inhibited on Serine 32.  This residue is \emph{absent} in the muscle, brain and adipocyte isoforms.  Therefore, glucagon-mediated inhibition\sidenote{Via PKA-dependent phosphorylation} and insulin-mediated activation (via dephosphorylation) is \emph{only} relevant for the liver isoform.  The muscle and adipocyte PFK2 isoforms are not regulated by these hormones.  This means that glucagon will prevent glycolysis in liver cells but that adrenaline will not prevent glycolysis in muscle cells\sidenote{There is a physiological advantage to this, think about what the consequence would be if adrenaline \emph{prevented} glycolysis in muscle cells, and why it would be advantageous to do this in liver cells}.  Similarly, pyruvate kinase is inhibited by ATP and Alanine, but only in the liver.  While all pyruvate kinase isoforms are regulated positively by F1,6bP this means that the downstream negative feedback by Alanine and ATP is not a factor in the regulation of adipocyte or muscle glycolysis.  
+
+\newthought{Another level of control of glycolysis is transcriptional.}  There are certain conditions where it is helpful to increase glycolysis in a chronic and less rapidly reversible manner.  This occurs by transcription factors which can synthesize new glycolytic proteins, increasing the capacity by which glycolysis can occur.  There are several examples of this such as:
+
+\begin{itemize}
+\item Hypoxia, or reduced oxygen, via the transcription factor HIF\sidenote{Think about why glycolysis may be advantageous during oxygen deprivation.}.
+\item Chronically elevated glucose levels (via the transcription factor ChREBP).    
+\item Chronic glucagon stimulation (via the transcription factor CREB).
+\end{itemize}
+
+These transcriptional changes often affect the expression of the enzymes Pyruvate kinase, Glucokinase and PFK2 \citep{Semenza1994,Kawaguchi2001}.  These changes are slower and more energetically costly than allosteric or post-translational changes.  As such, they are both longer lasting and harder to undo.
+
 \section{Fructose metabolism}
+
+Fructose, the other component of sucrose is largely metabolized within the liver, compared to glucose which is metabolized in multiple tissues.  Within the liver, fructose enters the hepatocyte via facilitative GLUT5 channels, which are constitutively present on the plasma membrane.  In terms of metabolism, fructose undergoes the folowing steps, catalyzed by fructokinase, aldolase B then triose kinase\sidenote{Be careful here, fructose becomes F16 then DHAP/G3P wheras glucose becomes F6P then F16bP then DHAP/GA3P.  These routes can be easily confused.}\sidenote{As an exercise, consider the pathways by which glucose and fructose become lactate, calculate whether the ATP production is similar for these two monosaccharides.}.
+
+\begin{equation}
+Fructose + ATP \rightarrow Fructose-1-phosphate
+\end{equation}
+
+\begin{equation}
+Fructose-1-phosphate \leftrightarrow Glyceraldehyde + DHAP
+\end{equation}
+
+\begin{equation}
+Glyceraldehyde + ATP \rightarrow GA3P
+\end{equation}
+
+
 \subsection{Fructose catabolism is independent of PFK1}
+
+The products (DHAP and Glyceraldehyde-3-phosphate) are the same that occur for the glycolytic step in equation \ref{eq:aldolase-a}.  Importantly this step occurs \emph{after} the two key glycolytic regulatory steps at PFK1 and Glucokinase.  This has very important ramifications for how fructolysis\sidenote{The breakdown of fructose into pyruvate/lactate.} is regulated  relative to glycolysis.  Since the regulatory steps that can control the flow of glucose are uncontrolled for fructose, fructose is converted rapidly to its end-products, whether there is demand or not.  This is biochemical basis by which fructose is thought to be more prone to become acetyl-CoA then fatty acids.  Similarly, as we will discuss for unit on gluconeogenesis, fructose can very easily become glucose with little metabolic control \citep{Kim2016d}.
+
 \subsection{Fructose consumption is linked to both obesity and liver disease}
+
+Fructose is normally present at high levels in fruit, or as the disaccharide sucrose, which has a 1:1 ratio of glucose:fructose.  For ease of handling and production, high fructose corn syrup (HFCS) has been in widespread use since the 1970s, particularly in sugar-sweetened beverages.  HFCS generally contains 45-60\% fructose with the remaining as glucose.   While as recently as 2014, the Food and Drug Administration has declared HFCS safe as a food ingredient, epidemiological studies suggested HFCS is associated with both obesity, and non-alcoholic fatty liver disease\sidenote{A liver disease that starts with lipid accumulation and inflammation of the liver, which can result in impaired liver function or eventually cirrhosis or some liver cancers.}.  A recent meta-analysis in this area was inconclusive, as it was difficult to separate the effects of added calories due to HFCS from direct metabolic effects of this sweetener \citep{Chung2014}.
+
 \subsection{Disorders of fructose metabolism}
+
+There are two inborn errors of fructose metabolism, defects in eitehr Fructokinase or Aldolase B.  In the case of Fructokinase deficiency, this is generally not pathological, since Fructose is not phosphorylated, and therefore is not trapped in cells.  Patients with Fructokinase deficiency have very high circulating levels of Fructose in their blood, but are otherwise normal.  On the other hand, Aldolase B deficiency means that Fructose becomes trapped at the Fructose-1-phosphate step \citep{Cross1988}\sidenote{If you want to explore mutations in any of the enzymes we discuss in more detail, I suggest going to the website \url{http://exac.broadinstitute.org}, enter the gene name, scroll down, click on LOF (loss of function) then click on any of the variants to see their incidence in various populations.}.  This occurs in approximately 1 in 20,000 to 30,000 individuals.  This intermediary metabolite builds up, wasting ATP and resulting in liver cirrhosis, hypoglycemia and kidney damage\sidenote{Think about, from a dietary perspective how this disease could be managed.}.
+
 \section{Galactose metabolism}
-\subsection{Defecits in galactose metabolism}
-\section{Energy production from glycolysis, fructolysis and galactolysis}
+
+Galactose, the other monosaccharide in lactose is taken up in the liver via GLUT2.  In contrast to glucose, galactose enters glycolysis near the early steps of glycolysis and is subject to similar regulatory steps.  The initial steps of galactolysis are catalyzed by the enzymes galactokinase, GALT or phosphoglucomutase and result in the production of Glucose-6-phosphate:
+
+\begin{equation}
+Galactose + ATP \rightarrow Galactose-1-phosphate
+\end{equation}
+
+\begin{equation}
+Galactose-1-phosphate + UDP-Glucose \leftrightarrow Glucose-1-phosphate + UDP-Galactose
+\end{equation}
+
+\begin{equation}
+Glucose-1-phosphate \leftrightarrow Glucose-6-phosphate
+\end{equation}
+
+Glucose-6-phosphate then proceeds as normal, becoming dephosphorylated to glucose, or processed through glycolysis, glycogenesis or the pentose phosphate pathway.  Inborn errors of GALT lead to galactose intolerane and a buildup of Galactose-1-phosphate in tissues and the blood.
+
 \bibliography{library}
 \bibliographystyle{plainnat}
 
