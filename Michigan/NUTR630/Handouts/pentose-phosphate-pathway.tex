@@ -1,0 +1,112 @@
+\documentclass{tufte-handout}
+
+%\geometry{showframe}% for debugging purposes -- displays the margins
+
+\usepackage{amsmath}
+
+% Set up the images/graphics package
+\usepackage{graphicx}
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+\graphicspath{{graphics/}}
+
+\title{The Pentose Phosphate Pathway}
+\author{}
+\date{}  % if the \date{} command is left out, the current date will be used
+
+% The following package makes prettier tables.  We're all about the bling!
+\usepackage{booktabs}
+
+% The units package provides nice, non-stacked fractions and better spacing
+% for units.
+\usepackage{units}
+
+% The fancyvrb package lets us customize the formatting of verbatim
+% environments.  We use a slightly smaller font.
+\usepackage{fancyvrb}
+\fvset{fontsize=\normalsize}
+
+% Small sections of multiple columns
+\usepackage{multicol}
+
+% Provides paragraphs of dummy text
+\usepackage{lipsum}
+
+% These commands are used to pretty-print LaTeX commands
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+
+\begin{document}
+
+\maketitle% this prints the handout title, author, and date
+
+\begin{abstract}
+\noindent Glucose can enter three pathways; glycolysis, glycogenesis or the pentose phosphate pathway\sidenote{sometimes called the pentose phosphate shunt.}.  This handout will describe the role of this pathway in generating NADPH, nucleosides and the role of reducing equivalents in metabolism.
+\end{abstract}
+
+\tableofcontents
+\pagebreak
+\section{Learning Objectives}
+
+\begin{itemize}
+\item Understand the role of Glucose-6-Phosphate Dehydrogenase in regulating flow through the pentose phosphate pathway.
+\item Evaluate the role of glucose derived products in fatty acid and triglyceride synthesis.
+\item Interpret how the combined regulation of glycolysis, glycogenesis and the pentose phosphate pathway can affect the ability to synthesize lipids.
+\item Explain how defects in the pentose phosphate pathway can lead to disease.
+\end{itemize}
+
+\section{The Pentose Phosphate Pathway}
+
+This glucose utilizing pathway runs parallel to glycolysis, taking Glucose-6-Phosphate and converting it into several products, including NADPH, Ribose 5-phosphate\sidenote{which is used to make nucleotides}, and several glycolytic intermediates including Fructose-6-phosphate and Glyceraldehyde-3-phosphate.  The glycolytic intermediates feed back into glycolysis (see the notes on Glycolysis to see how these pathways reintegrate).
+
+\section{Glucose-6-Phosphate Dehydrogenase}
+
+The first enzyme is the rate limiting and irreversible step of the pentose phosphate pathway is catalyzed by Glucose-6-Phosphate Dehydrogenase (G6PDH).  G6PDH is activated by elevations of its two substrates NADP\textsuperscript{+} and Glucose-6-Phosphate.  Its activitiy is inhibited by high levels of NADPH.
+
+\section{The Importance of NAPDH}
+
+The most important product in terms of nutrition is NADPH\sidenote{This looks like NADH, but is not, it has an extra phosphate group and is generally not interconvertable with NADH.  However, like NADH it generated largely from Niacin, also known as Vitamin B3.}. The pentose phosphate pathway is not the only way to generate NAPDH, several other mechanisms exist.  The first is catalyzed by Malate Dehydrogenase:
+
+\begin{equation}
+Malate + NADP^+ \rightarrow NADPH + CO_2+ Pyruvate
+\end{equation}
+
+This pathway removes malate from the TCA cycle to generate NADPH\sidenote{Is this cataplerotic, or anaplerotic?}.  A third way to generate NADPH is through an isoform of Isocitate Dehydrogenase:
+
+\begin{equation}
+Isocitrate + NADP^+ \rightarrow NADPH + CO_2 + \alpha-Ketoglutarate
+\end{equation}
+
+Finally, recently a fourth pathway has emerged, wherin the reduction of 10-TMF to folate\sidenote{This is part of one-carbon metabolism, which will not be covered in this course, but will be covered in NUTR631.} can also generate NADPH in somce cells.  The details of this, and its potential as chemotherapeutic target due to its importance in rapidly dividing cells  is described in \citet{Fan2014a}.  The relative importance of these three pathways vary based on cell type and metabolic state, but in most cells the pentose phosphate pathway is prominent.
+
+\subsection{The Role of NADPH in Metabolism}
+While glycolysis is a catabolic pathway, the pentose phosphate pathway could be considered an anabolic pathway.  This is because anabolic pathways, notably fatty acid biosynthesis requires a large number of reducing equivalents.  These reducing equivalents are generally provided by NADPH.  To make one molecule of palmitate (a 16 carbon fatty acid) you need \emph{14 NADPH molecules}.  Since the pentose phosphate pathway only generates 2 NADPH molecules per glucose, that means that seven glucose molecules need to be oxidized just for the reducing agents for \textit{de novo lipogenesis}\sidenote{We will talk about this more in the lectures on lipid metabolism, later on in the semester.}.
+
+\subsection{NADPH is Important for Fighting Oxidative Damage}.
+
+The other main role of NADPH is to generate reduced glutathione (GSH) from oxidized glutathione (GSSG) by this reaction, catalysed by Glutathione Reductase :
+
+\begin{equation}
+NADPH + GSSG \rightarrow NADP^+  GSH
+\end{equation}
+
+Reduced glutathione is the most important endogenous antioxidant in mammalian cells\sidenote{It also maintains other antioxidants such as Vitamins C and E in their active (reduced) form.}.  When reactive oxygen species, such as free radicals or peroxides are generated, GSH transfers a proton to the oxidative species neutralizing it.  Therefore when cells are exposed to oxidative damage, the pentose phosphate pathway is extremely important for mounting the response.
+
+In some cells, such as red blood cells NADPH is the \textit{only} way to reduce glutatione\sidenote{We will talk more about how glutathione is generated in the lecture on non-protein compounds generated from amino acids.}.  This makes red blood cells prone to hemolysis\sidenote{The breakage of red blood cells.} and is a common trait in disorders of the pentose phosphate pathway.
+
+\section{Disorders of the Pentose Phosphate Pathway}
+
+\newthought{Mutations in G6PDH}
+Mutations in the gene for G6PDH (symbol is \textit{G6PD}) can have varying effects depending on the particular amino acid that is changed\sidenote{\textit{G6PD} is on the X-chromosome, so primarily this defect affects males.}.  In the most serious cases, where there is effectively no detectable G6PDH activity.  This is the most common enzymatic defect, affecting an estimated 400 million people worldwide.  These patients are extremely prone to oxidative damage, and can have a buildup of Glucose-6-Phosphate.  They are also very sensitive to certain infections and foods, notably fava beans\sidenote{This disorder was once known as favism, and has been described since antiquity.}  Interestingly, carriers of the mutant G6PD allele also have partial immunity to malaria.
+
+\newthought{Thiamine is important for Transketolase activity.}  Thiamine (Vitamin B1) becomes an important cofactor for Transketolase\sidenote{The cofactor is TPP or Thiamine Pyrophosphate, which is also important for the activity of Pyruvate Dehydrogenase, $\alpha$-ketoglutarate dehydrogenase (both discussed in the TCA cycle lecture), branched-chain $\alpha$-keto acid dehydrogenase (which we will talk about in amino acid catabolism and several other enzymes.}.  One of the major symptoms of Thiamine deficiency is an inability to generate NADPH.
+
+\bibliography{library}
+\bibliographystyle{plainnat}
+
+\end{document}
