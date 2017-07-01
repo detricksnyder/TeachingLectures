@@ -1,0 +1,181 @@
+\documentclass{tufte-handout}
+
+%\geometry{showframe}% for debugging purposes -- displays the margins
+
+\usepackage{amsmath}
+
+% Set up the images/graphics package
+\usepackage{graphicx}
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+\graphicspath{{graphics/}}
+
+\title{TCA Cycle and the Electron Transport Chain}
+\author{}
+\date{}  % if the \date{} command is left out, the current date will be used
+
+% The following package makes prettier tables.  We're all about the bling!
+\usepackage{booktabs}
+
+% The units package provides nice, non-stacked fractions and better spacing
+% for units.
+\usepackage{units}
+
+% The fancyvrb package lets us customize the formatting of verbatim
+% environments.  We use a slightly smaller font.
+\usepackage{fancyvrb}
+\fvset{fontsize=\normalsize}
+
+% Small sections of multiple columns
+\usepackage{multicol}
+
+% Provides paragraphs of dummy text
+\usepackage{lipsum}
+
+% These commands are used to pretty-print LaTeX commands
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+
+\begin{document}
+
+\maketitle% this prints the handout title, author, and date
+
+\begin{abstract}
+\noindent The aquisition and utilization of mitochondria during evolution dramatically improved the ability of the cell to generate energy.  In the presence of oxygen and ATP demand, the products of glycolysis, amino acid catabolism and lipid oxidation enter the TCA Cycle\sidenote{Also known as the Tricarboxylic Acid Cycle, Kreb's Cycle or Citric Acid Cycle.}.  This allows for complete oxidation of metabolites into CO\textsubscript{2} and efficient energy production by the mitochondrial ATP synthase.  This unit will describe how the TCA Cycle and Electron Transport Chain are regulated, and how various nutrients interact with this cellular pathway.
+\end{abstract}
+%add chapters
+\tableofcontents
+\pagebreak
+\section{Learning Objectives}
+
+\begin{itemize}
+\item Evaluate the potential metabolic fates of pyruvate and the signals that control these changes.
+\item Judge the importance of the mitochondria in glucose metabolism, and identify the steps that require mitochondrial import/export.
+\item Describe the key regulatory nodes of the TCA cycle.
+\item Understand the concept of anaplerosis and cataplerosis and how this can affect TCA cycle efficiency.
+\item Explain the differences in efficiency between anaerobic glycolysis and the TCA cycle linked to the electron transport chain.
+\item Recall the key functions of the electron carriers NADH, FADH\textsubscript{2} and QH2.
+\item Calculate ATP production from GTP, NADH and FADH\textsubscript{2} equivalents.
+\item Understand how mitochondria balance nutrient flux with ATP requirements.
+\end{itemize}
+
+\section{The Next Steps in Carbohydrate Metabolism Require Mitochondria}
+
+\subsection{Regulation of Mitochondrial Numbers}
+
+\section{The Possible Fates of Pyruvate}
+
+As we discussed in the unit on glycolysis, pyruvate has several possible fates.  If Alanine levels are low and Glutamate levels are high, Pyruvate can be converted to Alanine via ALT\sidenote{Alanine Aminotransferase.}.  If there is energy demand, PDH\sidenote{Pyruvate Dehdyrogenase, discussed in the next section.} is activated and pyruvte becomes Acetyl-CoA.  If Acetyl-CoA levels are high, Pyruvate becomes the TCA Cycle intermediate Oxaloacetate via the actions of Pyruvate Carboxylase.  If none of these enzymes are activated, Pyruvate is converted by Lactate Dehydrogenase and released from the cell as Lactate.
+
+\begin{margintable}
+\centering
+\caption{Potential fates of Pyruvate.}
+\label{tab:pyruvate-fates}
+\begin{tabular}{ccc}
+\hline
+\textbf {Pyruvate Fate} & \textbf{Conditions}  & \textbf{Key Enzyme} \\
+\hline
+TCA cycle & High PDH Activity & PDH \\
+Lactate & Low PDH Activity & PDH \\
+Alanine & Low Ala, High Glu & ALT\\
+Oxaloacetate & High Acetyl-CoA & PC \\
+\hline
+\end{tabular}
+\end{margintable}
+
+
+\subsection{Regulation of Pyruvate Dehydrogenase}
+
+\newthought{Acetyl-CoA also enters the TCA Cycle after $\beta$-oxidation.}  While we have focused so far on carbohydrate metabolism, now is a good time to talk briefly about lipid oxidation.  Unlike carbohydrates, when fatty acids are broken down they produce Acetyl-CoA, not Pyruvate\sidenote{They also generate equal amounts of NADH, FADH\textsubscript{2} which we will discuss later}.  This means that in humans, fatty acids enter the TCA cycle here.  If fatty acids are oxidized in the liver, but the TCA Cycle is not activated, those extra Acetyl-CoA molecules are released as ketone bodies, which can be used by other tissues, after re-conversion back into Acetyl-CoA.
+
+\newthought{Some amino acids are also converted into Acetyl-CoA.}  As we will learn in the gluconeogenesis and amino acid catabolism lectures, some amino acids, depending on the circumstances are able to become converted into glucose\sidenote{These are the glucogenic amino acids.}.  Others are converted into Acetyl-CoA and are known as the ketogenic amino acids.  These amino acids can only be oxidized into energy by entering the TCA cycle as Acetyl-CoA, but cannot become glucose\sidenote{Later we will learn that the exclusively ketogenic amino acids are Leucine and Lysine.  Phenylalanine, Isoleucine, Threonine, Tryptophan and Tyrosine are partially glucogenic and partially ketogenic.}.
+
+\section{The TCA Cycle Products}
+
+\subsection{NADH and FADH\textsubscript{2} Are Substrates for the Electron Transport Chain}
+%relevance of NADH and FADH
+
+\begin{margintable}
+\centering
+\caption{ATP producing equivalents.}
+\label{tab:atp-equivalents}
+\begin{tabular}{ccc}
+\hline
+\textbf {Molecule} & $\rightarrow$ & \textbf{ATP}\\
+\hline
+1 NADH & $\rightarrow$ & 2.5 ATP \\
+1 FADH\textsubscript{2} & $\rightarrow$ &  1.5 ATP  \\
+1 GTP & $\rightarrow$ &  1 ATP  \\
+\hline
+\end{tabular}
+\end{margintable}
+
+\subsection{The Electron Transport Chain is Coupled to ATP Production}
+
+\newthought{The TCA Cycle/ETC completely oxidizes Acetyl-CoA to CO\textsubscript{2}.}  One cycle, using one molecule of Acetyl-CoA generates the following:
+
+\begin{table}
+\centering
+\caption{TCA Cycle ATP generation.  See Table \ref{tab:atp-equivalents} for details on conversion rates.}
+\label{tab:atp-tca}
+\begin{tabular}{ccc}
+\hline
+\textbf {Product} & $\rightarrow$ & \textbf{ATP}\\
+\hline
+3 NADH & $\rightarrow$ & 7.5 ATP \\
+1 FADH\textsubscript{2} & $\rightarrow$ &  1.5 ATP  \\
+1 GTP & $\rightarrow$ &  1 ATP  \\
+\hline
+Total & & \textbf{10 ATP}\\
+\end{tabular}
+\end{table}
+
+if we include the NADH generated by Pyruvate Dehydrogenase, that means that Pyruvate oxidation results in 12.5 molecules of ATP.  Based on what we have discussed in this unit and in the glycolysis unit, try to determine how much ATP is generated from one molecule of glucose\sidenote{For a slightly bigger challenge, consider that palmitate oxidation generates 8 Acetyl-CoA, 7 NADH and 7 FADH\textsubscript{2} molecules, but requires 2 ATP molecules for activation.  Consider the energy yield from a C16:0 (Palmitate) fatty acid, compared to glucose.}.
+
+\newthought{The four electron carrier molecules we have described are FAD, NAD and CoQ.} These all need to be available to allow electrons to flow from the TCA cyle through the ETC and therefore must be present in reasonable amounts.  They are reduced by the actions of the TCA cycle then oxidized back to their original form by the ETC.  All three of these can be generated endogenously, but NAD and FAD are most effectively generated from vitamins (see Table \ref{tab:etc-carriers}).  Coenzyme Q is generated endogenously using some enzymes of the steroid biosynthesis pathway, and inhibitors of this pathway (such as statins) have been suggested to result in CoQ deficiency (reviewed in \citet{Quinzii2007}).
+
+\begin{margintable}
+\centering
+\caption{Electron carrier molecules in the ETC}
+\label{tab:etc-carriers}
+\begin{tabular}{cc}
+\hline
+\textbf {Carrier} & \textbf{Source}\\
+\hline
+NAD & Vitamin B3 \\
+FAD & Vitamin B2  \\
+CoQ & Not Considered a Vitamin \\
+\hline
+\end{tabular}
+\end{margintable}
+
+\subsection{The ETC is Driven by ATP Demand}
+
+\section{Regulation of the TCA Cycle}
+
+\subsection{Changes in TCA Cycle Intermediates}
+
+\newthought{The electron transport chain regenerates Oxaloacetate.}  Unlike glycolysis, which starts with glucose and ends with Pyruvate, the TCA cycle takes in Acetyl-CoA and after one round of the cycle, is left with Oxaloacetate.  That means that other than Acetyl-CoA, the cycle is self-replenishing\sidenote{One analogy for this is that the TCA Cycle is like a subway system, and Oxaloacetate is like a subway car.  You need it to get from point A to point B, but you dont use up the car.}.  As you might suspect, having more Oxaloacetate can mean there is more efficient Acetyl-CoA metabolism.  While normal TCA cycle function as we have been describing does not alter these levels, there are several important processes that can affect this.  One example is gluconeogenesis, which extracts Oxaloacetate (via the activity of an enzyme called PEPCK) to form glucose.  Another example is that biosynthesis of some amino acids uses up TCA cycle intermediates.  The process by which TCA Cycle intermediates are removed is known as \emph{cataplerosis}.
+
+\newthought{The opposite process, in which TCA cycle intermediates are generated is known as anaplerosis.}  These can derive from Pyruvate, or from the breakdown of amino acids\sidenote{Amino Acid catabolism will be covered later in the course, so here we will focus on anaplerosis from Pyruvate.}.  The most important enzyme here is called Pyrvate Carboxylase.  This enzyme performs the following irreversible, ATP consuming reaction:
+
+\begin{equation}\label{eq:pcx}
+Pyruvate + Bicarbonate + ATP \rightarrow Oxaloacetate + ADP + Pi
+\end{equation}
+
+There are two important roles of Pyruvate Carboxylase, one of which is to increase TCA Cycle intermediates.  The second is to generate Oxaloacetate for gluconeogenesis\sidenote{We will discuss this in a couple of lectures.}.  The activity of Pyruvate Carboxylase is regulated by Acetyl-CoA.  Since Acetyl-CoA is not directly anaplerotic, this mechanism balances flow of "passengers" (Acetyl-CoA) to the number of "trains" (Oxaloacetate).  
+
+\subsection{Allosteric Regulation of the TCA Cycle}
+
+%first third and fourth steps
+
+
+\bibliography{library}
+\bibliographystyle{plainnat}
+
+\end{document}
