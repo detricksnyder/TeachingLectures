@@ -46,7 +46,7 @@
 \maketitle% this prints the handout title, author, and date
 
 \begin{abstract}
-\noindent This review material will cover the roles of insulin and glucagon in normal and pathophyiological states, especially diabetes.  These hormones are the major glucose controlling hormones and are both secreted from the pancreas. 
+\noindent This review material will cover the roles of some key metabolic hormones in normal and pathophyiological states, especially diabetes.  This material should be a review from the endocrine unit in your undergraduate physiology courses.  If there are concepts or vocabulary in these notes that are unfamiliar to you, please reach out to the instructional team if you would like additional material.
 \end{abstract}
 
 \tableofcontents
@@ -64,10 +64,9 @@
 \begin{tabular}{@{}ll@{}}
 \textbf{Process }                          & \textbf{Tissue}           \\ \midrule
 Insulin Stimulated \\Glucose Uptake & Muscle and Fat   \\ \midrule
-Glucose Oxidation & Muscle \\ \midrule
+Glucose Oxidation & Muscle, Brain \\ \midrule
 Glycogen Storage/Release                      & Liver and Muscle \\ \midrule
-Gluconeogenesis & Liver \\ \midrule
-Lipid Storage/Release & Adipocytes and Liver \\ \bottomrule
+Gluconeogenesis & Liver \\ \bottomrule
 \end{tabular}
 \end{margintable}
 
@@ -75,17 +74,17 @@ For the purposes of the acute maintenance of glucose homeostasis, four organs ar
 
 \newthought{Glucose enters the cell, down a concentration gradient} via passive transport from the blood into most tissues including liver, pancreas, kidneys and the brain.  However, for glucose to enter into muscle and fat tissue, insulin is required.  This is accomplished by moving GLUT4 transporters from intracellular storage sites to the plasma membrane, allowing for glucose influx.  
 
-\newthought{Glucose can be stored in esterified form as glycogen\sidenote{This is known as glycogenesis}}.  To form glycogen, glucose must first be converted through glucose-1-phosphate into UDP-glucose.  This activated form of glucose is then added onto existing glycogen chains through the activity of an enzyme named glycogen synthase.  In addition to being regulated by protein phosphorylation and sub-cellular location, glycogen synthase is also allosterically activated by glucose-6-phosphate, promoting increased glycogen synthesis when glucose levels in the cell are high.
+\newthought{Glucose can be stored in esterified form as glycogen\sidenote{This is known as glycogenesis}}.  To form glycogen, glucose must first be converted through glucose-1-phosphate into UDP-glucose.  This activated form of glucose is then added onto existing glycogen chains through the activity of an enzyme named glycogen synthase.  In addition to being regulated by protein phosphorylation and sub-cellular location, glycogen synthase is also allosterically activated by glucose-6-phosphate, promoting increased glycogen synthesis when glucose levels\sidenote{and therefore G6P levels} in the cell are high.
 
 \newthought{To liberate glucose from stored glycogen, an enzyme known as glycogen phosphorylase is activated}.  This enzyme hydrolyses glycogen, releasing glucose-1-phosphate, which can then be dephophorylated into glucose for glycolysis or release into the blood stream.  This is the preferred source of short term glucose maintenance.  In addition to post-translational modifications and recruitment to the glycogen pellet by accessory proteins, glycogen phosphorylase is allosterically activated by energy stress such as increases in AMP, or negatively by increases in glucose-6-phosphate levels.
 
 \newthought{Gluconeogenesis is the generation of glucose from non-carbohydrate precursor molecules}.  These typically include amino acids, lactate and the products of fatty acid oxidation.  The vast majority of gluconeogenesis occurs in the liver, and generally is important for glucose production from proteins and lipids after glycogen stores are depleted.  This process is similar to reverse glycolysis though in several cases different enzymes are used.  The rate limiting enzymes in gluconeogenesis are phosphoenolpyruvate carboxykinase, fructose-1,6-bisphosphatase and glucose-6-phosphatase.  These enzymes are under both transcriptional and post-translational control as described below.
 
-\newthought{When energy is needed}, for example during fasting the primary source is circulating glucose, followed by the the breakdown of glycogen and then the production of new glucose (gluconeogenesis) from proteins and lipids.  At the same time, the wasteful synthesis of new glycogen is stopped.  When glucose levels are too high, the first response is uptake and oxidation by the muscle, followed by glycogen synthesis and then by lipogenesis.  At this time, gluconeogenesis (which is not needed) is stoped.
+\newthought{When energy is needed}, for example during fasting, the primary source is circulating glucose, followed by the the breakdown of glycogen and then the production of new glucose (gluconeogenesis) from proteins and lipids.  At the same time, the wasteful synthesis of new glycogen is stopped.  When glucose levels are too high, the first response is uptake and oxidation by the muscle, followed by glycogen synthesis and then by lipogenesis.  At this time, gluconeogenesis (which is not needed) is stopped.
 
 \section{Pancreatic Cell Types}
 
-In order to balance the energy requirements of all tissues, blood glucose is primarily controlled via endocrine and neuroendocrine mechanisms.  The primary mediators are insulin and glucagon which are secreted from the pancreas during times of hyper and hypoglycemia respectively.  These two peptide hormones are released from two cell types in the pancreas, the alpha-cells which release glucagon and the beta-cells which release insulin.  Both cell types are located in the Islets of Langerhans within the pancreas (see Figure \ref{pancreas-cells})\cite{Efrat2012}
+In order to balance the energy requirements of all tissues, blood glucose is primarily controlled via endocrine and neuroendocrine mechanisms.  The primary mediators are insulin and glucagon which are secreted from the pancreas during times of hyper and hypoglycemia respectively.  These two peptide hormones are released from two cell types in the pancreas, the $\alpha$ cells which release glucagon and the $\beta$ cells which release insulin.  Both cell types are located in the Islets of Langerhans within the pancreas (see Figure \ref{pancreas-cells})\cite{Efrat2012}
 
 \begin{marginfigure}[-5in]
 \includegraphics{figures/insulin-cells.png}
@@ -103,7 +102,7 @@ When glucose levels are raised, such as after a meal, insulin has four main func
 \item Promotes the uptake of glucose from the blood into muscle and adipose tissue.  
 \item Enhances the synthesis of glycogen and triglycerides in liver, adipose and muscle.  
 \item Inhibits gluconeogenesis, or the production of glucose from non-glucose precursors such as amino acids and lipids.
-\item Promote the breakdown of glucose via glycolysis.
+\item Promote the breakdown of glucose via glycolysis (in muscle).
 \end{enumerate}
 
 \subsection{Insulin Release and Insulin Signal Transduction}
@@ -126,13 +125,13 @@ In both fat and muscle, the PI3K/Akt dependent signaling pathways are absolutely
 
 The other functions of insulin, including promoting glucose uptake will provide more UDP-Glucose for glycogen synthase, and will also allosterically activate the enzyme by generating large amounts of glucose-6-phosphate.  This is augmented by post-translational activation of glycogenic enzymes.
 
-In addition to these allosteric activators, both glycogen synthase and glycogen phosphorylase are regulated by protein phosphorylation.  In the case of glycogen synthase, the phosphorylated form is relatively inactive, and is resistant to allosteric activation by glucose-6-phosphate \cite{Friedman1963}.  Glycogen synthase is phosphorylated by several protein kinases including AMPK and GSK-3 \cite{Parker1982}.  In addition to inactivating the upstream kinases, insulin also activates a protein phosphatase, which removes the phosphate groups.  In a co-ordinated way, protein phosphorylation activates glycogen phosphorylase \cite{Krebs1964}.  This means that when these enzymes are phosphorylated, the balance tips towards glycogenolysis, and when they are dephosphorylated glycogen is synthesized.
+In addition to these allosteric activators, both glycogen synthase and glycogen phosphorylase are regulated by protein phosphorylation.  In the case of glycogen synthase, the phosphorylated form is relatively inactive, and is resistant to allosteric activation by glucose-6-phosphate \cite{Friedman1963}.  Glycogen synthase is phosphorylated by several protein kinases including AMPK and GSK-3 \cite{Parker1982}.  In addition to inactivating the upstream kinases, insulin also activates a protein phosphatase, which removes the phosphate groups.  In a co-ordinated way, protein phosphorylation activates glycogen phosphorylase \cite{Krebs1964}.  This means that when these enzymes are phosphorylated, the balance tips towards glycogenolysis, and when they are dephosphorylated glycogen is synthesized.  This will be discussed in more detail in the lecture on glycogen metabolism.
 
 \subsection{Regulation of Gluconeogenesis in the Liver}
 
-The activation of glucose uptake and glycolysis leads to increased levels of several glycolytic intermediates which themselves will regulate gluconeogenesis.  The most important of these is Fructose-2,6-bisphosphate which is raised during glycolysis and inhibits FBPase, one of the key rate limiting steps in gluconeogenesis.
+The activation of glucose uptake and glycolysis leads to increased levels of several glycolytic intermediates which themselves will regulate gluconeogenesis.  The most important of these is Fructose-2,6-bisphosphate which is raised during glycolysis and inhibits FBPase, one of the key rate limiting steps in gluconeogenesis.  Activation of gluconeogenesis is therefore driven by an abundance of precursors\sidenote{Key gluconeogenic precursors are glycerol, lactate and alanine among others.}, ATP and Acetyl-CoA.
 
-In addition to these effects, both G6Pase and PEPCK, two other rate limiting enzymes are regulated transcriptionally.  Akt phosphorylates and inactivates the transcription factor FOXO which would normally drive the expression of these enzymes.  Therefore when insulin activate the PI3K/Akt cascade, FOXO mediated transcription of G6Pase and PEPCK is decreased and the levels of these enzymes are reduced, decreasing gluconeogenesis.
+In addition to these rapid effects, both G6Pase and PEPCK, two other rate limiting enzymes are regulated transcriptionally.  Akt phosphorylates and inactivates the transcription factor FOXO which would normally increase the expression of these enzymes.  Therefore when insulin activate the PI3K/Akt cascade, FOXO mediated transcription of G6Pase and PEPCK is decreased and the levels of these enzymes are reduced, decreasing gluconeogenesis.  We will discuss the regulation and relevance of gluconeogenesis in a separate lecture.
 
 \section{Glucagon Promotes Glucose Elevation}
 
@@ -144,7 +143,7 @@ The mechanisms which underlie hypoglycemia induced glucagon release are incomple
 
 Adrenergic-receptor coupled mediated cAMP synthesis was the first example of a hormonal second messenger.  Earl Sutherland was interested in the regulation of glycogenolysis and he noticed that if he added adrenaline to intact cells, he could accelerate glycogen breakdown, but if he added it to lysed cells he could not.  In his key experiment he treated one set of livers with adrenaline, then lysed them.  He then added that lysate to a second set of livers which had already been broken.  He found that there was an internal factor (later identified as cAMP) in the stimulated tissues, that could accelerate glycogenolysis in the other tissues \cite{Rall1956}.  For this work, Sutherland won the Nobel Prize in Medicine and Physiology in 1971.
 
-In metabolism, the main effector of cAMP in cells is Protein Kinase A (PKA).  This protein kinase is allosterically activated by cAMP and phosphorylates a wide variety of important metabolic substrates.  The identification of PKA and its role in carbohydrate homeostasis led to Fisher and Krebs winning the Nobel Prize in Medicine and Physiology in 1992.  The major role of glucagon is to increase blood glucose, both by mobilizing glycogen stores and inducing gluconeogenesis.  The mechanisms for this are identical to those for adrenaline, as both of these hormones activate Gs-linked receptors and result in PKA activation in the liver.
+In metabolism, the main effector of cAMP in cells is Protein Kinase A (PKA).  This protein kinase is allosterically activated by cAMP and phosphorylates a wide variety of important metabolic substrates.  The identification of PKA and its role in carbohydrate homeostasis led to Fisher and Krebs winning the Nobel Prize in Medicine and Physiology in 1992.  The primary role of glucagon is to increase blood glucose, both by mobilizing glycogen stores and inducing gluconeogenesis.  The mechanisms for this are identical to those for adrenaline, as both of these hormones activate Gs-linked receptors and result in PKA activation in the liver.
 
 \subsection{The Primary Target of Glucagon is the Liver}
 
@@ -154,11 +153,11 @@ PKA is the primary mediator of the activation of glycogen phosphorylase.  Once a
 
 In addition to the activation of these protein kinases, there is a reduction of glycogen associated protein phosphatase activity.  As a balance, this leads to more highly phosphorylated and therefore more glycogenolytic activities.
 
-\newthought{Glucagon promotes gluconeogenesis.}  In addition to the decreased flux of glycolytic intermediates which allosterically activate gluconeogenesis, there are both post-translational and transcriptional mechanisms by which adrenergic signaling promotes gluconeogenesis.  
+\newthought{Glucagon also promotes gluconeogenesis in the liver.}  There are both post-translational and transcriptional mechanisms by which adrenergic signaling promotes gluconeogenesis.  Similar to glycolysis, the allosteric and post-translational regulation of gluconeogenesis is rapid, while the transcriptional regulation is slower but more stable.
 
 Post-translationally, the best studied route by which PKA activates gluconeogenesis is through inactivation of phosphofructokinase-2.  PFK-2 normally generates the carbohydrate Fructose-2,6,-bisphosphate which is a positive regulator of glycolysis and a negative regulator of gluconeogenesis.  The alleviation of this inhibition allows for promotion of the gluconeogenic metabolism.  
 
-Transcriptionally, the transcription factor CREB is phosphorylated by PKA where it plays a role in transcriptionally activating the rate limiting gluconeogenic enzymes PEPCK, FPBase and G6Pase.
+Transcriptionally, the transcription factor CREB is phosphorylated by PKA where it plays a role in transcriptionally activating the rate limiting gluconeogenic enzymes PEPCK, FPBase and G6Pase.  This is energetically costly, and occurs slowly.  Transcriptional changes are therefore often more permanent in nature.
 
 \section{Other Glucoregulatory Hormones}
 
@@ -168,7 +167,7 @@ In adipose tissue, adrenaline induces lipolysis, via phosphorylation and activat
 
 \newthought{Longer term glucose control is regulated by two other hormones previously discussed, growth hormone and cortisol.}  These hormones are elevated during times of growth or stress where it is important to keep circulating glucose available for other functions.  During a prolonged fast, both GH and cortisol can be released, causing longer-lasting changes which ensure adequate blood supply to the brain.
 
-\newthought{Incretins are enhanceres of insulin release}, typically released from the gut.  They were first described when it was noted that when equal amounts of glucose are provided either through the gut, or intravenously, the gut-supplied glucose leads to a more robust insulin secretion effect.  Eventually to gut-derived peptide hormones, GLP-1 and GIP1\sidenote{glucagon-like peptide 1 and gastric inhibitory peptide respectively} were described.  Both of these peptides are degraded by an enzyme called DPP-4, and inhibitors of this process have provided an exciting new potential therapeutic mechanism for enhancing glucose control.
+\newthought{Incretins enhance insulin release}, and are typically released from the gut.  They were first described when it was noted that when equal amounts of glucose are provided either through the gut, or intravenously, the gut-supplied glucose leads to a more robust insulin secretion effect.  Eventually to gut-derived peptide hormones, GLP-1 and GIP1\sidenote{glucagon-like peptide 1 and gastric inhibitory peptide respectively} were described.  Both of these peptides are degraded by an enzyme called DPP-4, and inhibitors of this process have provided an exciting new potential therapeutic mechanism for enhancing glucose control.
 
 \section{Pathophysiology Related to Glucose Control}
 
@@ -197,17 +196,20 @@ There are several hormone that control protein synthesis, often mediated by a pr
 \item Indirect actions by promoting the release of IGF1.
 \end{enumerate}
 
-\newthought{Testosterone}...
-
 \subsection{Hormonal Regulators of Protein Degradation}
-Protein breakdown occurs via two mechanisms, proteolysis which targets specific proteins for degradation and autophagy\sidenote{or self-eating} which can target entire organelles.  Both 
+Protein breakdown occurs via two mechanisms, proteolysis which targets specific proteins for degradation and autophagy\sidenote{or self-eating} which can target entire organelles.  Both of these processes result in the liberation of amino acids from proteins.  Unlike fatty acids (triglycerides) and glucose (glycogen) there is no standard storage molecule for amino acids, so when the body needs amino acids, a variety of proteins are catabolized. 
 
 \newthought{One major pathway by which proteolysis is suppressed is the Insulin/IGF-FOXO pathway}.  As described with respect to gluconeogenesis, insulin or IGF1 \emph{reduce} FOXO activity.  When active, FOXO transcriptionally activates proteolytic genes known as atrogenes to liberate amino acids.  Therefore, when insulin/IGF signaling is active, proteolysis is reduced. 
 
-\newthought{Cortisol}...
+\newthought{Cortisol functions to make blood glucose available to key organs such as the brain, during times of stress.}  As such, cortisol promotes gluconeogenesis, by transcriptionally activating several enzymes, including G6Pase, PEPCK and pyruvate carboxylase.  At the same time, cortisol promotes delivery of gluconeogenic precursors such as glycerol (from adipocyte lipolysis), lactate and alanine (from muscle tissue) to the liver.  Chronically elevated cortisol leads to substantial muscle breakdown and is a major side effect of prescribed glucocorticoids.
 
 \section{Endocrine Regulation of Lipid Metabolism}
 
+Lipid metabolism, which we will discuss in the last unit of the course is strongly promoted by insulin and reversed by adrenaline.  Triglyceride breakdown can be thought of in two phases, the conversion of triglycerides into fatty acids and glycerol\sidenote{This is known as lipolysis and occurs within adipose tissue to release fatty acids to the body, or on the surface of cells, to allow triglycerides to be converted to fatty acids prior to uptake} and then the conversion of these fatty acids into energy\sidenote{This is known as fatty acid oxidation or $\beta$-oxidation.}  
+
+\newthought{Insulin functions to promote lipid storage} in two ways.  It promotes the production of lipids from precursors\sidenote{This is known as \textit{de novo} lipogenesis.}, promotes the esterifictaion of fatty acids and glycerol in to triglycerides and prevents the breakdown of triglycerides into fatty acids.  We will discuss the mechanisms by which insulin controls fat storage later in the semester.
+
+\newthought{To liberate and use lipids for fuel} they are generally released from adipose tissue as fatty acids, with the activation of $\beta$-oxidation happening concurrently in muscle.  There are several hormones that regulate this, but adrenaline, which promotes both adipocyte lipolysis and muscle lipid oxidation is very important.  As we will learn later in the semester, several key lipolytic and oxidative enzymes are activated by adrenaline (and PKA) mediated protein phosphorylation.
 
 \bibliography{library}
 \bibliographystyle{plainnat}
