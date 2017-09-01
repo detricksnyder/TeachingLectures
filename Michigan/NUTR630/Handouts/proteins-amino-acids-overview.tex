@@ -1,0 +1,128 @@
+\documentclass{tufte-handout}
+
+%\geometry{showframe}% for debugging purposes -- displays the margins
+
+\usepackage{amsmath}
+
+% Set up the images/graphics package
+\usepackage{graphicx}
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+\graphicspath{{graphics/}}
+
+\title{Understanding Energy Balance}
+\author{}
+\date{}  % if the \date{} command is left out, the current date will be used
+
+% The following package makes prettier tables.  We're all about the bling!
+\usepackage{booktabs}
+
+% The units package provides nice, non-stacked fractions and better spacing
+% for units.
+\usepackage{units}
+
+% The fancyvrb package lets us customize the formatting of verbatim
+% environments.  We use a slightly smaller font.
+\usepackage{fancyvrb}
+\fvset{fontsize=\normalsize}
+
+% Small sections of multiple columns
+\usepackage{multicol}
+
+% Provides paragraphs of dummy text
+\usepackage{lipsum}
+
+% These commands are used to pretty-print LaTeX commands
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+
+\begin{document}
+
+\maketitle% this prints the handout title, author, and date
+
+\begin{abstract}
+\noindent This lecture is the introduction to the proteins unit.  In this unit we will describe some of the important functions of protein and their constituent amino acids including why some amino acids are essential (or conditionally essential), how they are interconverted and how they are used for energy.  Amino acids also are the precursors for many other important biological molecules, so we will discuss these non-protein functions of amino acids as well.
+\end{abstract}
+
+\tableofcontents
+
+\pagebreak
+\section{Learning Objectives}
+
+\begin{itemize}
+\item Apply your knowledge of amino acid biochemistry to explain why proteins are essential macronutrients
+\item Understand the basic structure of protein
+\item Identify the property that makes an amino acid different from another 
+\item Describe different functional roles of protein
+\item Identify the major proteins present in food
+\item Differentiate between the different classifications of amino acids
+\item Understand how nonessential amino acids can become essential
+\item Explain the nutritional requirements of collagen synthesis
+
+
+\end{itemize}
+
+\section{Proteins, Amino Acids and Essentiality}
+
+\begin{margintable}
+\centering
+\caption{Amino Acid Essentiality.}
+\label{tab:aa-dispensibility}
+\begin{tabular}{lll}
+\hline
+\textbf {Dispensible} & \textbf{Essential} & \textbf{Conditional}\\
+\hline
+Ala & Phe & Arg\\
+Asp & Trp & Tyr\\
+Asn & Thr & Cys\\
+Glu & Ile & Pro\\
+Gly & Met & Gln\\
+Ser & Val\\
+ & Leu\\
+ & His\\
+ & Lys\\
+\hline
+\end{tabular}
+\end{margintable}
+
+Glucose and other carbohydrates are not strictly essential.  As we described in the unit on gluconeogenesis, we can generate glucose even if dietary supplies are low or absent.  The same is not true for proteins, which are macromolecule comprised of amino acids.  While plants, bacteria and fungi can often synthesize their own amino acids, during evolution we have lost the ability to make certain amino acids (see Table \ref{tab:aa-dispensibility}).  Since most proteins consist of at least some of each of the amino acids that means that we cannot generate new proteins unless we have a dietary supply of the essential amino acids.  In this context, dispensible means that we can make these amino acids from other fuels in our body, such as glucose\sidenote{Recall from the glycolysis lecture that pyruvate can be converted to alanine as part of the Cahill cycle.}.  Essential means that we must get those amino acids in our diet.  Conditional means that we need another amino acid in order to make that amino acid.  For example, we can make Tyrosine, but only if we have sufficient amounts of Phenylalanine as catalyzed by the enzyme phenylalanine hydroxylase\sidenote{BH$_4$ in this equation indicates tetrahydrobiopterin, a cofactor for this reaction.}:
+
+\begin{equation}
+Phe + BH_4 + O_2\leftrightarrow Tyr + BH_2 + H_2O 
+\end{equation}
+
+\subsection{Recommended Protein Intake}
+
+The USDA recommends increasing protein levels over the lifespan (see Table \ref{tab:protein-amdr}), but suggests a wide range where <35\% of calories are from protein.  From a essentiality perspective, the amounts of each amino acid needed from the diet depend on the amino acid content of the food.  As en example, legumes (beans and nuts) tend to be low in the amino acid methionine while grains often contain low levels of lysine.  When thinking about an appropriate protein amount, two things are important; are there sufficient dietary levels of the essential amino acids, and if protein levels are low are calories coming from lipids or carbohydrates.
+
+\begin{margintable}
+\centering
+\caption{ Acceptable Macronutrient Distribution Range (AMDR) for protein intake over the lifespan in percent of calories (from \citep{USDA2015}).}
+\label{tab:protein-amdr}
+\begin{tabular}{lll}
+\hline
+\textbf {Age} & \textbf{Amount}\\
+1-3 & 5-20\\
+4-19 & 10-30\\
+19+ & 10-35\\
+\hline
+
+\hline
+\end{tabular}
+\end{margintable}
+
+\subsection{Diseases of Protein Malnutrition}
+
+In the developed world, protein deficiency is rare, however in some developing nations protein deficiency is a major public health problem.  Protein deficiency can present in two main ways, \emph{kwashiorkor} which is a deficiency of protein, but an acceptable total calorie intake; and \emph{marasmus} which is a deficiency of both protein and calories.  Protein deficiencies can lead to impaired physical and mental development, fatty liver, hair loss and characteristic distended abdomen.
+
+\section{Protein Storage and the Amino Acid Pool}
+
+\bibliography{library}
+\bibliographystyle{plainnat}
+
+\end{document}
