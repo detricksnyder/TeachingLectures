@@ -126,7 +126,7 @@ Once phosphorylated, G6P can enter four separate pathways (3 in non-hepatic tiss
 The most important regulatory step that controls flow through glycolysis is catalyzed by PFK1\sidenote{For all these reactions G indicates Glucose, F indicates Fructose, GA indicates Glyceraldehyde and PG indicates Phosphoglycerate.}.  This is the first committed step of glycolysis and catalyzes the third step in glycolysis\sidenote{Reaction \ref{eq:pgm}, catalyzed by Phosphoglucose isomerase is a reversible, equillibrium reaction}:
 
 \begin{equation}\label{eq:pgm}
-G6P \leftrightarrow F6P
+G6P \rightleftharpoons F6P
 \end{equation}
 
 \begin{equation}\label{eq:pfk1}
@@ -160,23 +160,23 @@ Because this is such an important regulatory node, there are several facets to t
 \newthought{The next several steps of glycolysis are neither regulated or rate limiting.}  In general, the F16bP molecule is broken in two by aldolase, then each part rapidly is converted into phosphoenolpyruvate via the following reactions:
 
 \begin{equation}\label{eq:aldolase-a}
-F16bP \leftrightarrow DHAP+ GA3P
+F16bP \rightleftharpoons DHAP+ GA3P
 \end{equation}
 
 \begin{equation}\label{eq:g3pdh}
-GA3P + NAD+ \leftrightarrow 1,3bPG  + NADH
+GA3P + NAD+ \rightleftharpoons 1,3bPG  + NADH
 \end{equation}
 
 \begin{equation}\label{eq:pgk}
-1,3bPG + ADP \leftrightarrow 3PG + ATP
+1,3bPG + ADP \rightleftharpoons 3PG + ATP
 \end{equation}
 
 \begin{equation}
-3PG \leftrightarrow 2PG
+3PG \rightleftharpoons 2PG
 \end{equation}
 
 \begin{equation}
-2PG \leftrightarrow Phosphoenolpyruvate
+2PG \rightleftharpoons Phosphoenolpyruvate
 \end{equation}
 
 While these steps are not regulated, or associated with known nutrient deficiencies or inborn errors of metabolism, there are two key points about steps 5 and 6, the generation of NADH and ATP respectively\sidenote{Remember, since glucose was broken in two pieces at step 4, one glucose generates two ATP at this step.}.  ATP is the primary fuel source in cells, and one molecule NADH is converted into 2.5 molecules of ATP in the electron transport chain\sidenote{Discussed next lecture.}.  The second point, which we will come back to near the end of the semester, is that the glycerol backbone, needed to generate triglycerides is derived from DHAP, and when glycerol is broken down, it becomes DHAP and enters the glycolytic pathway.
@@ -253,8 +253,8 @@ Fructose, the other component of sucrose is largely metabolized within the liver
 Fructose + ATP \rightarrow Fructose-1-phosphate
 \end{equation}
 
-\begin{equation}
-Fructose-1-phosphate \leftrightarrow Glyceraldehyde + DHAP
+\begin{equation}\label{eq:aldolase}
+Fructose-1-phosphate \rightleftharpoons Glyceraldehyde + DHAP
 \end{equation}
 
 \begin{equation}
@@ -272,25 +272,31 @@ Fructose is normally present at high levels in fruit, or as the disaccharide suc
 
 \subsection{Disorders of fructose metabolism}
 
-There are two inborn errors of fructose metabolism, defects in either Fructokinase or Aldolase B.  In the case of Fructokinase deficiency, this is generally not pathological, since Fructose is not phosphorylated, and therefore is not trapped in cells.  Patients with Fructokinase deficiency have very high circulating levels of Fructose in their blood, but are otherwise normal.  On the other hand, Aldolase B deficiency means that Fructose becomes trapped at the Fructose-1-phosphate step \citep{Cross1988}\sidenote{If you want to explore mutations in any of the enzymes we discuss in more detail, I suggest going to the website \url{http://exac.broadinstitute.org}, enter the gene name, scroll down, click on LOF (loss of function) then click on any of the variants to see their incidence in various populations.  The gene name for Aldolase B for example is \textit{ALDOB}.}.  This occurs in approximately 1 in 20,000 to 30,000 individuals.  This intermediary metabolite builds up, wasting ATP and resulting in liver cirrhosis, hypoglycemia and kidney damage\sidenote{Think about, from a dietary perspective how this disease could be managed.}.
+There are two inborn errors of fructose metabolism, defects in either Fructokinase or Aldolase B\sidenote{This is a different enzyme from Aldolase A, which is part of glycolysis and shown in reaction \ref{eq:aldolase}.}.  In the case of Fructokinase deficiency, this is generally not pathological, since Fructose is not phosphorylated, and therefore is not trapped in cells.  Patients with Fructokinase deficiency have very high circulating levels of Fructose in their blood, but are otherwise normal.  On the other hand, Aldolase B deficiency means that Fructose becomes trapped at the Fructose-1-phosphate step \citep{Cross1988}\sidenote{If you want to explore mutations in any of the enzymes we discuss in more detail, I suggest going to the website \url{http://bravo.sph.umich.edu}, enter the gene name, scroll down, click on LOF (loss of function) then click on any of the variants to see their incidence in various populations.  The gene name for Aldolase B for example is \textit{ALDOB}.}.  This occurs in approximately 1 in 20,000 to 30,000 individuals.  This intermediary metabolite builds up, wasting ATP and resulting in liver cirrhosis, hypoglycemia and kidney damage\sidenote{Think about, from a dietary perspective how this disease could be managed.}.
 
 \section{Galactose metabolism}
 
-Galactose, the other monosaccharide in lactose is taken up in the liver via GLUT2.  In contrast to Fructose, Galactose enters glycolysis near the early steps of glycolysis and is subject to similar regulatory steps.  The initial steps of galactolysis are catalyzed by the enzymes galactokinase, GALT or phosphoglucomutase and result in the production of Glucose-6-phosphate:
+Galactose, the other monosaccharide in lactose is taken up in the liver via GLUT2.  In contrast to Fructose, Galactose enters glycolysis near the early steps of glycolysis and is subject to similar regulatory steps.  The initial steps of galactolysis are catalyzed by the enzymes galactokinase, GALT\sidenote{Galactose-1-phosphate uridylyltransferase, shown in reaction \ref{eq:galt}.  This is \emph{not} the same thing as Gut-Associated Lymphoid Tissue, which is also abbreviated as GALT and was discussed as it relates to the digestive system.} or phosphoglucomutase and result in the production of Glucose-6-phosphate:
 
 \begin{equation}
 Galactose + ATP \rightarrow Galactose-1-phosphate
 \end{equation}
 
-\begin{equation}
-Galactose-1-phosphate + UDP-Glucose \leftrightarrow Glucose-1-phosphate + UDP-Galactose
+\begin{equation} \label{eq:galt}
+Galactose-1-phosphate + UDP-Glucose \rightleftharpoons Glucose-1-phosphate + UDP-Galactose
 \end{equation}
 
 \begin{equation}
-Glucose-1-phosphate \leftrightarrow Glucose-6-phosphate
+Glucose-1-phosphate \rightleftharpoons Glucose-6-phosphate
 \end{equation}
 
-Glucose-6-phosphate then proceeds as normal, becoming dephosphorylated to glucose, or processed through glycolysis, glycogenesis or the pentose phosphate pathway.  Inborn errors of GALT lead to galactose intolerane and a buildup of Galactose-1-phosphate in tissues and the blood.
+Glucose-6-phosphate then proceeds as normal, becoming dephosphorylated to glucose, or processed through glycolysis, glycogenesis or the pentose phosphate pathway.  The UDP-galactose generated in reaction \ref{eq:galt} is regenerated back to UDP glucose by another enzyme called UDP-Galactose Epimerase, which catalyzes this reaction:
+
+\begin{equation}
+UDP-Galactose \rightleftharpoons UDP-Glucose
+\end{equation}
+
+Inborn errors of GALT or UDP-Galactose epimerase lead to galactose intolerance and a buildup of Galactose-1-phosphate in tissues and the blood.
 
 \bibliography{library}
 \bibliographystyle{plainnat}
