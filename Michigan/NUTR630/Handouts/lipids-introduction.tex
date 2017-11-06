@@ -1,0 +1,72 @@
+\documentclass{tufte-handout}
+
+%\geometry{showframe}% for debugging purposes -- displays the margins
+
+\usepackage{amsmath}
+
+% Set up the images/graphics package
+\usepackage{graphicx}
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+\graphicspath{{graphics/}}
+
+\title{Introduction to Lipids}
+\author{}
+\date{}  % if the \date{} command is left out, the current date will be used
+
+% The following package makes prettier tables.  We're all about the bling!
+\usepackage{booktabs}
+
+% The units package provides nice, non-stacked fractions and better spacing
+% for units.
+\usepackage{units}
+
+% The fancyvrb package lets us customize the formatting of verbatim
+% environments.  We use a slightly smaller font.
+\usepackage{fancyvrb}
+\fvset{fontsize=\normalsize}
+
+% Small sections of multiple columns
+\usepackage{multicol}
+
+% Provides paragraphs of dummy text
+\usepackage{lipsum}
+
+% These commands are used to pretty-print LaTeX commands
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+
+\begin{document}
+
+\maketitle% this prints the handout title, author, and date
+
+\begin{abstract}
+\noindent This unit will cover lipid metabolism, with lectures on structure and properties, digestion, synthesis, oxidation and transportation.  This particular lecture will cover the general properties of lipids, including fatty acid, steroid and tri- and diglycerides.  For more details on general fatty acid properties refer to Chapter 30 in Lippincott's Illustrated Reviews in Biochemistry available in reserve\cite{Ferrier2017}.
+\end{abstract}
+
+\tableofcontents
+
+\pagebreak
+\section{Learning Objectives}
+
+\begin{itemize}
+\item Understand the different roles of lipids in our bodies
+\item Describe the structure and functions of triacylglycerols (triglycerides)
+\item Recognize that phospholipids are amphipathic and play an important role as structural components within our body
+\item Identify the structure and functions of cholesterol and other steroids
+\item Use the common, n- and $\omega$ nomenclature systems to describe fatty acids, and be able to draw fatty acids based on these various naming systems
+\item Describe the structure of fatty acids and analyze how this affects their packing, solubility and physical state
+\item Explain the roles of the essential fatty acids, including what makes them essential
+
+\end{itemize}
+
+
+\bibliography{library}
+\bibliographystyle{plainnat}
+
+\end{document}
