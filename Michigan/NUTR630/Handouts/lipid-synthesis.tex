@@ -1,0 +1,188 @@
+\documentclass{tufte-handout}
+
+%\geometry{showframe}% for debugging purposes -- displays the margins
+
+\usepackage{amsmath}
+
+% Set up the images/graphics package
+\usepackage{graphicx}
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+\graphicspath{{graphics/}}
+
+\title{Regulation of Lipid Synthesis}
+\author{}
+\date{}  % if the \date{} command is left out, the current date will be used
+
+% The following package makes prettier tables.  We're all about the bling!
+\usepackage{booktabs}
+
+% The units package provides nice, non-stacked fractions and better spacing
+% for units.
+\usepackage{units}
+
+% The fancyvrb package lets us customize the formatting of verbatim
+% environments.  We use a slightly smaller font.
+\usepackage{fancyvrb}
+\fvset{fontsize=\normalsize}
+
+% Small sections of multiple columns
+\usepackage{multicol}
+
+% Provides paragraphs of dummy text
+\usepackage{lipsum}
+
+% These commands are used to pretty-print LaTeX commands
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+
+\begin{document}
+
+\maketitle% this prints the handout title, author, and date
+
+\begin{abstract}
+\noindent This unit will cover the synthesis of lipids including cholesterol, fatty acid and triglyceride synthesis.  For more details on these topics, refer to Chapters 28 and 29 in Biochemistry: A Short Course available in reserve\cite{Berg2015}.
+\end{abstract}
+
+\tableofcontents
+
+\pagebreak
+\section{Learning Objectives}
+
+\begin{itemize}
+\item Identify the functions of cholesterol within our body
+\item Understand how fatty acids are synthesized in the body
+\item Describe the initial highly regulated step of FA synthesis
+\item Explain the tissue-specific energetic costs of triglyceride synthesis.
+\item Understand the reactions resulting in triacylglycerol synthesis resulting in 3 fatty acids esterified to glycerol
+\item Describe the breakdown of triacylglycerol to glycerol plus fatty acids and the fates of these products
+\item Describe fatty acid breakdown (beta-oxidation)
+\item Determine the amount of energy produced by fatty acid breakdown in comparison to glucose
+\item Understand when ketogenesis occurs, what organs ketones are a fuel source for and consequences of overactive ketogenesis
+\item Describe how triglyceride synthesis is regulated in the liver, and how liver triglycerides are transported to other tissues
+
+
+
+
+\end{itemize}
+
+\section{Synthesis of Triglycerides from Fatty Acids}
+
+Fatty acids are obtained from the diet, or can be made from excess glucose/amino acids\sidenote{A process known as \textit{de novo} lipogenesis.}.  The esterification of these fatty acids within cells is very important because free fatty acids can be toxic to a cell once they build up.  Most tissues are able to store excess fatty acids to some degree but the major sites of synthesis are adipose tissue, and liver.
+
+Generally cells have to decide between three general fates for the fatty acids that arrive inside the cell\sidenote{Though in growing and dividing cells, the fraction of fatty acids that become phospholipids becomes much more relevant.}:
+\begin{description}
+\item [Without energy demand:] esterify with glycerol as triglycerides
+\item [With energy demand, but with OAA availability:] oxidize fatty acid to Acetyl-CoA and use that for fuel in the TCA cycle to generate ATP.
+\item [With energy demand but insufficient OAA:] oxidize to Acetyl-CoA and convert that to ketone bodies for release (primarily in the liver\sidenote{Two main reasons why this is mainly in the liver, the first is that there is typically less cataplerosis in non-hepatic tissues because there is less gluconeogenesis.  The second is that the enzymes of ketogenesis are at higher levels in the liver.}.
+\end{description}
+
+We will discuss the regulation of $\beta$-oxidation, which is the main process by which fatty acids become Acetyl-CoA in the next lecture.  When fatty acid synthesis is active, the elevations in malonyl-CoA\sidenote{Described below} will generally suppress $\beta$-oxidation via inhibition of Carnitine Palmitoyltransferase I\sidenote{Which is the rate limiting step of fatty acid breakdown.}.  This ensures that fatty acid synthesis and oxidation do not occur simultaneously.
+
+\newthought{Triglyceride synthesis involves the sequential addition of fatty acids to a glycerol backbone.}  This involves enzymatic reactions starting with phosphorylated glycyerol and an activated fatty acid.  To prepare fatty acids for esterification, an fatty acid\sidenote{Also known as an acyl group} is conjugated to coenzyme A by Acyl-CoA Synthetase:
+
+\begin{equation}
+Fatty Acid + CoA +  ATP \rightarrow AcylCoA + AMP + PPi
+\end{equation}
+
+Note that this reaction \emph{consumes} two high ATP equivalents for each fatty acid to be added.  This fatty acid is now in the \emph{activated} form and is available to be conjugated to phosphorylated glycerol by the folllowing four sequential reactions:
+
+\begin{equation}\label{eq:gpat}
+AcylCoA + Glycerol3P \rightarrow Lysophosphatidic Acid
+\end{equation}
+
+\begin{equation}\label{eq:LPAT}
+AcylCoA+ Lysophosphatidic Acid \rightarrow Phosphatidic Acid
+\end{equation}
+
+\begin{equation}\label{eq:lipin}
+Phosphatidic Acid \rightarrow Diacylglycerol + Pi
+\end{equation}
+
+\begin{equation}
+AcylCoA + Diacylglycerol \rightarrow Triacylglycerol
+\end{equation}
+
+\newthought{The phosphatidic acid generated in step \ref{eq:LPAT} is the precursor for most phospholipids.}  Enzymes can convert phosphatidic acid to phosphatidylserine, or phosphatidylinositol.  Phosphatidylserine is the substrate for the generation of phosphatidylethanolamine, which in turn generates phosphatidylcholine\sidenote{This is the reaction catalyzed by \textit{PEMT}, the enzyme that has variants which conver choline dependence.}  For more details about phospholipid synthesis see \citet{Kent1995}.  These structural lipids are particularly important during development, and are targets to reduce the growth of cancer cells, which require generation of substantial membranes.  
+
+\newthought{Fatty acids are added in a specific manner.}  Generally at the sn2 position is an unsaturated fatty acid, while there are saturated fats at the sn1 position.  The sn3 position seems to have much less specificity in mammalian triglyceride formation \citep{Brockerhoff1971}.  This is relevant for phospholipids that form membranes, as these will tend to have one saturated and one unsaturated fatty acid at each of the sn1 and sn2 positions\sidenote{The sn3 position is where the phosphate group is located.}.  
+
+\subsection{Glycerol-3-Phosphate Supply for Triglycerides}
+
+While each triglyceride molecule needs three fatty acids, they also require a phosphorylated glycerol backbone for reaction \ref{eq:gpat}.  The source of this glycerol varies between tissues.  In the liver, glycerol can be generated by phosphorylation of glycerol via Glycerol Kinase at a cost of an ATP:
+
+\begin{equation}
+Glycerol + ATP \rightarrow Glycerol3P
+\end{equation}
+
+Adipocytes on the other hand have low levels of glycerol kinase activity.  Therefore when fatty acids are presented to adipocytes they \emph{require} glycerol to be made from glucose.  The glycolytic intermediate dihydroxyacetone phosphate (DHAP) is generated by Aldolase\sidenote{Two steps \emph{after} PFK1} and can be converted into glycerol.
+
+\begin{equation}\label{eq:g3pdh}
+DHAP + NADH \rightleftharpoons Glycerol3P + NAD^+
+\end{equation}
+
+This reaction comes at a cost of one NADH molecule, or 2.5 ATP equivalents.  The lack of glycerol kinase in adipocytes is thought to be an adaptation to prevent the futile release and then re-esterification of fatty acids, wheras after lipolysis in adipocytes \emph{both} glycerol and fatty acids can go to the liver, so the liver always has sufficient glycerol to prevent fatty acid accumulation.  Nonetheless, because of this requirement, a substantial amount of the glucose used in adipocytes is used to generate glycerol backbones.  In the absence of glucose, gluconeogenic precursors such as lactate and pyruvate can be converted to glycerol in adipocytes, a process known as glyceroneogenesis\sidenote{This is equivalent to gluconeoegenesis, up to the DHAP step, where reaction \ref{eq:g3pdh} takes precedence over the Aldolase reaction.}.
+
+\newthought{The energy costs of triglyceride synthesis}, based on these pathways is substantial.  Three acyl chains must activated at a cost of 2 ATP equivalents each for 6 ATP in total.  This is tissue independent. In the liver, one more ATP to activate glycerol so a total 7 ATP are required to form one triglyceride.  In adipose tissue the cost is more because you use 2 x ATP in the preparation phase of glycolysis and another NADH to form Glycerol-3-phosphate in reaction \ref{eq:g3pdh}.  This means the cost in adipose tissue is 10.5 ATP, so it is not only more energy demanding, but also consumes some of the glucose that would be used to generate those ATP molecules.
+
+\subsection{Regulation of Triglyceride Esterification Enzymes}  
+
+Both in the liver and in adipose triglyceride synthesis will increase in response to insulin.  The mechanisms of this include both short-term and long term regulation.  Recall first, that in adipocytes glucose uptake is increased by insulin via stimulation of GLUT4 translocation.  Insulin can acutely activate GPAT\sidenote{The enzyme that catalyzes reaction \ref{eq:gpat}.} and Lipin \sidenote{The enzyme that catalyzes reaction \ref{eq:lipin}, this is mediated by activation of mTORC1 \citep{Harris2007}}.  Together the increased glucose and fatty acid flux, combined with more activity of these triglyceride synthethizing enzymes will result in efficient triglyceride storage in adipose tissue after a meal. Simulataneous to these effects, as we will discuss in the lipid transport lecture, insulin also suppresses triglyceride breakdown, a process known as \emph{lipolysis}.  For more insights into how insulin regulates triglyceride synthesis, see the recent review by \citet{Coleman2011}.
+
+\newthought{Chronic regulation of triglyceride synthesis is transcriptional} and is regulated by the two transcription factors SREBP1c\sidenote{Sterol response element binding protein 1c, which has a similar isoform SREBP2, that plays a key role in cholesterol synthesis, more on this in the next section.} and PPAR$\gamma$\sidenote{This stands for Peroxisome proliferator-activated receptor gamma, a nuclear hormone receptor which promotes both triglyceride synthesis and new adipocyte formation.  It is the target of the anti-diabetic drugs of the thiazolidinedione family.}  Both of these nuclear hormone receptors increase the number of the key triglyceride synthesis enzymes, including GPAT, Lipin and AGPAT\sidenote{Which catalyzes reaction \ref{eq:gpat}.}.  The regulation of SREBP1c is quite complicated but involves insulin- and mTORC1-dependent signals (reviewed in \citet{Bakan2012}).  In this way both insulin and nutritional status can promote the efficiency of triglyceride storage.
+
+\section{\textit{De Novo} Fatty Acid Synthesis}
+
+Triglycerides can use fatty acids derived from the diet, or that are generated endogenously.  Certain fatty acids (the $\omega$3 and $\omega$6 derived fatty acids) are entirely dependent on nutritional inputs, but others are generated endogenously.  This can vary substantially, with individuals on a high carbohydrate diet generating many of their fatty acids \textit{de novo}, with those on a low carbohydrate diet relying almost entirely on dietary intake.  All tissues can perform this function\sidenote{As it may be important for phospholipid synthesis}, but the major sites are liver and adipose tissue.
+
+\subsection{Fatty Acid Synthesis from Glucose and Ketogenic Amino Acids}
+
+Fatty acid biosynthesis begins with 
+
+\begin{equation}\label{eq:acl}
+Citrate + ATP + CoA \rightarrow AcetylCoA + OAA + ADP + Pi
+\end{equation}
+
+In sum the overall reaction for a single palmitate is:
+
+\begin{equation}\label{eq:pamitate-overall}
+8 AcetylCoA + 7 ATP + 14 NADPH \rightarrow Palmitate + 14 NADP^+ + 7 ADP + 8 CoA  + 7 Pi + 6H_2O
+\end{equation}
+
+\newthought{The NADPH requirements of fatty acid synthesis are high.}  Each palmitate requires 14 NADPH molecules along with a substantial amount of ATP.  The NADPH comes from two sources the pentose phosphate shunt\sidenote{Wherin one glucose molecule yields one NADPH molecule.}, and the activity of Malic Enzyme.  Recall from above, when a Citrate molecule is e xported, the other product of ATP-Citrate Lyase, shown in reaction \ref{eq:acl}, is oxaloacetate.  While this is used as a TCA intermediate in the mitochondria, in the cytoplasm OAA can be converted into pyruvate via Malic Dehydrogenase and Malic Enzyme.  This reactions are:
+
+\begin{equation}\label{eq:me}
+OAA + NADH  \rightarrow Malate + NAD^+
+\end{equation}
+
+\begin{equation}\label{eq:mdh}
+Malate + NADP+  \rightarrow NADPH + CO_2 + 2 Pyruvate
+\end{equation}
+
+In sum this reaction uses a cytosolic NADH and the released oxaloacetate to generate NADPH and two pyruvate molecules, which can then be re-oxidized in the mitochondria.  This means that for each Citrate released and Acetyl-CoA generated by ATP-Citrate Lyase, one NADPH is regenerated (again, at a cost of an NADH).  This helps to maintain the NADPH pool.  Therefore we can suspect that the 8 Acetyl-CoA's needed in reaction \ref{eq:pamitate-overall} will come with 8 NADPH molecules, so on average we need 6 more from the pentose phosphate shunt.  This means we need the equivalent of 6 molecules of glucose to go through the pentose phosphate pathway, and still need to generate 7 ATP, 8 NADH (equivalent to 20 ATP) and 8 Acetyl-CoA molecules (This requires  4 Glucoses, but generates 12 NADH and 4 ATP during partial oxidation) to power the formation of a single palmitic acid.  This means a net requirement of 16 glucose molecules to make a single palmitic acid, at a net gain of only 11 ATP equivalents of energy\sidenote{The exact math here is unimportant, since this is simplified scenario, but the point is that you have to use up a lot of glucose without gaining a lot of energy to make a single fatty acid}.  Recall that if those same glucose molecules were to undergo complete oxidation it would yield 512 ATP\sidenote{16 Glucose x 32 ATP/glucose.}.  This is a huge diversion of resources for making a single fatty acid.
+
+\subsection{Desaturation of Fatty Acids}
+
+While palmitate is the initial fatty acid made by mammals, C16:0 can be further modified in our bodies.
+
+\subsection{Regulation of Fatty Acid Synthesis}
+
+\subsection{Lipodistrophy Results from Impaired Triglyceride Storage}
+
+\section{Cholesterol Synthesis}
+
+\subsection{HMG-CoA Reductase is the Rate Limiting Step for Cholesterol Synthesis}
+
+\subsection{Sensing and Regulation of Sterol Biosynthesis by SREBP2}
+
+\subsection{The Relationship Between Dietary Fat and Cholesterol Synthesis}
+
+\bibliography{library}
+\bibliographystyle{plainnat}
+
+\end{document}
