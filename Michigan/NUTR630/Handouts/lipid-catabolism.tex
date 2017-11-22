@@ -1,0 +1,88 @@
+\documentclass{tufte-handout}
+
+%\geometry{showframe}% for debugging purposes -- displays the margins
+
+\usepackage{amsmath}
+
+% Set up the images/graphics package
+\usepackage{graphicx}
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+\graphicspath{{graphics/}}
+
+\title{Regulation of Lipid Catbolism}
+\author{}
+\date{}  % if the \date{} command is left out, the current date will be used
+
+% The following package makes prettier tables.  We're all about the bling!
+\usepackage{booktabs}
+
+% The units package provides nice, non-stacked fractions and better spacing
+% for units.
+\usepackage{units}
+
+% The fancyvrb package lets us customize the formatting of verbatim
+% environments.  We use a slightly smaller font.
+\usepackage{fancyvrb}
+\fvset{fontsize=\normalsize}
+
+% Small sections of multiple columns
+\usepackage{multicol}
+
+% Provides paragraphs of dummy text
+\usepackage{lipsum}
+
+% These commands are used to pretty-print LaTeX commands
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+
+\begin{document}
+
+\maketitle% this prints the handout title, author, and date
+
+\begin{abstract}
+\noindent  Biochemistry: A Short Course available in reserve\cite{Berg2015}.
+\end{abstract}
+
+\tableofcontents
+
+\pagebreak
+\section{Learning Objectives}
+
+\begin{itemize}
+\item Explain how triglyceride breakdown into glycerol and free fatty acids is controlled in adipocytes by hormonal signals.
+\item Explain how high carbohydrate diets affect fuel utilization, including effects on lipid fuel utilization.  Describe at an endocrine level how this is thought to occur.
+\item Determine how much energy, in ATP equivalents, is released during the oxidation of a given fatty acid.  Be able to relate the energy content of a fatty acid, in general to its physical properties (length and saturation).
+\item Explain the rate limiting steps of lipid oxidation.
+\item Explain how ketone bodies are converted to ATP in non-hepatic tissues, and what governs this specificity.
+\item Demonstrate an understanding of how how \textit{de novo} lipogenesis and $\beta$-oxidation are reciprocately controlled.
+\item Describe how very long chain fatty acids are oxidized differently from long chain fatty acids.
+\item Explain how odd-numbered fatty acids are catabolized, including the importance of vitamin B12 in this process. 
+\item Evaluate the role of transcriptional regulation and long term adaptations to fatty acid oxidative capacity.
+\end{itemize}
+
+
+\section{Lipolysis Liberates Fatty Acids from Triglyerides}
+\subsection{Carbohydrate Overfeeding and Lipid Utilization}
+\section{Fatty Acid Oxidation in the Mitochondria}
+\subsection{The Role of CPTI in Lipid Oxidation}
+\subsection{Determining the Energy Content of a Fatty Acid}
+\subsection{Alternative Fatty Acid Catabolism}
+\subsection{Ketolysis}
+\section{Regulation of Fatty Acid Oxidation}
+\subsection{Energy Dependent Regulation via AMPK}
+\subsection{Transcriptional Adaptations for Fatty Acid Oxidation}
+\newthought{In terms of athletic performance,} increasing the ability to oxidize fatty acids is important for endurance athletes.
+
+
+
+
+\bibliography{library}
+\bibliographystyle{plainnat}
+
+\end{document}

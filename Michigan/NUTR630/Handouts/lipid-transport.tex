@@ -1,0 +1,144 @@
+\documentclass{tufte-handout}
+
+%\geometry{showframe}% for debugging purposes -- displays the margins
+
+\usepackage{amsmath}
+
+% Set up the images/graphics package
+\usepackage{graphicx}
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+\graphicspath{{graphics/}}
+
+\title{Mechanisms of Lipid Transport and Blood Lipid Levels}
+\author{}
+\date{}  % if the \date{} command is left out, the current date will be used
+
+% The following package makes prettier tables.  We're all about the bling!
+\usepackage{booktabs}
+
+% The units package provides nice, non-stacked fractions and better spacing
+% for units.
+\usepackage{units}
+
+% The fancyvrb package lets us customize the formatting of verbatim
+% environments.  We use a slightly smaller font.
+\usepackage{fancyvrb}
+\fvset{fontsize=\normalsize}
+
+% Small sections of multiple columns
+\usepackage{multicol}
+
+% Provides paragraphs of dummy text
+\usepackage{lipsum}
+
+% These commands are used to pretty-print LaTeX commands
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+
+\begin{document}
+
+\maketitle% this prints the handout title, author, and date
+
+\begin{abstract}
+\noindent  Biochemistry: A Short Course available in reserve\cite{Berg2015}.
+\end{abstract}
+
+\tableofcontents
+
+\pagebreak
+\section{Learning Objectives}
+
+\begin{itemize}
+\item Explain why lipoproteins are necessary for triglyceride and cholesterol transport.
+\item Describe the main carriers of cholesterol and triglyceride throughout the body, including how their apolipoproteins affect their endocytosis or catabolism.
+\item Evaluate how different alleles of \textit{APOE} can alter risk of cardiovascular and neurodegenerative diseases.
+\item Apply your knowledge of cholesterol transport to explain why someone may have changes in HDL and LDL levels.
+\item Understand the etiology of high cholesterol and its potential role in atherosclerosis.  
+\item Apply your understanding of cholesterol absorption, synthesis and transport to evaluate the relationships between dietary cholesterol and triglycerides and cardiovascular risk.
+\item Explain the role of lipoprotein lipase in lipid transport, including how it is regulated.
+
+\end{itemize}
+\section{Triglyceride and Fatty Acid Transport Mechanisms}
+
+Transportation of lipids presents some logistical problems.  Since they are inherently insoluble, lipids need to be either solubilized prior to tranport to other tissues via the blood stream.  This is accomplished in two ways.  One is the packaging of triglycerides and cholesterol esters into lipoprotein particles, such as the chylomicrons discussed earlier this unit.  The second mechanism is to break triglycerides down to fatty acids, where they can bind to solubilizing proteins called albumin within the blood.
+
+\subsection{Lipolysis and Fatty Acid Transport}
+
+
+\subsection{Lipoprotein Particles in the Body}
+
+In terms of moving triglycerides and cholesterol esters, we have a variety of lipoprotein particles that play different roles in the body.  These are summarized in Table \ref{tab:lipoprotein-particles}.  There are three main transport routes.  The first is from the enterocyte to the periphery, mediated by chylomicrons.  The second is from the liver to the periphery, mediated by VLDL.  The third is from the periphery back to the liver, mediated by HDL/LDL.  We will discuss each of these in the next few sections
+
+\begin{margintable}
+\centering
+\caption{Summary of lipoprotein particles.}
+\label{tab:lipoprotein-particles}
+\begin{tabular}{@{}ccc@{}}
+\toprule
+\textbf{Particle} & \textbf{Source} & \textbf{Destination}       \\ \midrule
+Chylomicron       & Enterocyte      & Adipose, Muscle, Liver \\
+VLDL              & Liver           & Adipose, Muscle            \\
+IDL                 & VLDL          & Liver or LDL \\
+HDL               & Endothelial     & LDL                        \\
+LDL               & IDL/HDL             & Liver                      \\ \bottomrule
+\end{tabular}
+\end{margintable}
+
+
+\begin{margintable}
+\centering
+\caption{Apolipoprotein summary.  Some key things to remember, ApoB48 is specifically made in the enterocyte.  ApoB100 and ApoE the ligands for the LDL Receptor allowing for particle uptake.  ApoCII is the coenzyme for LPL, allowing for lipid extraction to peripheral tissues.}
+\label{tab:apolipoproteins}
+\begin{tabular}{@{}cllcc@{}}
+\toprule
+\textbf{Particle} & \textbf{ApoA} & \textbf{ApoB} & \textbf{ApoC} & \textbf{ApoE} \\ \midrule
+Chylomicron       &               & B48           & CII           & E             \\
+VLDL              &               & B100          & CI/CII        & E             \\
+IDL               &                  & B100         &        &   E \\
+HDL               & AI/AII          & B100          &               &               \\
+LDL               & AI/AII         & B100          &               &              
+\end{tabular}
+\end{margintable}
+\section{The Role of Chylomicrons and VLDL}
+
+The goal of these lipoprotein particles is to move lipids from the source\sidenote{The enterocyte for chylomicrons for dietary lipids, or the liver for VLDL.} to peripheral tissues which might be better equiped to utilize or store lipids.  As summarized in Table \ref{tab:apolipoproteins}, these particles are characterized by the presence of Apolipoproteins E and CII.
+
+\subsection{The Role and Regulation of Lipoprotein Lipase}
+
+Both VLDL and chylomicrons are targetted to peripheral tissues.  This specificity is mediated by Apolipoprotein CII.  This lipid acts as an activator of a triglyceride lipase known as \emph{Lipoprotein Lipase} or LPL.  This lipase resides on the lumen of blood vessels, adjacent to muscle and adipose tissues.  Once activated by ApoCII binding, LPL breaks down the triglycerides in the particle and releases free fatty acids.  These free fatty acids enter the cell where they can be stored (in the case of adipocytes), or used as fuel (in the case of muscle cells).
+
+\newthought{LPL has long known to be inactivated by diets high in saturated fats.}  This meant that when saturated fat levels were increased, LPL activity was reduced.  This is a negative feedback mechanism wherein intracellular lipids can signal to the LPL on the extracellular surface to prevent additional fat uptake.  The molecular underpinnings of this phenomena have recently been determined and involves a protein called ANGPTL4\sidenote{Unhelpfully, an abbreviation for Angiopoietin-like 4.}.  ANGPTL4 is induced by elevated fatty acids levels in the cell, and is secreted where it binds to and inhibits LPL (more details about this can be found in the recent review by \citet{Dijk2014}).  Mutations in either the \textit{LPL} or \textit{ANGPTL4} genes result either impaired, or enhanced blood lipid clearance respectively and as a result either increased or decreased risk of cardiovascular disease \citep{Article2016b}.
+
+\newthought{Depleted VLDL are known as IDL, wheras depleted chylomicrons are known as chylomicron remnants.}  Once these lipoproteins have delivered their triglyceride content they are known as chylomicron remnants or intermediate\sidenote{This indicates intermediate in density between VLDL and LDL} density lipoproteins.  Due to the presence of ApoE on their surface these particles can be absorbed by the liver and the apolipoproteins and phospholipids reused.
+
+\newthought{\textit{APOE} variants are associated with disease risk.}  Since this apolipoprotein is present on both chylomicrons and VLDL then IDL.  There are four variants of the \textit{APOE} gene numbered 1-4.  Of these isoform ApoE2 is thought to be protective while ApoE4 is a risk factor for late-onset Alzheimer's disease \citep{Poirier1993,Corder1993}.  When fed a hyperlipidemic diet, individuals with the \textit{APOE4} variants have much more dramatic increases in LDL than those with other genotypes \citep{Lehtimaki1992}.  This suggests that for those consuming diets rich in saturated fats, and with the \textit{APOE4} there may be an exacerbated risk, although to our knowledge this has not been tested.
+
+\section{Reverse Cholesterol Transport}
+
+Cholesterol is primarily disposed of via bile salt generation and excretion, a process that occurs in the liver.  Therefore cholesterol, which is made throughout the body is trafficked to the liver, a process known as \emph{Reverse Cholesterol Transport}.  This process is mediated by HDL and LDL particles.
+
+\subsection{Synthesis and Role of HDL}
+
+High density lipoprotein particles start off as nascent particles containing ApoAI, ApoAII and ApoB100 and very little cholesterol.  As they pass through the circulation they bind cholesterol from the plasma membrane of tissues and become enriched with cholesterol.  Eventually these HDL particles can be endocytosed in the liver where cholesterol can be disposed.
+
+\newthought{HDL transfers cholesteryl esters to and from the VLDL} in exchange for phospholipids and triglycerides.  This is done via cholesterylester transfer protein\sidenote{Abbreviated as CETP}, and ensures that triglycerides are packaged in the LPL-accessible particles for peripheral transport, while excess cholesterol is delivered back to the liver for excretion.   Inhibition of CETP results in an increase in the amount of  HDL cholesterol in the bloodand was a heavily invested pharmacological area, but these drugs have shown limited cardiovascular benefits.  The best thinking in this area is now that high HDL cholesterol is a marker of but not a cause of lowered cardiovascular risk.
+
+\subsection{LDL-mediated Transport to the Liver}
+
+Low density lipoproteins on the other hand are generated when IDL derived from VLDL remains in the circulation.  These particles tend to be cholesterol rich, since the triglycerides have been taken up by the actions of LPL at peripheral tissues.  These particles would normally be endocytosed by the liver, but this is dependent on the activity of the Low Density Lipoprotein Receptor, itself under control of SREBP2.  Recall that when intrahepatic cholesterol levels are high, SREBP2 is inactive, and LDLR is not produced.  This means that when the liver has sufficient cholesterol\sidenote{Potentially because of sufficient cholesterol synthetic activity.} LDL particles remain in the circulation\sidenote{As a thought exercise, consider what would happen if you had a \textit{LDLR} mutation, how would that affect cholesterol retrieval?  How do you think it would affect cholesterol synthesis?  This is the case for individuals with a disease known as familial hypercholesterolemia.}.  This is known as "bad" cholesterol because elevations are associated with cardiovascular disease.  
+
+\subsection{Cholesterol Export to Bile}
+
+Within the liver, bile salts are generated limited by the activity of 7-$\alpha$-hydroxylase\sidenote{We discussed this in the lipid digestion lecture} and exported to the gall bladder for release into the digestive system.  Separate from the SREBP2-dependent cholesterol regulatory system, the production of bile salts is sensed by the FXR sensing system.
+
+\section{Blood Lipids and Cardiovascular Risk}
+\bibliography{library}
+\bibliographystyle{plainnat}
+
+\end{document}
