@@ -9,7 +9,7 @@
 \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
 \graphicspath{{graphics/}}
 
-\title{Mechanisms of Lipid Transport and Blood Lipid Levels}
+\title{Lipid Transport and Blood Lipid Levels}
 \author{}
 \date{}  % if the \date{} command is left out, the current date will be used
 
@@ -46,7 +46,7 @@
 \maketitle% this prints the handout title, author, and date
 
 \begin{abstract}
-\noindent  Biochemistry: A Short Course available in reserve\cite{Berg2015}.
+\noindent  Lipid transport is essential to both the efficient storage, and effective use of lipids.  Due to their semi-or total insoluble nature, triglycerides, cholesterol and fatty acids present some specific technical problems in terms of transportation.  These processes rely on both carrier proteins such as albumin as well as lipoprotein particles to safely move lipids from one tissue to another.  Inefficient co-ordination of lipid transport can lead to elevated blood lipids, which are highly associated with cardiovascular disease, a major cause of death in modern society.  For more details about lipid transport refer to Chapter 18 in Lippincott's Illustrated Reviews: Biochemistry, available in reserve\cite{Ferrier2017}.
 \end{abstract}
 
 \tableofcontents
@@ -57,7 +57,6 @@
 \begin{itemize}
 \item Explain why lipoproteins are necessary for triglyceride and cholesterol transport.
 \item Describe the main carriers of cholesterol and triglyceride throughout the body, including how their apolipoproteins affect their endocytosis or catabolism.
-\item Evaluate how different alleles of \textit{APOE} can alter risk of cardiovascular and neurodegenerative diseases.
 \item Apply your knowledge of cholesterol transport to explain why someone may have changes in HDL and LDL levels.
 \item Understand the etiology of high cholesterol and its potential role in atherosclerosis.  
 \item Apply your understanding of cholesterol absorption, synthesis and transport to evaluate the relationships between dietary cholesterol and triglycerides and cardiovascular risk.
@@ -69,6 +68,8 @@
 Transportation of lipids presents some logistical problems.  Since they are inherently insoluble, lipids need to be either solubilized prior to tranport to other tissues via the blood stream.  This is accomplished in two ways.  One is the packaging of triglycerides and cholesterol esters into lipoprotein particles, such as the chylomicrons discussed earlier this unit.  The second mechanism is to break triglycerides down to fatty acids, where they can bind to solubilizing proteins called albumin within the blood.
 
 \subsection{Lipolysis and Fatty Acid Transport}
+
+As we described in the unit about lipid oxidation, the majority of our triglyceride stores are in adipose tissue.  The release of free fatty acids and glycerol from adipose tissue is a highly regulated process, activated by adrenaline and inhibited by insulin (for more details see \citet{Zechner2012} for a review).  The transport of free fatty acids after release from adipose tissue is mediated by proteins called albumin, a very abundant protein produced by the liver.  Due to their semi-solubility, fatty acids also require transport systems and fatty acid binding proteins (abbreviated as FABP) to move through membranes and through the cytoplasm.
 
 
 \subsection{Lipoprotein Particles in the Body}
@@ -91,6 +92,8 @@ LDL               & IDL/HDL             & Liver                      \\ \bottomr
 \end{margintable}
 
 
+The goal of these lipoprotein particles is to move lipids from the source\sidenote{The enterocyte for chylomicrons for dietary lipids, or the liver for VLDL.} to peripheral tissues which might be better equiped to utilize or store lipids.  As summarized in Table \ref{tab:apolipoproteins}, these particles are characterized by the presence of Apolipoproteins E and CII.
+
 \begin{margintable}
 \centering
 \caption{Apolipoprotein summary.  Some key things to remember, ApoB48 is specifically made in the enterocyte.  ApoB100 and ApoE the ligands for the LDL Receptor allowing for particle uptake.  ApoCII is the coenzyme for LPL, allowing for lipid extraction to peripheral tissues.}
@@ -98,16 +101,16 @@ LDL               & IDL/HDL             & Liver                      \\ \bottomr
 \begin{tabular}{@{}cllcc@{}}
 \toprule
 \textbf{Particle} & \textbf{ApoA} & \textbf{ApoB} & \textbf{ApoC} & \textbf{ApoE} \\ \midrule
-Chylomicron       &               & B48           & CII           & E             \\
-VLDL              &               & B100          & CI/CII        & E             \\
+Chylomicron       &  AV         & B48           & CII/CIII           & E             \\
+VLDL              &   AV            & B100          & CI/CII        & E             \\
 IDL               &                  & B100         &        &   E \\
-HDL               & AI/AII          & B100          &               &               \\
-LDL               & AI/AII         & B100          &               &              
+HDL               & AI/AII          & B100          &               &             E  \\
+LDL               &         & B100          &               &              
 \end{tabular}
 \end{margintable}
 \section{The Role of Chylomicrons and VLDL}
 
-The goal of these lipoprotein particles is to move lipids from the source\sidenote{The enterocyte for chylomicrons for dietary lipids, or the liver for VLDL.} to peripheral tissues which might be better equiped to utilize or store lipids.  As summarized in Table \ref{tab:apolipoproteins}, these particles are characterized by the presence of Apolipoproteins E and CII.
+Both chylomicrons and VLDL function to move lipids to peripheral tissues, either from the gastrointestinal tract or the liver respectively.  These particles transport primarily \emph{neutral lipids} rather than free fatty acids.  Their assembly is also dependent on the production of the apolipoproteins and the presence of phospholipids, especially phosphatidylcholine for their synthesis.   If choline levels are limited, either due to less active variants in \textit{PEMT} or reduced dietary intake, the liver will be less able to assemble VLDL.  This can result in increased hepatic steatosis, potentially leading to non-alcoholic fatty liver disease.
 
 \subsection{The Role and Regulation of Lipoprotein Lipase}
 
@@ -121,7 +124,7 @@ Both VLDL and chylomicrons are targetted to peripheral tissues.  This specificit
 
 \section{Reverse Cholesterol Transport}
 
-Cholesterol is primarily disposed of via bile salt generation and excretion, a process that occurs in the liver.  Therefore cholesterol, which is made throughout the body is trafficked to the liver, a process known as \emph{Reverse Cholesterol Transport}.  This process is mediated by HDL and LDL particles.
+Cholesterol is primarily disposed of via bile salt generation and excretion, a process that occurs in the liver.  Therefore cholesterol, which is made throughout the body is trafficked to the liver, a process known as \emph{Reverse Cholesterol Transport}.  This process is mediated by HDL and LDL particles.  To separate blood lipids between reverse and forward transport processes, sometimes the ratio betwen ApoB and ApoAI is determined\sidenote{Consider based on the data in Table \ref{tab:apolipoproteins} what this ratio is actually measuring.  As a hint, a high ApoB100/ApoA1 ratio is indicitave of elevated cardiovascular risk.}.
 
 \subsection{Synthesis and Role of HDL}
 
@@ -138,6 +141,13 @@ Low density lipoproteins on the other hand are generated when IDL derived from V
 Within the liver, bile salts are generated limited by the activity of 7-$\alpha$-hydroxylase\sidenote{We discussed this in the lipid digestion lecture} and exported to the gall bladder for release into the digestive system.  Separate from the SREBP2-dependent cholesterol regulatory system, the production of bile salts is sensed by the FXR sensing system.
 
 \section{Blood Lipids and Cardiovascular Risk}
+
+If fat transport systems (VLDL and LDL) exceed the ability to store lipids, these lipids remain in the blood.  Akin to the hyperglycemia associated with impaired glucose disposal, and excesive glucose production, hyperlipidemia is associated with cardiovascular disease.  Since triglycerides can be metabolized into energy by most tissues, hypercholesterolemia in particular has been long associated with cardiovascular risk \citep{Keys1963}.
+
+Since cholesterol may exist in several lipoprotein particles, a more prognostic indicator is the amount of cholesterol in HDL particles relative to the amount of cholesterol in LDL particles, with the latter being more pathogenic\sidenote{HDL cholesterol levels may indicate a surplus of cholesterol transport particles, wheras LDL cholesterol likely indicates a surplus of cholesterol that cannot be adsorbed by the liver.}.  Several mechanisms for LDL's specific association with cardiovascular risk have been proposed, but one possibility is that excess LDL is absorbed in blood vessel walls, promoting both atherosclerosis\sidenote{The lipid-based coating of arteries, narrowing them and reducing their vascular flexibility.} and increasing the risk of thrombosis\sidenote{The release of a blood clot, often by lysis and release of an atherosclerotic plaque.  This blood clot could travel to the brain or heard where a stroke or heart attack may occur.}.
+
+\newthought{From a dietary standpoint}, data from several US-based cohort studies demonstrated that diets lower in saturated fat intake are associated with both total and LDL cholesterol, and associated with that, reductions in cardiovascular disease \citep{Anderson1987,Wang2016b}.  This has recently been challenged by a large-multi country study\sidenote{This is known as the PURE study, which evaluated over 135 000 participants in 18 countries.} which indicated that increased carbohydrates plays a key role, maybe moreso than saturated fats with respect to cardiovascular disease \citep{Dehghan2017}.  For this large multi-ethnic study, there is some debate about whether regional dietary differences are fully accounted for, or if this is more reflective of diet-disease risk in a more diverse dataset.  
+
 \bibliography{library}
 \bibliographystyle{plainnat}
 
