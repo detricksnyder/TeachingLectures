@@ -1,0 +1,187 @@
+---
+title: "Summary Graphs of NUTR630 Post-Semester Feedback"
+author: "Dave Bridges, Liv Anderson and Rina Hisamatsu"
+date: "2017-09-03"
+output:
+  pdf_document:
+    highlight: tango
+    keep_tex: yes
+    number_sections: no
+    toc: yes
+---
+
+```{r global_options, include=FALSE}
+library(knitr)
+#figures makde will go to directory called figures, will make them as both png and pdf files 
+opts_chunk$set(fig.path='figures/',
+               echo=TRUE, warning=FALSE, message=FALSE,dev=c('png','pdf'))
+options(scipen = 2, digits = 3)
+# set echo and message to TRUE if you want to display code blocks and code output respectively
+
+knitr::knit_hooks$set(inline = function(x) {
+  knitr:::format_sci(x, 'md')
+})
+
+
+superpose.eb <- function (x, y, ebl, ebu = ebl, length = 0.08, ...)
+  arrows(x, y + ebu, x, y - ebl, angle = 90, code = 3,
+  length = length, ...)
+
+  
+se <- function(x) sd(x, na.rm=T)/sqrt(length(x))
+
+#load these packages, nearly always needed
+library(tidyr)
+library(dplyr)
+
+# sets maize and blue color scheme
+color.scheme <- c('#00274c', '#ffcb05')
+```
+
+
+```{r data-input}
+library(readr)
+onboarding.filename <- 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQI-b1A4Zd-gx3FuY3lkKbWE0zKUfmAhpFovKOxow5AC1wWQpBsSvOKI0_gtZ4DJu5sj-YM1_1nsKUe/pub?gid=1032535237&single=true&output=csv'
+onboarding.data <- read_csv(onboarding.filename)
+
+end.filename <- 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTxPKhKOwkZ18U1X0Z44M8wGqtM5ow18tVPF4yupZbzditOQdlQ3DJkfJJA-Dl226NfGYJ0tEUqOFn4/pub?gid=1563141647&single=true&output=csv'
+end.data <- read_csv(end.filename)
+
+merged.data <- full_join(onboarding.data,end.data, by='Email Address', suffix=c("before","after"))
+```
+
+These data can be found in `r getwd()`.  This script was most recently updated on `r date()`.
+
+# Analysis
+
+## Interests
+
+## Learning Activities
+
+### Thoughts about whether they learned a lot from the activity
+
+```{r learning-activities}
+library(dplyr)
+
+mylevels <- c('Strongly Agree','Agree','Neutral','Disagree','Strongly Disagree')
+
+
+activity.data <- 
+  end.data %>%
+  dplyr::select(contains("learned")) %>%
+  rename(`Written Reports` = `Select one in reference to written reports [I learned a lot from this activity]`,
+         `Presentation` = `Select one in reference to your presentation [I learned a lot from this activity]`,
+         `Peer Reviews` = `Select one answer in reference to the peer reviews [I learned a lot from this activity]`,
+         `Social Media` = `Select one in reference to the social media assignments [I learned a lot from this activity]`,
+         `News Posts` = `Select one in reference to the news posts [I learned a lot from this activity]`,
+         `Review Questions` = `Select one in reference to the review questions [I learned a lot from this activity]`,
+         `Problem Roulette` = `Select one answer in reference to problem roulette [I learned a lot from this activity]`) %>%
+  mutate(`Written Reports` = factor(`Written Reports`,levels=mylevels),
+         `Presentation`= factor(`Presentation`, levels=mylevels),
+         `Peer Reviews`= factor(`Peer Reviews`, levels=mylevels),
+         `Social Media`= factor(`Social Media`, levels=mylevels),
+         `News Posts`= factor(`News Posts`, levels=mylevels),
+         `Review Questions`= factor(`Review Questions`, levels=mylevels),
+         `Problem Roulette`= factor(`Problem Roulette`, levels=mylevels))
+
+library(sjPlot)
+sjp.likert(activity.data, title="I learned a lot from this activity")
+```
+
+### Thoughts about whether these assesed knowledge
+
+```{r assessed-knowledge}
+assessed.data <- 
+  end.data %>%
+  dplyr::select(contains("assessed")) %>%
+  rename(`Written Reports` = `Select one in reference to written reports [This effectively assessed my knowledge]`,
+         `Presentation` = `Select one in reference to your presentation [This effectively assessed my knowledge]`,
+         `Peer Reviews` = `Select one answer in reference to the peer reviews [This effectively assessed my knowledge]`,
+         `Social Media` = `Select one in reference to the social media assignments [This effectively assessed my knowledge]`,
+         `News Posts` = `Select one in reference to the news posts [This effectively assessed my knowledge]`,
+         `Review Questions` = `Select one in reference to the review questions [This effectively assessed my knowledge]`,
+         `Problem Roulette` = `Select one answer in reference to problem roulette [This effectively assessed my knowledge]`) %>%
+  mutate(`Written Reports` = factor(`Written Reports`,levels=mylevels),
+         `Presentation`= factor(`Presentation`, levels=mylevels),
+         `Peer Reviews`= factor(`Peer Reviews`, levels=mylevels),
+         `Social Media`= factor(`Social Media`, levels=mylevels),
+         `News Posts`= factor(`News Posts`, levels=mylevels),
+         `Review Questions`= factor(`Review Questions`, levels=mylevels),
+         `Problem Roulette`= factor(`Problem Roulette`, levels=mylevels))
+
+sjp.likert(assessed.data, title="This effectively assessed my knowledge")
+```
+
+### Thoughts as to whether it was worth an ppropriate amount of points
+
+```{r amount-of-points}
+points.data <- 
+  end.data %>%
+  dplyr::select(contains("appropriate amount")) %>%
+  rename(`Written Reports` = `Select one in reference to written reports [This was worth an appropriate amount of points based on the amount of effort required]`,
+         `Presentation` = `Select one in reference to your presentation [This was worth an appropriate amount of points based on the amount of effort required]`,
+         `Peer Reviews` = `Select one answer in reference to the peer reviews [This was worth an appropriate amount of points based on the amount of effort required]`,
+         `Social Media` = `Select one in reference to the social media assignments [This was worth an appropriate amount of points based on the amount of effort required]`,
+         `News Posts` = `Select one in reference to the news posts [This was worth an appropriate amount of points based on the amount of effort required]`,
+         `Review Questions` = `Select one in reference to the review questions [This was worth an appropriate amount of points based on the amount of effort required]`,
+         `Problem Roulette` = `Select one answer in reference to problem roulette [This was worth an appropriate amount of points based on the amount of effort required]`) %>%
+  mutate(`Written Reports` = factor(`Written Reports`,levels=mylevels),
+         `Presentation`= factor(`Presentation`, levels=mylevels),
+         `Peer Reviews`= factor(`Peer Reviews`, levels=mylevels),
+         `Social Media`= factor(`Social Media`, levels=mylevels),
+         `News Posts`= factor(`News Posts`, levels=mylevels),
+         `Review Questions`= factor(`Review Questions`, levels=mylevels),
+         `Problem Roulette`= factor(`Problem Roulette`, levels=mylevels))
+
+sjp.likert(points.data, title="This was worth an appropriate amount of points based on the amount of effort required")
+```
+
+# Changes over the semester
+
+## Interests and Aptitudes
+
+```{r interests}
+merged.data[merged.data==1]<-'Strongly Agree'
+merged.data[merged.data==2]<-'Agree'
+merged.data[merged.data==3]<-'Neutral'
+merged.data[merged.data==4]<-'Disagree'
+merged.data[merged.data==5]<-'Strongly Disagree'
+
+
+macronutritent.aptitude.data <- 
+  merged.data %>%
+  dplyr::select(contains("macronutrient")) %>%
+  rename(`Interested Before` = `Macronutrient biochemistry is of interest to me.before`,
+         `Interested After` = `Macronutrient biochemistry is of interest to me.after`,
+         `Important Before` = `Macronutrient biochemistry is important for my career interests.before`,
+         `Important After` = `Macronutrient biochemistry is important for my career interests.after`) %>%
+  mutate(`Interested Before`= factor(`Interested Before`, levels=mylevels),
+         `Interested After`= factor(`Interested After`, levels=mylevels),
+         `Important Before`= factor(`Important Before`, levels=mylevels),
+         `Important After`= factor(`Important After`, levels=mylevels))
+col.order <- c(1,3,2,4)
+
+sjp.likert(macronutritent.aptitude.data[,col.order], title="Macronutrient biochemistry")
+
+
+digestive.aptitude.data <- 
+  merged.data %>%
+  dplyr::select(contains("digestive")) %>%
+  rename(`Interested Before` = `Comprehensive understanding of the digestive tract is of interest to me.before`,
+         `Interested After` = `Comprehensive understanding of the digestive tract is of interest to me.after`,
+         `Important Before` = `Comprehensive understanding of the digestive tract is important for my career interests.before`,
+         `Important After` = `Comprehensive understanding of the digestive tract is important for my career interests.after`) %>%
+  mutate(`Interested Before`= factor(`Interested Before`, levels=mylevels),
+         `Interested After`= factor(`Interested After`, levels=mylevels),
+         `Important Before`= factor(`Important Before`, levels=mylevels),
+         `Important After`= factor(`Important After`, levels=mylevels))
+col.order <- c(1,3,2,4)
+
+sjp.likert(digestive.aptitude.data[,col.order], title="Understanding of the digestive tract")
+```
+
+# Session Information
+
+```{r session-information, echo=T}
+sessionInfo()
+```
