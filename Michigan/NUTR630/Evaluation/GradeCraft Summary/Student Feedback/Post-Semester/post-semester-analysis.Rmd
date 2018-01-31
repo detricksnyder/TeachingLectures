@@ -180,6 +180,65 @@ col.order <- c(1,3,2,4)
 sjp.likert(digestive.aptitude.data[,col.order], title="Understanding of the digestive tract")
 ```
 
+# Metacognition
+
+```{r metacognition}
+meta.data <- 
+  merged.data %>%
+  dplyr::select(contains("What is your level of agreement on the following statements? [When given an assignment to complete, I produce better outcomes with a community of support (i.e., instructor or peer support).]")) %>%
+  rename(`Before` = `What is your level of agreement on the following statements? [When given an assignment to complete, I produce better outcomes with a community of support (i.e., instructor or peer support).]before`,
+         `After` =  `What is your level of agreement on the following statements? [When given an assignment to complete, I produce better outcomes with a community of support (i.e., instructor or peer support).]after`) %>%
+  mutate(`Before`= factor(`Before`, levels=mylevels),
+         `After`= factor(`After`, levels=mylevels))
+
+sjp.likert(meta.data, title="When given an assignment to complete, I produce better outcomes with a community of support (i.e., instructor or peer support)", cat.neutral='Neutral')
+
+
+meta.data <- 
+  merged.data %>%
+  dplyr::select(contains("What is your level of agreement on the following statements? [I am motivated to complete an assignment if I enjoy doing it.]")) %>%
+  rename(`Before` = `What is your level of agreement on the following statements? [I am motivated to complete an assignment if I enjoy doing it.]before`,
+         `After` =  `What is your level of agreement on the following statements? [I am motivated to complete an assignment if I enjoy doing it.]after`) %>%
+  mutate(`Before`= factor(`Before`, levels=mylevels),
+         `After`= factor(`After`, levels=mylevels))
+
+sjp.likert(meta.data, title="I am motivated to complete an assignment if I enjoy doing it.", cat.neutral='Neutral')
+
+
+meta.data <- 
+  merged.data %>%
+  dplyr::select(contains("What is your level of agreement on the following statements? [I am aware of the skills I develop when I complete different types of assignments.]")) %>%
+  rename(`Before` = `What is your level of agreement on the following statements? [I am aware of the skills I develop when I complete different types of assignments.]before`,
+         `After` =  `What is your level of agreement on the following statements? [I am aware of the skills I develop when I complete different types of assignments.]after`) %>%
+  mutate(`Before`= factor(`Before`, levels=mylevels),
+         `After`= factor(`After`, levels=mylevels))
+
+sjp.likert(meta.data, title="I am aware of the skills I develop when I complete different types of assignments.", cat.neutral='Neutral')
+
+
+meta.data <- 
+  merged.data %>%
+  dplyr::select(contains("What is your level of agreement on the following statements? [When a difficult assignment is given to me, I feel confident that I can complete it.]")) %>%
+  rename(`Before` = `What is your level of agreement on the following statements? [When a difficult assignment is given to me, I feel confident that I can complete it.]before`,
+         `After` =  `What is your level of agreement on the following statements? [When a difficult assignment is given to me, I feel confident that I can complete it.]after`) %>%
+  mutate(`Before`= factor(`Before`, levels=mylevels),
+         `After`= factor(`After`, levels=mylevels))
+
+sjp.likert(meta.data, title="When a difficult assignment is given to me, I feel confident that I can complete it", cat.neutral='Neutral')
+
+
+meta.data <- 
+  merged.data %>%
+  dplyr::select(contains("What is your level of agreement on the following statements? [I perform better when completing an assignment that I enjoy (i.e., get a better grade).]")) %>%
+  rename(`Before` = `What is your level of agreement on the following statements? [I perform better when completing an assignment that I enjoy (i.e., get a better grade).]before`,
+         `After` =  `What is your level of agreement on the following statements? [I perform better when completing an assignment that I enjoy (i.e., get a better grade).]after`) %>%
+  mutate(`Before`= factor(`Before`, levels=mylevels),
+         `After`= factor(`After`, levels=mylevels))
+
+sjp.likert(meta.data, title="I perform better when completing an assignment that I enjoy (i.e., get a better grade).", cat.neutral='Neutral')
+
+```
+
 # Session Information
 
 ```{r session-information, echo=T}

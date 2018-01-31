@@ -147,7 +147,7 @@
 These data can be found in
 /Users/davebrid/Documents/GitHub/TeachingLectures/Michigan/NUTR630/Evaluation/GradeCraft
 Summary/Student Feedback/Post-Semester. This script was most recently
-updated on Wed Jan 31 17:25:32 2018.
+updated on Wed Jan 31 17:41:34 2018.
 
 \section{Analysis}\label{analysis}
 
@@ -301,6 +301,88 @@ points}\label{thoughts-as-to-whether-it-was-worth-an-ppropriate-amount-of-points
 \end{Shaded}
 
 \includegraphics{figures/interests-2.png}
+
+\section{Metacognition}\label{metacognition}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{meta.data <-}\StringTok{ }
+\StringTok{  }\NormalTok{merged.data %>%}
+\StringTok{  }\NormalTok{dplyr::}\KeywordTok{select}\NormalTok{(}\KeywordTok{contains}\NormalTok{(}\StringTok{"What is your level of agreement on the following statements? [When given an assignment to complete, I produce better outcomes with a community of support (i.e., instructor or peer support).]"}\NormalTok{)) %>%}
+\StringTok{  }\KeywordTok{rename}\NormalTok{(}\StringTok{`}\DataTypeTok{Before}\StringTok{`} \NormalTok{=}\StringTok{ `}\DataTypeTok{What is your level of agreement on the following statements? [When given an assignment to complete, I produce better outcomes with a community of support (i.e., instructor or peer support).]before}\StringTok{`}\NormalTok{,}
+         \StringTok{`}\DataTypeTok{After}\StringTok{`} \NormalTok{=}\StringTok{  `}\DataTypeTok{What is your level of agreement on the following statements? [When given an assignment to complete, I produce better outcomes with a community of support (i.e., instructor or peer support).]after}\StringTok{`}\NormalTok{) %>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\StringTok{`}\DataTypeTok{Before}\StringTok{`}\NormalTok{=}\StringTok{ }\KeywordTok{factor}\NormalTok{(}\StringTok{`}\DataTypeTok{Before}\StringTok{`}\NormalTok{, }\DataTypeTok{levels=}\NormalTok{mylevels),}
+         \StringTok{`}\DataTypeTok{After}\StringTok{`}\NormalTok{=}\StringTok{ }\KeywordTok{factor}\NormalTok{(}\StringTok{`}\DataTypeTok{After}\StringTok{`}\NormalTok{, }\DataTypeTok{levels=}\NormalTok{mylevels))}
+
+\KeywordTok{sjp.likert}\NormalTok{(meta.data, }\DataTypeTok{title=}\StringTok{"When given an assignment to complete, I produce better outcomes with a community of support (i.e., instructor or peer support)"}\NormalTok{, }\DataTypeTok{cat.neutral=}\StringTok{'Neutral'}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{figures/metacognition-1.png}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{meta.data <-}\StringTok{ }
+\StringTok{  }\NormalTok{merged.data %>%}
+\StringTok{  }\NormalTok{dplyr::}\KeywordTok{select}\NormalTok{(}\KeywordTok{contains}\NormalTok{(}\StringTok{"What is your level of agreement on the following statements? [I am motivated to complete an assignment if I enjoy doing it.]"}\NormalTok{)) %>%}
+\StringTok{  }\KeywordTok{rename}\NormalTok{(}\StringTok{`}\DataTypeTok{Before}\StringTok{`} \NormalTok{=}\StringTok{ `}\DataTypeTok{What is your level of agreement on the following statements? [I am motivated to complete an assignment if I enjoy doing it.]before}\StringTok{`}\NormalTok{,}
+         \StringTok{`}\DataTypeTok{After}\StringTok{`} \NormalTok{=}\StringTok{  `}\DataTypeTok{What is your level of agreement on the following statements? [I am motivated to complete an assignment if I enjoy doing it.]after}\StringTok{`}\NormalTok{) %>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\StringTok{`}\DataTypeTok{Before}\StringTok{`}\NormalTok{=}\StringTok{ }\KeywordTok{factor}\NormalTok{(}\StringTok{`}\DataTypeTok{Before}\StringTok{`}\NormalTok{, }\DataTypeTok{levels=}\NormalTok{mylevels),}
+         \StringTok{`}\DataTypeTok{After}\StringTok{`}\NormalTok{=}\StringTok{ }\KeywordTok{factor}\NormalTok{(}\StringTok{`}\DataTypeTok{After}\StringTok{`}\NormalTok{, }\DataTypeTok{levels=}\NormalTok{mylevels))}
+
+\KeywordTok{sjp.likert}\NormalTok{(meta.data, }\DataTypeTok{title=}\StringTok{"I am motivated to complete an assignment if I enjoy doing it."}\NormalTok{, }\DataTypeTok{cat.neutral=}\StringTok{'Neutral'}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{figures/metacognition-2.png}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{meta.data <-}\StringTok{ }
+\StringTok{  }\NormalTok{merged.data %>%}
+\StringTok{  }\NormalTok{dplyr::}\KeywordTok{select}\NormalTok{(}\KeywordTok{contains}\NormalTok{(}\StringTok{"What is your level of agreement on the following statements? [I am aware of the skills I develop when I complete different types of assignments.]"}\NormalTok{)) %>%}
+\StringTok{  }\KeywordTok{rename}\NormalTok{(}\StringTok{`}\DataTypeTok{Before}\StringTok{`} \NormalTok{=}\StringTok{ `}\DataTypeTok{What is your level of agreement on the following statements? [I am aware of the skills I develop when I complete different types of assignments.]before}\StringTok{`}\NormalTok{,}
+         \StringTok{`}\DataTypeTok{After}\StringTok{`} \NormalTok{=}\StringTok{  `}\DataTypeTok{What is your level of agreement on the following statements? [I am aware of the skills I develop when I complete different types of assignments.]after}\StringTok{`}\NormalTok{) %>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\StringTok{`}\DataTypeTok{Before}\StringTok{`}\NormalTok{=}\StringTok{ }\KeywordTok{factor}\NormalTok{(}\StringTok{`}\DataTypeTok{Before}\StringTok{`}\NormalTok{, }\DataTypeTok{levels=}\NormalTok{mylevels),}
+         \StringTok{`}\DataTypeTok{After}\StringTok{`}\NormalTok{=}\StringTok{ }\KeywordTok{factor}\NormalTok{(}\StringTok{`}\DataTypeTok{After}\StringTok{`}\NormalTok{, }\DataTypeTok{levels=}\NormalTok{mylevels))}
+
+\KeywordTok{sjp.likert}\NormalTok{(meta.data, }\DataTypeTok{title=}\StringTok{"I am aware of the skills I develop when I complete different types of assignments."}\NormalTok{, }\DataTypeTok{cat.neutral=}\StringTok{'Neutral'}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{figures/metacognition-3.png}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{meta.data <-}\StringTok{ }
+\StringTok{  }\NormalTok{merged.data %>%}
+\StringTok{  }\NormalTok{dplyr::}\KeywordTok{select}\NormalTok{(}\KeywordTok{contains}\NormalTok{(}\StringTok{"What is your level of agreement on the following statements? [When a difficult assignment is given to me, I feel confident that I can complete it.]"}\NormalTok{)) %>%}
+\StringTok{  }\KeywordTok{rename}\NormalTok{(}\StringTok{`}\DataTypeTok{Before}\StringTok{`} \NormalTok{=}\StringTok{ `}\DataTypeTok{What is your level of agreement on the following statements? [When a difficult assignment is given to me, I feel confident that I can complete it.]before}\StringTok{`}\NormalTok{,}
+         \StringTok{`}\DataTypeTok{After}\StringTok{`} \NormalTok{=}\StringTok{  `}\DataTypeTok{What is your level of agreement on the following statements? [When a difficult assignment is given to me, I feel confident that I can complete it.]after}\StringTok{`}\NormalTok{) %>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\StringTok{`}\DataTypeTok{Before}\StringTok{`}\NormalTok{=}\StringTok{ }\KeywordTok{factor}\NormalTok{(}\StringTok{`}\DataTypeTok{Before}\StringTok{`}\NormalTok{, }\DataTypeTok{levels=}\NormalTok{mylevels),}
+         \StringTok{`}\DataTypeTok{After}\StringTok{`}\NormalTok{=}\StringTok{ }\KeywordTok{factor}\NormalTok{(}\StringTok{`}\DataTypeTok{After}\StringTok{`}\NormalTok{, }\DataTypeTok{levels=}\NormalTok{mylevels))}
+
+\KeywordTok{sjp.likert}\NormalTok{(meta.data, }\DataTypeTok{title=}\StringTok{"When a difficult assignment is given to me, I feel confident that I can complete it"}\NormalTok{, }\DataTypeTok{cat.neutral=}\StringTok{'Neutral'}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{figures/metacognition-4.png}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{meta.data <-}\StringTok{ }
+\StringTok{  }\NormalTok{merged.data %>%}
+\StringTok{  }\NormalTok{dplyr::}\KeywordTok{select}\NormalTok{(}\KeywordTok{contains}\NormalTok{(}\StringTok{"What is your level of agreement on the following statements? [I perform better when completing an assignment that I enjoy (i.e., get a better grade).]"}\NormalTok{)) %>%}
+\StringTok{  }\KeywordTok{rename}\NormalTok{(}\StringTok{`}\DataTypeTok{Before}\StringTok{`} \NormalTok{=}\StringTok{ `}\DataTypeTok{What is your level of agreement on the following statements? [I perform better when completing an assignment that I enjoy (i.e., get a better grade).]before}\StringTok{`}\NormalTok{,}
+         \StringTok{`}\DataTypeTok{After}\StringTok{`} \NormalTok{=}\StringTok{  `}\DataTypeTok{What is your level of agreement on the following statements? [I perform better when completing an assignment that I enjoy (i.e., get a better grade).]after}\StringTok{`}\NormalTok{) %>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\StringTok{`}\DataTypeTok{Before}\StringTok{`}\NormalTok{=}\StringTok{ }\KeywordTok{factor}\NormalTok{(}\StringTok{`}\DataTypeTok{Before}\StringTok{`}\NormalTok{, }\DataTypeTok{levels=}\NormalTok{mylevels),}
+         \StringTok{`}\DataTypeTok{After}\StringTok{`}\NormalTok{=}\StringTok{ }\KeywordTok{factor}\NormalTok{(}\StringTok{`}\DataTypeTok{After}\StringTok{`}\NormalTok{, }\DataTypeTok{levels=}\NormalTok{mylevels))}
+
+\KeywordTok{sjp.likert}\NormalTok{(meta.data, }\DataTypeTok{title=}\StringTok{"I perform better when completing an assignment that I enjoy (i.e., get a better grade)."}\NormalTok{, }\DataTypeTok{cat.neutral=}\StringTok{'Neutral'}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{figures/metacognition-5.png}
 
 \section{Session Information}\label{session-information}
 
