@@ -1,0 +1,145 @@
+---
+title: "Analysis of Teaching Evaluations"
+author: "Dave Bridges"
+date: "1/28/2018"
+output:
+  pdf_document:
+    highlight: tango
+    keep_tex: yes
+    number_sections: no
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+opts_chunk$set(echo = TRUE)
+
+opts_chunk$set(fig.path='figures/',
+               echo=TRUE, warning=FALSE, message=FALSE,dev=c('png','pdf'))
+options(scipen = 2, digits = 3)
+
+# sets maize and blue color scheme
+color.scheme <- c('#00274c', '#ffcb05')
+```
+
+## Data Import
+
+Copied evaluation table, added quotes around the questions and imported into excel.  Converted this to a csv file for import.  Did this for both 2016 and 2017 teaching evaluations, downloaded from wolverine access.
+
+```{r data-import}
+library(readr)
+library(dplyr)
+data.2016.datafile <- '2016 Evaluations.csv'
+data.2017.datafile <- '2017 Evaluations.csv'
+
+input_col_types <- cols(
+  Number = col_factor(levels=NULL),
+  Question = col_factor(levels=NULL))
+
+data.2016 <- read_csv(data.2016.datafile, col_types=input_col_types) %>% mutate(Year="2016")
+data.2017 <- read_csv(data.2017.datafile, col_types=input_col_types)  %>% mutate(Year="2017")
+
+te.data.wide <- full_join(data.2016,data.2017, 
+                     by = c("Number", "Question"), 
+                     suffix = c(".16", ".17"))
+
+te.data <- 
+  rbind(data.2016,data.2017) %>%
+  mutate(Total = SD+D+N+A+SA) %>%
+  mutate(`Strongly Disagree`=SD/Total*100,
+         `Disagree`=D/Total*100,
+         `Neutral`=N/Total*100,
+         `Agree`=A/Total*100,
+         `Strongly Agree`=SA/Total*100)
+```
+
+The imported datafiles include:
+
+* `r data.2016.datafile`
+* `r data.2017.datafile`
+
+# Overall Questions
+
+## Overall, this was an excellent course.
+
+```{r excellent-course}
+
+overall.data <-
+  te.data %>%
+  filter(Number==1) %>%
+  mutate(Item=as.factor(Year))
+
+library(HH)
+
+plot.data <- overall.data[7:3]
+rownames(plot.data) <- c("Before","After")
+
+likert(plot.data, horizontal = FALSE,
+       main = "Overall, this was an excellent course.",
+       xlab = "Percent", # becomes ylab due to horizontal arg,
+       ylab = c("Before","After"),
+       title = "Overall, this was an excellent course.",
+       auto.key = list(space = "right", columns = 1,
+                     reverse = TRUE))
+```
+
+## This course advanced my understanding of the subject matter.
+
+```{r advanced-understanding}
+
+overall.data <-
+  te.data %>%
+  filter(Number==1631) %>%
+  mutate(Item=as.factor(Year))
+
+plot.data <- overall.data[7:3]
+rownames(plot.data) <- c("Before","After")
+
+likert(plot.data, horizontal = FALSE,
+       main = "This course advanced my understanding of the subject matter.",
+       xlab = "Percent", # becomes ylab due to horizontal arg,
+       ylab = c("Before","After"),
+       title = "Overall, this was an excellent course.",
+       auto.key = list(space = "right", columns = 1,
+                     reverse = TRUE))
+```
+
+## I learned a great deal from this course.
+
+```{r learned-great-deal}
+
+overall.data <-
+  te.data %>%
+  filter(Number==3) %>%
+  mutate(Item=as.factor(Year))
+
+plot.data <- overall.data[7:3]
+rownames(plot.data) <- c("Before","After")
+
+likert(plot.data, horizontal = FALSE,
+       main = "I learned a great deal from this course.",
+       xlab = "Percent", # becomes ylab due to horizontal arg,
+       ylab = c("Before","After"),
+       auto.key = list(space = "right", columns = 1,
+                     reverse = TRUE))
+```
+
+# The grades in this course were fairly determined.
+
+```{r grades-fairly-determined}
+overall.data <-
+  te.data %>%
+  filter(Number==894) %>%
+  mutate(Item=as.factor(Year))
+
+plot.data <- overall.data[7:3]
+rownames(plot.data) <- c("Before","After")
+
+likert(plot.data, horizontal = FALSE,
+       main = "The grades in this course were fairly determined.", # or give "title",
+       xlab = "Percent", # becomes ylab due to horizontal arg,
+       ylab = c("Before","After"),
+       title = "Overall, this was an excellent course.",
+       auto.key = list(space = "right", columns = 1,
+                     reverse = TRUE))
+```
