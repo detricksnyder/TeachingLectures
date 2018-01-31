@@ -83,6 +83,49 @@ likert(plot.data, horizontal = FALSE,
                      reverse = TRUE))
 ```
 
+# Learning
+
+## My interest in the subject has increased because of this course.
+
+```{r increased-interest}
+overall.data <-
+  te.data %>%
+  filter(Number==1632) %>%
+  mutate(Item=as.factor(Year))
+
+plot.data <- overall.data[7:3]
+rownames(plot.data) <- c("Before","After")
+
+likert(plot.data, horizontal = FALSE,
+       main = "My interest in the subject has increased because of this course.",
+       xlab = "Percent", # becomes ylab due to horizontal arg,
+       ylab = c("Before","After"),
+       title = "Overall, this was an excellent course.",
+       auto.key = list(space = "right", columns = 1,
+                     reverse = TRUE))
+```
+
+## I learned a great deal from this course.
+
+```{r learned-a-great-deal}
+overall.data <-
+  te.data %>%
+  filter(Number==3) %>%
+  mutate(Item=as.factor(Year))
+
+plot.data <- overall.data[7:3]
+rownames(plot.data) <- c("Before","After")
+
+likert(plot.data, horizontal = FALSE,
+       main = "I learned a great deal from this course..",
+       xlab = "Percent", # becomes ylab due to horizontal arg,
+       ylab = c("Before","After"),
+       title = "Overall, this was an excellent course.",
+       auto.key = list(space = "right", columns = 1,
+                     reverse = TRUE))
+```
+
+
 ## This course advanced my understanding of the subject matter.
 
 ```{r advanced-understanding}
@@ -124,7 +167,9 @@ likert(plot.data, horizontal = FALSE,
                      reverse = TRUE))
 ```
 
-# The grades in this course were fairly determined.
+# Fairness in Grading
+
+## The grades in this course were fairly determined.
 
 ```{r grades-fairly-determined}
 overall.data <-
@@ -137,6 +182,69 @@ rownames(plot.data) <- c("Before","After")
 
 likert(plot.data, horizontal = FALSE,
        main = "The grades in this course were fairly determined.", # or give "title",
+       xlab = "Percent", # becomes ylab due to horizontal arg,
+       ylab = c("Before","After"),
+       title = "Overall, this was an excellent course.",
+       auto.key = list(space = "right", columns = 1,
+                     reverse = TRUE))
+```
+
+## Graded assignments reflected the material covered
+
+```{r reflected-material}
+overall.data <-
+  te.data %>%
+  filter(Number==893) %>%
+  mutate(Item=as.factor(Year))
+
+plot.data <- overall.data[7:3]
+rownames(plot.data) <- c("Before","After")
+
+likert(plot.data, horizontal = FALSE,
+       main = "Graded assignments reflected the material covered.", # or give "title",
+       xlab = "Percent", # becomes ylab due to horizontal arg,
+       ylab = c("Before","After"),
+       title = "Overall, this was an excellent course.",
+       auto.key = list(space = "right", columns = 1,
+                     reverse = TRUE))
+```
+
+## Knew what was expected of me
+
+```{r knew-expectations}
+overall.data <-
+  te.data %>%
+  filter(Number==1633) %>%
+  mutate(Item=as.factor(Year))
+
+plot.data <- overall.data[7:3]
+rownames(plot.data) <- c("Before","After")
+
+likert(plot.data, horizontal = FALSE,
+       main = "I knew what was expected of me in this course..", # or give "title",
+       xlab = "Percent", # becomes ylab due to horizontal arg,
+       ylab = c("Before","After"),
+       title = "Overall, this was an excellent course.",
+       auto.key = list(space = "right", columns = 1,
+                     reverse = TRUE))
+```
+
+
+# Workload
+
+
+
+```{r workload}
+overall.data <-
+  te.data %>%
+  filter(Number==891) %>%
+  mutate(Item=as.factor(Year))
+
+plot.data <- overall.data[7:3]
+rownames(plot.data) <- c("Before","After")
+
+likert(plot.data, horizontal = FALSE,
+       main = "As compared with other courses of equal credit, the workload of this course was:", # or give "title",
        xlab = "Percent", # becomes ylab due to horizontal arg,
        ylab = c("Before","After"),
        title = "Overall, this was an excellent course.",

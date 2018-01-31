@@ -205,6 +205,58 @@ course.}\label{overall-this-was-an-excellent-course.}
 
 \includegraphics{figures/excellent-course-1.png}
 
+\section{Learning}\label{learning}
+
+\subsection{My interest in the subject has increased because of this
+course.}\label{my-interest-in-the-subject-has-increased-because-of-this-course.}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{overall.data <-}
+\StringTok{  }\NormalTok{te.data %>%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(Number==}\DecValTok{1632}\NormalTok{) %>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{Item=}\KeywordTok{as.factor}\NormalTok{(Year))}
+
+\NormalTok{plot.data <-}\StringTok{ }\NormalTok{overall.data[}\DecValTok{7}\NormalTok{:}\DecValTok{3}\NormalTok{]}
+\KeywordTok{rownames}\NormalTok{(plot.data) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"Before"}\NormalTok{,}\StringTok{"After"}\NormalTok{)}
+
+\KeywordTok{likert}\NormalTok{(plot.data, }\DataTypeTok{horizontal =} \OtherTok{FALSE}\NormalTok{,}
+       \DataTypeTok{main =} \StringTok{"My interest in the subject has increased because of this course."}\NormalTok{,}
+       \DataTypeTok{xlab =} \StringTok{"Percent"}\NormalTok{, }\CommentTok{# becomes ylab due to horizontal arg,}
+       \DataTypeTok{ylab =} \KeywordTok{c}\NormalTok{(}\StringTok{"Before"}\NormalTok{,}\StringTok{"After"}\NormalTok{),}
+       \DataTypeTok{title =} \StringTok{"Overall, this was an excellent course."}\NormalTok{,}
+       \DataTypeTok{auto.key =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{space =} \StringTok{"right"}\NormalTok{, }\DataTypeTok{columns =} \DecValTok{1}\NormalTok{,}
+                     \DataTypeTok{reverse =} \OtherTok{TRUE}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{figures/increased-interest-1.png}
+
+\subsection{I learned a great deal from this
+course.}\label{i-learned-a-great-deal-from-this-course.}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{overall.data <-}
+\StringTok{  }\NormalTok{te.data %>%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(Number==}\DecValTok{3}\NormalTok{) %>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{Item=}\KeywordTok{as.factor}\NormalTok{(Year))}
+
+\NormalTok{plot.data <-}\StringTok{ }\NormalTok{overall.data[}\DecValTok{7}\NormalTok{:}\DecValTok{3}\NormalTok{]}
+\KeywordTok{rownames}\NormalTok{(plot.data) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"Before"}\NormalTok{,}\StringTok{"After"}\NormalTok{)}
+
+\KeywordTok{likert}\NormalTok{(plot.data, }\DataTypeTok{horizontal =} \OtherTok{FALSE}\NormalTok{,}
+       \DataTypeTok{main =} \StringTok{"I learned a great deal from this course.."}\NormalTok{,}
+       \DataTypeTok{xlab =} \StringTok{"Percent"}\NormalTok{, }\CommentTok{# becomes ylab due to horizontal arg,}
+       \DataTypeTok{ylab =} \KeywordTok{c}\NormalTok{(}\StringTok{"Before"}\NormalTok{,}\StringTok{"After"}\NormalTok{),}
+       \DataTypeTok{title =} \StringTok{"Overall, this was an excellent course."}\NormalTok{,}
+       \DataTypeTok{auto.key =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{space =} \StringTok{"right"}\NormalTok{, }\DataTypeTok{columns =} \DecValTok{1}\NormalTok{,}
+                     \DataTypeTok{reverse =} \OtherTok{TRUE}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{figures/learned-a-great-deal-1.png}
+
 \subsection{This course advanced my understanding of the subject
 matter.}\label{this-course-advanced-my-understanding-of-the-subject-matter.}
 
@@ -231,7 +283,7 @@ matter.}\label{this-course-advanced-my-understanding-of-the-subject-matter.}
 \includegraphics{figures/advanced-understanding-1.png}
 
 \subsection{I learned a great deal from this
-course.}\label{i-learned-a-great-deal-from-this-course.}
+course.}\label{i-learned-a-great-deal-from-this-course.-1}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -254,7 +306,9 @@ course.}\label{i-learned-a-great-deal-from-this-course.}
 
 \includegraphics{figures/learned-great-deal-1.png}
 
-\section{The grades in this course were fairly
+\section{Fairness in Grading}\label{fairness-in-grading}
+
+\subsection{The grades in this course were fairly
 determined.}\label{the-grades-in-this-course-were-fairly-determined.}
 
 \begin{Shaded}
@@ -278,6 +332,80 @@ determined.}\label{the-grades-in-this-course-were-fairly-determined.}
 \end{Shaded}
 
 \includegraphics{figures/grades-fairly-determined-1.png}
+
+\subsection{Graded assignments reflected the material
+covered}\label{graded-assignments-reflected-the-material-covered}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{overall.data <-}
+\StringTok{  }\NormalTok{te.data %>%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(Number==}\DecValTok{893}\NormalTok{) %>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{Item=}\KeywordTok{as.factor}\NormalTok{(Year))}
+
+\NormalTok{plot.data <-}\StringTok{ }\NormalTok{overall.data[}\DecValTok{7}\NormalTok{:}\DecValTok{3}\NormalTok{]}
+\KeywordTok{rownames}\NormalTok{(plot.data) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"Before"}\NormalTok{,}\StringTok{"After"}\NormalTok{)}
+
+\KeywordTok{likert}\NormalTok{(plot.data, }\DataTypeTok{horizontal =} \OtherTok{FALSE}\NormalTok{,}
+       \DataTypeTok{main =} \StringTok{"Graded assignments reflected the material covered."}\NormalTok{, }\CommentTok{# or give "title",}
+       \DataTypeTok{xlab =} \StringTok{"Percent"}\NormalTok{, }\CommentTok{# becomes ylab due to horizontal arg,}
+       \DataTypeTok{ylab =} \KeywordTok{c}\NormalTok{(}\StringTok{"Before"}\NormalTok{,}\StringTok{"After"}\NormalTok{),}
+       \DataTypeTok{title =} \StringTok{"Overall, this was an excellent course."}\NormalTok{,}
+       \DataTypeTok{auto.key =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{space =} \StringTok{"right"}\NormalTok{, }\DataTypeTok{columns =} \DecValTok{1}\NormalTok{,}
+                     \DataTypeTok{reverse =} \OtherTok{TRUE}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{figures/reflected-material-1.png}
+
+\subsection{Knew what was expected of
+me}\label{knew-what-was-expected-of-me}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{overall.data <-}
+\StringTok{  }\NormalTok{te.data %>%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(Number==}\DecValTok{1633}\NormalTok{) %>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{Item=}\KeywordTok{as.factor}\NormalTok{(Year))}
+
+\NormalTok{plot.data <-}\StringTok{ }\NormalTok{overall.data[}\DecValTok{7}\NormalTok{:}\DecValTok{3}\NormalTok{]}
+\KeywordTok{rownames}\NormalTok{(plot.data) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"Before"}\NormalTok{,}\StringTok{"After"}\NormalTok{)}
+
+\KeywordTok{likert}\NormalTok{(plot.data, }\DataTypeTok{horizontal =} \OtherTok{FALSE}\NormalTok{,}
+       \DataTypeTok{main =} \StringTok{"I knew what was expected of me in this course.."}\NormalTok{, }\CommentTok{# or give "title",}
+       \DataTypeTok{xlab =} \StringTok{"Percent"}\NormalTok{, }\CommentTok{# becomes ylab due to horizontal arg,}
+       \DataTypeTok{ylab =} \KeywordTok{c}\NormalTok{(}\StringTok{"Before"}\NormalTok{,}\StringTok{"After"}\NormalTok{),}
+       \DataTypeTok{title =} \StringTok{"Overall, this was an excellent course."}\NormalTok{,}
+       \DataTypeTok{auto.key =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{space =} \StringTok{"right"}\NormalTok{, }\DataTypeTok{columns =} \DecValTok{1}\NormalTok{,}
+                     \DataTypeTok{reverse =} \OtherTok{TRUE}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{figures/knew-expectations-1.png}
+
+\section{Workload}\label{workload}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{overall.data <-}
+\StringTok{  }\NormalTok{te.data %>%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(Number==}\DecValTok{891}\NormalTok{) %>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{Item=}\KeywordTok{as.factor}\NormalTok{(Year))}
+
+\NormalTok{plot.data <-}\StringTok{ }\NormalTok{overall.data[}\DecValTok{7}\NormalTok{:}\DecValTok{3}\NormalTok{]}
+\KeywordTok{rownames}\NormalTok{(plot.data) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"Before"}\NormalTok{,}\StringTok{"After"}\NormalTok{)}
+
+\KeywordTok{likert}\NormalTok{(plot.data, }\DataTypeTok{horizontal =} \OtherTok{FALSE}\NormalTok{,}
+       \DataTypeTok{main =} \StringTok{"As compared with other courses of equal credit, the workload of this course was:"}\NormalTok{, }\CommentTok{# or give "title",}
+       \DataTypeTok{xlab =} \StringTok{"Percent"}\NormalTok{, }\CommentTok{# becomes ylab due to horizontal arg,}
+       \DataTypeTok{ylab =} \KeywordTok{c}\NormalTok{(}\StringTok{"Before"}\NormalTok{,}\StringTok{"After"}\NormalTok{),}
+       \DataTypeTok{title =} \StringTok{"Overall, this was an excellent course."}\NormalTok{,}
+       \DataTypeTok{auto.key =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{space =} \StringTok{"right"}\NormalTok{, }\DataTypeTok{columns =} \DecValTok{1}\NormalTok{,}
+                     \DataTypeTok{reverse =} \OtherTok{TRUE}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{figures/workload-1.png}
 
 
 \end{document}
