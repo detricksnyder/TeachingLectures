@@ -1,0 +1,54 @@
+---
+title: "Scoring Evaluations"
+author: "Dave Bridges"
+date: "1/31/2018"
+output:
+  pdf_document:
+    highlight: tango
+    keep_tex: yes
+    number_sections: no
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+opts_chunk$set(echo = TRUE)
+
+opts_chunk$set(fig.path='figures/',
+               echo=TRUE, warning=FALSE, message=FALSE,dev=c('png','pdf'))
+options(scipen = 2, digits = 3)
+
+# sets maize and blue color scheme
+color.scheme <- c('#00274c', '#ffcb05')
+```
+
+## Data Import
+
+
+
+```{r data-import}
+library(readr)
+library(dplyr)
+library(tidyr)
+datafile <- 'grades.csv'
+
+library(readr)
+dataset <- read_csv(datafile,
+                    col_types = cols(
+  Grade = col_factor(levels=NULL),
+  Year = col_factor(levels=NULL),
+  Count = col_integer()
+))
+
+dataset <-
+  dataset %>%
+  group_by(Year) %>%
+  mutate(Count.Rel = Count/sum(Count[Year==Year]) *100)
+
+library(ggplot2)
+
+p <- ggplot(dataset, aes(y=Count.Rel, x=Year))
+
+p + geom_bar(aes(fill=Grade), stat='identity') +
+  labs(y="Proportion") 
+```
