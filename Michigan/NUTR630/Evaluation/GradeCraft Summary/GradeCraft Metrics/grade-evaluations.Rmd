@@ -1,0 +1,120 @@
+---
+title: "Scoring Evaluations"
+author: "Dave Bridges"
+date: "1/31/2018"
+output:
+  pdf_document:
+    highlight: tango
+    keep_tex: yes
+    number_sections: no
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+opts_chunk$set(echo = TRUE)
+
+opts_chunk$set(fig.path='figures/',
+               echo=TRUE, warning=FALSE, message=FALSE,dev=c('png','pdf'))
+options(scipen = 2, digits = 3)
+
+# sets maize and blue color scheme
+color.scheme <- c('#00274c', '#ffcb05')
+```
+
+## Data Import
+
+Exported **Assignment Type Summaries** from GradeCraft and imported.
+
+```{r data-import}
+library(readr)
+library(dplyr)
+library(tidyr)
+datafile <- 'Principles of Nutritional Sciences Assignment Type Summary - 2018-02-01.csv'
+
+library(readr)
+dataset <- read_csv(datafile)
+
+dropped.students <- c('dave.bridges','ajian','zhongyli')
+
+assessment.dataset <-
+  dataset %>%
+  select(-`First Name`, -`Last Name`, -Email, -Team) %>%
+  gather(Assignment, Points, -Username) %>% 
+  filter(!(Username %in% dropped.students)) %>%
+  arrange(Points)
+
+summary.dataset <-
+  assessment.dataset %>%
+  group_by(Username) %>%
+  summarize(Total = sum(Points)) %>%
+  arrange(-Total)
+```
+
+This script imports the data from **`r datafile`**.  This script is located at `r getwd()` and was most recently run on `r date()`
+
+```{r points-distribution}
+library(ggplot2)
+
+p <- ggplot(data=summary.dataset, aes(x=Total)) 
+p + geom_histogram(binwidth=50) +
+  labs(x="Final Points",y="Number of Students", title="Distribution of Final Points") +
+  geom_vline(aes(xintercept=1000), color="red", linetype="dashed", size=1) +
+  geom_vline(aes(xintercept=950), color="red", linetype="dashed", size=0.5) +
+  geom_vline(aes(xintercept=900), color="red", linetype="dashed", size=0.5) +
+  geom_vline(aes(xintercept=850), color="red", linetype="dashed", size=0.5) +
+  geom_vline(aes(xintercept=800), color="red", linetype="dashed", size=0.5) +
+  geom_vline(aes(xintercept=750), color="red", linetype="dashed", size=0.5) +
+  geom_vline(aes(xintercept=700), color="red", linetype="dashed", size=0.5) 
+```
+
+There were `r filter(summary.dataset, Total>1000) %>% count` students who earned an A.  Among those who earned an A, their average points were `r  filter(summary.dataset, Total>1000) %>% summarize(Averagel=mean(Total))`.  This means that the A students averaged **`r  filter(summary.dataset, Total>1000) %>% summarize(Averagel=mean(Total))-1000`** points too many than they needed.  This is relative to the overall mean of `r summary.dataset %>% summarize(Averagel=mean(Total))`
+
+## Assessment Choices
+
+### Aggregated
+
+```{r points-from-assessments-summary}
+assignment.summary.data <-
+  assessment.dataset %>%
+  group_by(Assignment) %>%
+  summarize(Mean.Points = mean(Points)) %>%
+  arrange(-Mean.Points)
+
+positions <- as.character(assignment.summary.data$Assignment)
+
+library(forcats)
+
+assignment.summary.data$Assignment <- fct_relevel(assignment.summary.data$Assignment, positions)
+
+p <- ggplot(assignment.summary.data, aes(y=Mean.Points, x=Assignment))
+p + geom_bar(stat='identity', aes(fill=Assignment)) + scale_x_discrete(limits = positions) +   
+  labs(title="Aggregate Assignment Breakdown",  y = "Average Points") +
+  theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())
+
+p <- ggplot(filter(assignment.summary.data, Assignment != 'Midterm'), aes(y=Mean.Points, x=Assignment))
+p + geom_bar(stat='identity', aes(fill=Assignment)) + scale_x_discrete(limits = positions) +   
+  labs(title="Aggregate Assignment Breakdown - Excluding Midterm", y = "Average Points") +
+  theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())
+
+```
+
+### Student Level
+
+```{r points-from-assessments-individual}
+assessment.dataset$Username <- fct_relevel(assessment.dataset$Username, summary.dataset$Username)  
+assessment.dataset$Assignment <- fct_relevel(assessment.dataset$Assignment, positions)
+
+p <- ggplot(assessment.dataset, aes(y=Points,x=Username))
+
+p + geom_bar(stat='identity', aes(fill=Assignment)) +
+  labs(title="Student Level Assignment Breakdown") +
+  theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank()) +
+    geom_hline(aes(yintercept=1000), color="black", linetype="dashed", size=0.5) 
+```
