@@ -75,31 +75,78 @@ There were `r filter(summary.dataset, Total>1000) %>% count` students who earned
 ### Aggregated
 
 ```{r points-from-assessments-summary}
+required.assignments <- c('Midterm','Class Based Assignments','In Class Quiz')
+
 assignment.summary.data <-
   assessment.dataset %>%
   group_by(Assignment) %>%
-  summarize(Mean.Points = mean(Points)) %>%
-  arrange(-Mean.Points)
+  summarize(Mean.Points = mean(Points),
+            SD.Points = sd(Points)) %>%
+  mutate(Required = ifelse(Assignment %in% required.assignments, "Required", "Optional")) %>%
+  mutate(Required = relevel(as.factor(Required), ref="Required")) %>%
+  arrange(Required, -Mean.Points)
+
+assignment.summary.data.required <-
+  assessment.dataset %>%
+  mutate(Required = ifelse(Assignment %in% required.assignments, "Required", "Optional")) %>%
+  mutate(Required = relevel(as.factor(Required), ref="Required")) %>%
+  group_by(Username, Required) %>%
+  summarize(Points = sum(Points)) %>%
+  group_by(Required) %>%
+  summarize(Median.Points = median(Points),
+            Median.Points.SD = sd(Points)) %>%
+  mutate(Relative.Points = Median.Points/sum(Median.Points) *100,
+         Relative.Points.SD = Median.Points.SD/sum(Median.Points)*100)
+
+assignment.summary.data.relative <-
+  assessment.dataset %>%
+  group_by(Username) %>%
+  mutate(Total = sum(Points)) %>%
+  group_by(Assignment) %>%
+  summarize(Relative.Points = mean(Points/Total)*100,
+            SD.Relative.Points = sd(Points/Total)*100) %>%
+  mutate(Required = ifelse(Assignment %in% required.assignments, "Required", "Optional")) %>%
+  mutate(Required = relevel(as.factor(Required), ref="Required")) %>%
+  arrange(Required, -Relative.Points)
 
 positions <- as.character(assignment.summary.data$Assignment)
 
 library(forcats)
 
 assignment.summary.data$Assignment <- fct_relevel(assignment.summary.data$Assignment, positions)
+assignment.summary.data.relative$Assignment <- fct_relevel(assignment.summary.data.relative$Assignment, positions)
 
 p <- ggplot(assignment.summary.data, aes(y=Mean.Points, x=Assignment))
-p + geom_bar(stat='identity', aes(fill=Assignment)) + scale_x_discrete(limits = positions) +   
+p + geom_bar(stat='identity', aes(fill=Assignment,col=Required)) + scale_x_discrete(limits = positions) +   
   labs(title="Aggregate Assignment Breakdown",  y = "Average Points") +
   theme(axis.title.x=element_blank(),
         axis.text.x=element_blank(),
         axis.ticks.x=element_blank())
 
 p <- ggplot(filter(assignment.summary.data, Assignment != 'Midterm'), aes(y=Mean.Points, x=Assignment))
-p + geom_bar(stat='identity', aes(fill=Assignment)) + scale_x_discrete(limits = positions) +   
+p + geom_bar(stat='identity', aes(fill=Assignment,col=Required)) + scale_x_discrete(limits = positions) +   
   labs(title="Aggregate Assignment Breakdown - Excluding Midterm", y = "Average Points") +
   theme(axis.title.x=element_blank(),
         axis.text.x=element_blank(),
         axis.ticks.x=element_blank())
+
+p <- ggplot(assignment.summary.data.relative, aes(y=Relative.Points, x=Assignment))
+p + geom_bar(stat='identity', aes(fill=Assignment,col=Required)) + scale_x_discrete(limits = positions) +   
+  labs(title="Aggregate Assignment Breakdown",  y = "Points as a Percent of Total") +
+  theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())
+
+p <- ggplot(filter(assignment.summary.data.relative, Assignment != 'Midterm'), aes(y=Relative.Points, x=Assignment))
+p + geom_bar(stat='identity', aes(fill=Assignment,col=Required)) + scale_x_discrete(limits = positions) +   
+  labs(title="Aggregate Assignment Breakdown - Excluding Midterm", y = "Points as a Percent of Total") +
+  theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())
+
+kable(assignment.summary.data.required, caption="Average total points")
+kable(assignment.summary.data, caption="Average total points per assignment")
+kable(assignment.summary.data.relative, caption="Average Relative points per assignment as a percent of total")
 
 ```
 
