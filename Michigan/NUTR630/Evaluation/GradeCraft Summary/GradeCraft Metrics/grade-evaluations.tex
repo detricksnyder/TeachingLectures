@@ -168,8 +168,8 @@ This script imports the data from \textbf{Principles of Nutritional
 Sciences Assignment Type Summary - 2018-02-01.csv}. This script is
 located at
 /Users/davebrid/Documents/GitHub/TeachingLectures/Michigan/NUTR630/Evaluation/GradeCraft
-Summary/GradeCraft Metrics and was most recently run on Sat Feb 17
-11:34:33 2018
+Summary/GradeCraft Metrics and was most recently run on Tue Feb 27
+10:27:22 2018
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -395,6 +395,173 @@ Public Contribution & 1.08 & 2.142 & Optional\tabularnewline
 \end{Shaded}
 
 \includegraphics{figures/points-from-assessments-individual-1.png}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{assessment.dataset.required <-}
+\StringTok{  }\NormalTok{assessment.dataset }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{Required =} \KeywordTok{ifelse}\NormalTok{(Assignment }\OperatorTok{%in%}\StringTok{ }\NormalTok{required.assignments, }\StringTok{"Required"}\NormalTok{, }\StringTok{"Optional"}\NormalTok{)) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{group_by}\NormalTok{(Username, Required) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{summarise}\NormalTok{(}\DataTypeTok{Points =} \KeywordTok{sum}\NormalTok{(Points)) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{spread}\NormalTok{(Required, Points) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{Total.Points =}\NormalTok{ Required }\OperatorTok{+}\StringTok{ }\NormalTok{Optional)}
+  
+\NormalTok{lm.points <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(Optional }\OperatorTok{~}\StringTok{ }\NormalTok{Required, }\DataTypeTok{data=}\NormalTok{assessment.dataset.required)  }
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mfrow=}\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{))}
+\KeywordTok{plot}\NormalTok{(lm.points)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{figures/required-optional-correlations-1.png}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(broom)}
+\KeywordTok{kable}\NormalTok{(}\KeywordTok{tidy}\NormalTok{(lm.points), }\DataTypeTok{caption=}\StringTok{"Linear model of optional points dependent on required points per student."}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}lrrrr@{}}
+\caption{Linear model of optional points dependent on required points
+per student.}\tabularnewline
+\toprule
+term & estimate & std.error & statistic & p.value\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+term & estimate & std.error & statistic & p.value\tabularnewline
+\midrule
+\endhead
+(Intercept) & 315.4 & 82.356 & 3.830 & 0.000\tabularnewline
+Required & -0.1 & 0.103 & -0.971 & 0.336\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{shapiro.tidy <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x) }\KeywordTok{tidy}\NormalTok{(}\KeywordTok{shapiro.test}\NormalTok{(x))}
+
+\KeywordTok{kable}\NormalTok{(}\KeywordTok{with}\NormalTok{(assessment.dataset.required, }\KeywordTok{rbind}\NormalTok{(}\DataTypeTok{Optional =} \KeywordTok{shapiro.tidy}\NormalTok{(Optional), }
+                                              \DataTypeTok{Required=}\KeywordTok{shapiro.tidy}\NormalTok{(Required),}
+                                              \DataTypeTok{Total.Points =} \KeywordTok{shapiro.tidy}\NormalTok{(Total.Points))), }\DataTypeTok{caption=}\StringTok{"Shapiro-Wilk tests for normality"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}lrrl@{}}
+\caption{Shapiro-Wilk tests for normality}\tabularnewline
+\toprule
+& statistic & p.value & method\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+& statistic & p.value & method\tabularnewline
+\midrule
+\endhead
+Optional & 0.986 & 0.785 & Shapiro-Wilk normality test\tabularnewline
+Required & 0.953 & 0.042 & Shapiro-Wilk normality test\tabularnewline
+Total.Points & 0.970 & 0.225 & Shapiro-Wilk normality
+test\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#correlations}
+\KeywordTok{kable}\NormalTok{(}\KeywordTok{tidy}\NormalTok{(}\KeywordTok{with}\NormalTok{(assessment.dataset.required, }\KeywordTok{cor.test}\NormalTok{(Optional, Required,}\DataTypeTok{method=}\StringTok{"spearman"}\NormalTok{)), }\DataTypeTok{caption=}\StringTok{"Correlation between optional and required points.  Spearman is used due to lack of normality of the required points distribution."}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}rrrll@{}}
+\toprule
+estimate & statistic & p.value & method & alternative\tabularnewline
+\midrule
+\endhead
+-0.07 & 23657 & 0.623 & Spearman's rank correlation rho &
+two.sided\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{kable}\NormalTok{(}\KeywordTok{tidy}\NormalTok{(}\KeywordTok{with}\NormalTok{(assessment.dataset.required, }\KeywordTok{cor.test}\NormalTok{(Optional, Total.Points,}\DataTypeTok{method=}\StringTok{"pearson"}\NormalTok{)), }\DataTypeTok{caption=}\StringTok{"Correlation between optional and total points."}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}rrrrrrll@{}}
+\toprule
+estimate & statistic & p.value & parameter & conf.low & conf.high &
+method & alternative\tabularnewline
+\midrule
+\endhead
+0.513 & 4.18 & 0 & 49 & 0.277 & 0.691 & Pearson's product-moment
+correlation & two.sided\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(assessment.dataset.required, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{y=}\NormalTok{Optional,}\DataTypeTok{x=}\NormalTok{Required))}
+\NormalTok{p }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_point}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_smooth}\NormalTok{(}\DataTypeTok{method=}\StringTok{'lm'}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{y=}\StringTok{"Optional Points"}\NormalTok{, }\DataTypeTok{x=}\StringTok{"Required Points"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_rug}\NormalTok{(}\DataTypeTok{alpha=}\FloatTok{0.5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{figures/required-optional-correlations-2.png}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(assessment.dataset.required, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{y=}\NormalTok{Total.Points,}\DataTypeTok{x=}\NormalTok{Optional))}
+\NormalTok{p }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_point}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_smooth}\NormalTok{(}\DataTypeTok{method=}\StringTok{'lm'}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{y=}\StringTok{"Total Points"}\NormalTok{, }\DataTypeTok{x=}\StringTok{"Optional Points"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_hline}\NormalTok{(}\DataTypeTok{yintercept =} \DecValTok{1000}\NormalTok{, }\DataTypeTok{lty=}\DecValTok{2}\NormalTok{,}\DataTypeTok{col=}\StringTok{"red"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_rug}\NormalTok{(}\DataTypeTok{alpha=}\FloatTok{0.5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{figures/required-optional-correlations-3.png}
+
+\section{Session Information}\label{session-information}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{sessionInfo}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## R version 3.4.2 (2017-09-28)
+## Platform: x86_64-apple-darwin15.6.0 (64-bit)
+## Running under: macOS High Sierra 10.13.3
+## 
+## Matrix products: default
+## BLAS: /Library/Frameworks/R.framework/Versions/3.4/Resources/lib/libRblas.0.dylib
+## LAPACK: /Library/Frameworks/R.framework/Versions/3.4/Resources/lib/libRlapack.dylib
+## 
+## locale:
+## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+## [1] broom_0.4.3   forcats_0.2.0 ggplot2_2.2.1 bindrcpp_0.2  tidyr_0.7.2  
+## [6] dplyr_0.7.4   readr_1.1.1   knitr_1.17   
+## 
+## loaded via a namespace (and not attached):
+##  [1] Rcpp_0.12.14     compiler_3.4.2   plyr_1.8.4       highr_0.6       
+##  [5] bindr_0.1        tools_3.4.2      digest_0.6.12    evaluate_0.10.1 
+##  [9] tibble_1.3.4     gtable_0.2.0     nlme_3.1-131     lattice_0.20-35 
+## [13] pkgconfig_2.0.1  rlang_0.1.4      psych_1.7.8      parallel_3.4.2  
+## [17] yaml_2.1.15      stringr_1.2.0    hms_0.4.0        rprojroot_1.2   
+## [21] grid_3.4.2       tidyselect_0.2.3 glue_1.2.0       R6_2.2.2        
+## [25] foreign_0.8-69   rmarkdown_1.8    reshape2_1.4.2   purrr_0.2.4     
+## [29] magrittr_1.5     backports_1.1.1  scales_0.5.0     htmltools_0.3.6 
+## [33] mnormt_1.5-5     assertthat_0.2.0 colorspace_1.3-2 labeling_0.3    
+## [37] stringi_1.1.6    lazyeval_0.2.1   munsell_0.4.3
+\end{verbatim}
 
 
 \end{document}

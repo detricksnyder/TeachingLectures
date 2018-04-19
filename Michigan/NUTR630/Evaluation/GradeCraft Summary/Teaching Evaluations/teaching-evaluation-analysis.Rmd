@@ -69,6 +69,43 @@ overall.data <-
   filter(Number==1) %>%
   mutate(Item=as.factor(Year))
 
+library(tidyr)
+library(dplyr)
+
+individualized.overall.data.agg <-
+  te.data %>%
+  dplyr::select(Question, Year, SA, A, N, D, SD) %>%
+  dplyr::select(SA:SD,Question,Year) %>%
+  gather(value=Number,key=Response,-Question,-Year) %>%
+  group_by(Question,Year,Response) %>%
+  expand(Count=seq(1:Number)) %>%
+  mutate(Value = ifelse(Response=='SA', 5,
+                        ifelse(Response=='A',4,
+                               ifelse(Response=='N',3,
+                                      ifelse(Response=='D',2,
+                                             ifelse(Response=='SD',1,0))))))
+  
+
+question.summary <-
+  individualized.overall.data.agg %>%
+  group_by(Question,Year) %>%
+  summarize(value.list = list(Value)) %>%
+  spread(Year,value.list) %>%
+  rename(First.Year=`2016`,
+         Second.Year=`2017`) %>%
+  group_by(Question) %>%
+  mutate(First.mean=mean(unlist(First.Year)),
+         Second.mean=mean(unlist(Second.Year))) %>%
+  mutate(Change=Second.mean-First.mean) %>%
+  filter(First.Year != 'NULL') %>%
+  mutate(Mann.Whitney.p=wilcox.test(unlist(First.Year),unlist(Second.Year))$p.value,
+         Mann.Whitney.t=wilcox.test(unlist(First.Year),unlist(Second.Year))$statistic) %>%
+  arrange(Mann.Whitney.p) %>%
+  dplyr::select(-First.Year,-Second.Year)
+
+kable(question.summary,caption="Mann-Whitney Tests for teaching evaluation questions asked in both years.")
+write.csv(question.summary, file="Statistical Tests for Teaching Evaluations.csv")
+
 library(HH)
 
 plot.data <- overall.data[7:3]

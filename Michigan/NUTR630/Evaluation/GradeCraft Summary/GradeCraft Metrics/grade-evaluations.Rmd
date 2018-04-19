@@ -165,3 +165,51 @@ p + geom_bar(stat='identity', aes(fill=Assignment)) +
         axis.ticks.x=element_blank()) +
     geom_hline(aes(yintercept=1000), color="black", linetype="dashed", size=0.5) 
 ```
+
+
+```{r required-optional-correlations}
+assessment.dataset.required <-
+  assessment.dataset %>% 
+  mutate(Required = ifelse(Assignment %in% required.assignments, "Required", "Optional")) %>%
+  group_by(Username, Required) %>%
+  summarise(Points = sum(Points)) %>%
+  spread(Required, Points) %>%
+  mutate(Total.Points = Required + Optional)
+  
+lm.points <- lm(Optional ~ Required, data=assessment.dataset.required)  
+par(mfrow=c(2,2))
+plot(lm.points)
+
+library(broom)
+kable(tidy(lm.points), caption="Linear model of optional points dependent on required points per student.")
+
+shapiro.tidy <- function(x) tidy(shapiro.test(x))
+
+kable(with(assessment.dataset.required, rbind(Optional = shapiro.tidy(Optional), 
+                                              Required=shapiro.tidy(Required),
+                                              Total.Points = shapiro.tidy(Total.Points))), caption="Shapiro-Wilk tests for normality")
+
+#correlations
+kable(tidy(with(assessment.dataset.required, cor.test(Optional, Required,method="spearman")), caption="Correlation between optional and required points.  Spearman is used due to lack of normality of the required points distribution."))
+
+kable(tidy(with(assessment.dataset.required, cor.test(Optional, Total.Points,method="pearson")), caption="Correlation between optional and total points."))
+
+p <- ggplot(assessment.dataset.required, aes(y=Optional,x=Required))
+p + geom_point() +
+  geom_smooth(method='lm') +
+  labs(y="Optional Points", x="Required Points") +
+  geom_rug(alpha=0.5)
+
+p <- ggplot(assessment.dataset.required, aes(y=Total.Points,x=Optional))
+p + geom_point() +
+  geom_smooth(method='lm') +
+  labs(y="Total Points", x="Optional Points") +
+  geom_hline(yintercept = 1000, lty=2,col="red") +
+  geom_rug(alpha=0.5)
+```
+
+# Session Information
+
+```{r session-info}
+sessionInfo()
+```
