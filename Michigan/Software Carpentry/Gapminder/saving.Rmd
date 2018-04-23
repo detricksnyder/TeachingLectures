@@ -1,0 +1,54 @@
+---
+title: "Saving Data and Plots - R Gapminder"
+author: "Dave Bridges"
+date: "4/23/2018"
+output:
+  html_document:
+    keep_md: true
+    theme: united
+    highlight: tango
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r sample-plot}
+library(ggplot2)
+library(gapminder)
+ggplot(data = gapminder, aes(x = gdpPercap, fill=continent)) +
+ geom_density(alpha=0.6) + facet_wrap( ~ year) + scale_x_log10()
+```
+
+You can save a plot from within RStudio using the ‘Export’ button in the ‘Plot’ window. **Show this** This will give you the option of saving as a .pdf or as .png, .jpg or other image formats.
+
+```{r saving-plots}
+pdf("Life_Exp_vs_time.pdf", width=12, height=4)
+ggplot(data = gapminder, aes(x = gdpPercap, fill=continent)) +
+ geom_density(alpha=0.6) + facet_wrap( ~ year) + scale_x_log10()
+dev.off()
+```
+
+This can be repeated with other commands including png or jpg.  **You must remember to close the device**  
+
+ Within ggplot there is another method
+
+# Saving within ggplot
+
+```{r ggsave}
+ggplot(data = gapminder, aes(x = gdpPercap, fill=continent)) +
+ geom_density(alpha=0.6) + facet_wrap( ~ year) + scale_x_log10()
+
+ggsave("My_most_recent_plot.pdf")
+```
+
+# What about saving data
+
+can write as table, excel or csv
+
+```{r saving-data}
+library(gapminder)
+gapminder
+
+write.csv(gapminder, file="Gapminder_data.csv")
+```
