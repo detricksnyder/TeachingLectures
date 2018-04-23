@@ -88,3 +88,14 @@ gapminder
 ```r
 write.csv(gapminder, file="Gapminder_data.csv")
 ```
+
+Can also write as a table (tab separated or excel file)
+
+# Challenge
+
+
+```saving
+Write a data-cleaning script file that subsets the gapminder data to include only data points collected since 1990.
+
+Use this script to write out the new subset to a file in the cleaned-data/ directory.
+```
