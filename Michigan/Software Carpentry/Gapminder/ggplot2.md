@@ -463,3 +463,5 @@ ggplot(data = gapminder, aes(x = gdpPercap, fill=continent)) +
 ```
 
 ![](ggplot2_files/figure-html/challenge-5-solution-1.png)<!-- -->
+
+# Next up, saving our data!
