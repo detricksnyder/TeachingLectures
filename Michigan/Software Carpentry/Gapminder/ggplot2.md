@@ -11,6 +11,24 @@ output:
 
 
 
+# Using libraries (1:00-1:05)
+
+Sometimes someone else has written a useful function such as the `f_to_k` example from yesterday.  They then share those functions within libraries so others can reuse them.  To install and then load libraries you can use the `install.packages` command.  
+
+There are many r-packages, some stored in CRAN: https://cran.r-project.org/web/packages/available_packages_by_date.html
+
+Once installed on your computer, each time you need an external library you need to load it into your session using the `library` command.
+
+
+```r
+#install.packages('ggplot2')
+#install.packages("gapminder")
+library(ggplot2)
+library(gapminder)
+```
+
+
+
 # Introduction to Plotting (1:00-1:05)
 
 There are several plotting packages in R, including base graphics, lattice and ggplot.  Zena talked about *base graphics* yesterday. Today we are going to focus on ggplot as a plotting tool. 
@@ -24,11 +42,6 @@ First we need to install and load *ggplot2* and *gapminder*.  Take a minute to l
 
 
 ```r
-#install.packages('ggplot2')
-#install.packages("gapminder")
-library(ggplot2)
-library(gapminder)
-
 #look around at the gapminder data
 summary(gapminder)
 ```
