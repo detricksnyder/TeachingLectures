@@ -13,7 +13,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Introduction to Plotting (0-5 min)
+# Introduction to Plotting (1:00-1:05)
 
 There are several plotting packages in R, including base graphics, lattice and ggplot.  Zena talked about *base graphics* yesterday. Today we are going to focus on ggplot as a plotting tool. 
 
@@ -34,7 +34,7 @@ library(gapminder)
 summary(gapminder)
 ```
 
-# Introduction to Plotting (5-20 min)
+# Introduction to Plotting (1:05-1:20)
 
 Lets make a graph about the GDP per capita and how it relates to life expectancy.  We are going to start with the full command and then go back and rebuild it.
 
@@ -52,16 +52,15 @@ ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp))
 #this will draw the axis but not the points
 ```
 
-Now that we have the data input we tell ggplot2 *what way* we want to plot the data using the aes (or aesthetics) function.  Here we say that we want to add the geometry points.  This put graphs the data as points.
+Now that we have the data input we tell ggplot2 *what way* we want to plot the data using the aes (or aesthetics) function.  Here we say that we want to add the geometry points.  This put graphs the data as points.  To add points we use the pipe + and add a geom that we use for points
 
 ```{r ggplot-3}
-# next to add points we use the pipe + and add a geom that we use for points
 ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
   geom_point()
 ```
 
 
-Now lets change the colors of the points
+Now lets change the colors of the points,  Several color options are available here: http://sape.inf.usi.ch/quick-reference/ggplot2/colour
 
 ```{r ggplot-4}
 ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
@@ -92,7 +91,7 @@ ggplot(data = gapminder, aes(x=gdpPercap, y=lifeExp)) +
   geom_smooth() + geom_rug()
 ```
 
-# Challenge #1  (20-35 mins)
+# Challenge #1  (1:20-1:25)
 
 ```{challenge-1}
 Modify the example so that the figure shows how life expectancy has changed over time:
@@ -114,7 +113,7 @@ Take a minute to play around graphing the relationship between the variables, us
 
 **Paste your interesting graph code into the etherpad**
 
-# Lineplots and Grouping (25-40 mins)
+# Lineplots and Grouping (1:25-1:40)
 
 We are going to move onto how to use lineplots, this was geom_line, looking at the relationship between life expectancy and year.  How would we code this so that the x-axis is the year and the y-axis is life expectancy.  With that set lets draw a lineplot
 
@@ -150,7 +149,7 @@ ggplot(data = gapminder, aes(x=year, y=lifeExp, by=country, color=continent)) +
   geom_line() + geom_point()
 ```
 
-# Scaling (40-45 mins)
+# Scaling (1:40-1:45)
 
 Now lets try grouping points by identifying them based on their color or country
 
@@ -208,7 +207,7 @@ ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
   geom_point() + scale_x_log10() + geom_smooth(method="loess")
 ```
 
-# Multipanel Figures (45-55 mins)
+# Multipanel Figures (1:45-1:55)
 
 Lets try to color all these by continent
 
@@ -300,7 +299,7 @@ ggplot(data = subset(gapminder, continent=="Americas"), aes(x = year, y = lifeEx
   theme(axis.text.x=element_blank(), axis.ticks.x=element_blank())
 ```
 
-# Final Challenge (55-60 mins)
+# Final Challenge (1:55-2:00)
 
 ```{challenge-5}
 Create a density plot of GDP per capita, filled by continent.  This is `geom_density`

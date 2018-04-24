@@ -15,13 +15,15 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Lets say we want to calculate the average GDP/capita for each continent. lets use subsetting, first lets make sure we have gapminder loaded
 
-#Subsetting and calculating means (0-5 mins)
+# Subsetting and calculating means (2:30-2:35)
 
 ```{r means-africa}
 library(gapminder)
 #update this based on how Zena taught subsetting
 mean(gapminder$gdpPercap)
 gapminder[gapminder$continent == "Africa",]
+#alternate method
+subset(gapminder, continent == 'Africa')
 gapminder[gapminder$continent == "Africa",]$gdpPercap
 mean(gapminder[gapminder$continent == "Africa",]$gdpPercap)
 ```
@@ -45,7 +47,7 @@ library(dplyr)
 
 There are several commands including select, filter and group_by/summarize that we are going to go through today.
 
-# Select (5-10 mins)
+# Select (2:35-2:40)
 
 ```{r select}
 year_country_gdp <- select(gapminder,year,country,gdpPercap)
@@ -57,12 +59,14 @@ What did this do?  Select picks out a subset of columns.  See image at `https://
 
 ![Image for group_by](https://swcarpentry.github.io/r-novice-gapminder/fig/13-dplyr-fig1.png)
 
-# Filter (5-10 mins)
+# Filter (2:40-2:45)
 
 Filters can select a subset of rows.
 
 ```{r filter}
 gapminder_euro <- filter(gapminder, continent=="Europe")
+#similar to subset
+gapminder_euro <- subset(gapminder, continent=="Europe")
 
 #written another way with pipes
 gapminder_euro <- gapminder %>% filter(continent=="Europe")
@@ -79,13 +83,13 @@ year_country_gdp_euro <-
   select(year,country,gdpPercap)
 ```
 
-# Challenge 1 (15-20 mins)
+# Challenge 1 (2:45-2:50)
 
 ```{challenge-1}
 Write a single command (which can span multiple lines and includes pipes) that will produce a dataframe that has the African values for lifeExp, country and year, but not for other Continents. How many rows does your dataframe have and why?
 ```
 
-# Group By with Summarize (20-30 mins)
+# Group By with Summarize (2:50-3:00)
 
 Now lets look at the combination of group_by and summarize
 
@@ -136,13 +140,13 @@ gdp_bycontinents <-
 gdp_bycontinents
 ```
 
-# Group By and Summarize Challenge (30-35)
+# Group By and Summarize Challenge (3:00-3:05)
 
 ```{challenge}
 Calculate the average life expectancy per country. Which has the longest average life expectancy and which has the shortest average life expectancy?
 ```
 
-# Multiple variables (35-40)
+# Multiple variables (3:05-3:10)
 
 ```{r multiple-variables}
 #lets group by multiple variables, here lets now incude year and contienent
@@ -154,7 +158,7 @@ gdp_bycontinents_years <-
 gdp_bycontinents_years
 ```
 
-# Mutate (40-45 mins)
+# Mutate (3:10-3:20)
 
 Mutate adds a new column
 
@@ -177,7 +181,7 @@ gdp_bycontinents <-
 gdp_bycontinents
 ```
 
-# Piping to GGPlot (45-50 mins)
+# Piping to GGPlot (3:20-3:30)
 
 ```{r ggplot}
 library(ggplot2)
@@ -190,9 +194,12 @@ gapminder %>%
   facet_wrap(~continent)
 ```
 
-# Final Challenge (55-60 mins)
+# Final Challenge (3:30-3:45)
 
 ```{final-challenge}
 Calculate the average life expectancy in 2002 of 2 randomly selected countries for each continent. Then arrange the continent names in reverse order. Hint: Use the dplyr functions arrange() and sample_n(), they have similar syntax to other dplyr functions.
 ```
 
+# Next Up Literate Programming
+
+https://swcarpentry.github.io/r-novice-gapminder/15-knitr-markdown/

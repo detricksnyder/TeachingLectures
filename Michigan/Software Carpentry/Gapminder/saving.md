@@ -21,7 +21,14 @@ ggplot(data = gapminder, aes(x = gdpPercap, fill=continent)) +
 
 ![](saving_files/figure-html/sample-plot-1.png)<!-- -->
 
-You can save a plot from within RStudio using the ‘Export’ button in the ‘Plot’ window. **Show this** This will give you the option of saving as a .pdf or as .png, .jpg or other image formats.
+# Several Ways to Save Plots (2:00-2:05)
+
+You can save a plot from within RStudio using:
+
+* the `pdf()`, `png()`, `jpg()`
+* the ‘Export’ button in the ‘Plot’ window. **Show this** This will give you the option of saving as a .pdf or as .png, .jpg or other image formats.
+* `ggsave()` see `?ggsave()`
+* within a Rmd file (will talk about later)
 
 
 ```r
@@ -58,7 +65,7 @@ ggsave("My_most_recent_plot.pdf")
 ## Saving 7 x 5 in image
 ```
 
-# What about saving data
+# What about saving data (2:05-2:15)
 
 can write as table, excel or csv
 
@@ -89,9 +96,9 @@ gapminder
 write.csv(gapminder, file="Gapminder_data.csv")
 ```
 
-Can also write as a table (tab separated or excel file)
+Can also write as a table (tab separated or excel file).  To use excel I prefer the packages `readxl` and `writexl` which contain the functions `read_excel` and `write_xlsx`.
 
-# Challenge
+# Challenge (2:15-2:20)
 
 
 ```saving
@@ -99,3 +106,5 @@ Write a data-cleaning script file that subsets the gapminder data to include onl
 
 Use this script to write out the new subset to a file in the cleaned-data/ directory.
 ```
+
+# Up Next: Break and dplyr

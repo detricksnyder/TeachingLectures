@@ -13,7 +13,7 @@ output:
 
 Lets say we want to calculate the average GDP/capita for each continent. lets use subsetting, first lets make sure we have gapminder loaded
 
-#Subsetting and calculating means (0-5 mins)
+# Subsetting and calculating means (2:30-2:35)
 
 
 ```r
@@ -28,6 +28,28 @@ mean(gapminder$gdpPercap)
 
 ```r
 gapminder[gapminder$continent == "Africa",]
+```
+
+```
+## # A tibble: 624 x 6
+##    country continent  year lifeExp      pop gdpPercap
+##     <fctr>    <fctr> <int>   <dbl>    <int>     <dbl>
+##  1 Algeria    Africa  1952  43.077  9279525  2449.008
+##  2 Algeria    Africa  1957  45.685 10270856  3013.976
+##  3 Algeria    Africa  1962  48.303 11000948  2550.817
+##  4 Algeria    Africa  1967  51.407 12760499  3246.992
+##  5 Algeria    Africa  1972  54.518 14760787  4182.664
+##  6 Algeria    Africa  1977  58.014 17152804  4910.417
+##  7 Algeria    Africa  1982  61.368 20033753  5745.160
+##  8 Algeria    Africa  1987  65.799 23254956  5681.359
+##  9 Algeria    Africa  1992  67.744 26298373  5023.217
+## 10 Algeria    Africa  1997  69.152 29072015  4797.295
+## # ... with 614 more rows
+```
+
+```r
+#alternate method
+subset(gapminder, continent == 'Africa')
 ```
 
 ```
@@ -215,7 +237,7 @@ library(dplyr)
 
 There are several commands including select, filter and group_by/summarize that we are going to go through today.
 
-# Select (5-10 mins)
+# Select (2:35-2:40)
 
 
 ```r
@@ -265,13 +287,15 @@ What did this do?  Select picks out a subset of columns.  See image at `https://
 
 ![Image for group_by](https://swcarpentry.github.io/r-novice-gapminder/fig/13-dplyr-fig1.png)
 
-# Filter (5-10 mins)
+# Filter (2:40-2:45)
 
 Filters can select a subset of rows.
 
 
 ```r
 gapminder_euro <- filter(gapminder, continent=="Europe")
+#similar to subset
+gapminder_euro <- subset(gapminder, continent=="Europe")
 
 #written another way with pipes
 gapminder_euro <- gapminder %>% filter(continent=="Europe")
@@ -289,14 +313,14 @@ year_country_gdp_euro <-
   select(year,country,gdpPercap)
 ```
 
-# Challenge 1 (15-20 mins)
+# Challenge 1 (2:45-2:50)
 
 
 ```challenge
 Write a single command (which can span multiple lines and includes pipes) that will produce a dataframe that has the African values for lifeExp, country and year, but not for other Continents. How many rows does your dataframe have and why?
 ```
 
-# Group By with Summarize (20-30 mins)
+# Group By with Summarize (2:50-3:00)
 
 Now lets look at the combination of group_by and summarize
 
@@ -460,14 +484,14 @@ gdp_bycontinents
 ## 5   Oceania      18621.609      34435.37    10039.5956
 ```
 
-# Group By and Summarize Challenge (30-35)
+# Group By and Summarize Challenge (3:00-3:05)
 
 
 ```challenge
 Calculate the average life expectancy per country. Which has the longest average life expectancy and which has the shortest average life expectancy?
 ```
 
-# Multiple variables (35-40)
+# Multiple variables (3:05-3:10)
 
 
 ```r
@@ -498,7 +522,7 @@ gdp_bycontinents_years
 ## # ... with 50 more rows
 ```
 
-# Mutate (40-45 mins)
+# Mutate (3:10-3:20)
 
 Mutate adds a new column
 
@@ -546,7 +570,7 @@ gdp_bycontinents
 ## 5   Oceania      18621.609      34435.37    10039.5956       24395.77
 ```
 
-# Piping to GGPlot (45-50 mins)
+# Piping to GGPlot (3:20-3:30)
 
 
 ```r
@@ -562,10 +586,13 @@ gapminder %>%
 
 ![](dplyr_files/figure-html/ggplot-1.png)<!-- -->
 
-# Final Challenge (55-60 mins)
+# Final Challenge (3:30-3:45)
 
 
 ```final
 Calculate the average life expectancy in 2002 of 2 randomly selected countries for each continent. Then arrange the continent names in reverse order. Hint: Use the dplyr functions arrange() and sample_n(), they have similar syntax to other dplyr functions.
 ```
 
+# Next Up Literate Programming
+
+https://swcarpentry.github.io/r-novice-gapminder/15-knitr-markdown/
