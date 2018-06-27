@@ -23,7 +23,8 @@ knitr::opts_chunk$set(echo = TRUE)
 ## How do I use R in my research
 
 * We study the mechanisms of chronic disease, things like obesity, diabetes and cancer.  We try to disect the molecular pathways that cause the diseases and understand how we can modify these.
-* A lot of our research involves analyzing public datasets.  These could be 
+* A lot of our research involves analyzing public datasets.  These could be genetic data, or metabolite data with thousands of compounds, or how tens of thousands of transcripts might change after a drug treatment.  A lot of our research is in making sense out of these numbers.
+* We do all of our data analysis, do all of our statistical analyses and make all of our graphs in R.  We then share all the raw data, along with how we made these graphs openly with other researchers.
 
 Lesson is from http://www.datacarpentry.org/R-ecology-lesson/index.html
 
