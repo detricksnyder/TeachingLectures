@@ -1,0 +1,57 @@
+---
+title: "M-Sci Notes Lecture 1"
+author: "Dave Bridges"
+date: "6/27/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Who Am I?
+
+* Professor in the department of Nutritional Sciences at the University of Michigan School of Public Health
+* Born in Canada, did my undergraduate degree in Biochemistry, was interested in medicine, then in science
+
+## Why are analytical skills important
+
+* When I was an undergrad in the late 90s my University education was about facts and the professors and textbooks were the gateway to those facts.  Wikipedia, Youtube, Reddit did not exist.  As an example, memorizing glycolysis or the structures of amino acids.
+* Now my students have access to **tons** of information, and tons of facts.  We as teachers are striving to provide you with skills to organize those facts.
+* Analytical skills are essential to finding your **own** data, and asking your **own** questions.  Learning can be much more active this way.
+
+## How do I use R in my research
+
+* We study the mechanisms of chronic disease, things like obesity, diabetes and cancer.  We try to disect the molecular pathways that cause the diseases and understand how we can modify these.
+* A lot of our research involves analyzing public datasets.  These could be 
+
+Lesson is from http://www.datacarpentry.org/R-ecology-lesson/index.html
+
+# Before We Start
+
+Follows the plan in http://www.datacarpentry.org/R-ecology-lesson/00-before-we-start.html
+
+Need to cover these learning objectives:
+
+* Describe the purpose of the RStudio Script, Console, Environment, and Plots panes.
+* Organize files and directories for a set of analyses as an R Project, and understand the purpose of the working directory.
+
+Note from Meg
+
+<quote>While going through this, remind the students about the “your primary collaborator is yourself 6 months from now, and your past self doesn’t answer email” axiom. Note that this is part of why using R makes sense (since having a script makes it much easier to figure out what they did in the past!),</quote> 
+
+# Introduction to R
+
+Once you’ve covered those two objectives, move on to the “Introduction to R” portion of the lesson.  This can be found at http://www.datacarpentry.org/R-ecology-lesson/01-intro-to-r.html. For this first day, focus on just the “Creating objects in R” section and associated learning objectives:
+
+* Define the following terms as they relate to R: object, assign, call, function, arguments, options.
+* Assign values to objects in R.
+* Learn how to name objects
+* Use comments to inform script.
+* Solve simple arithmetic operations in R.
+* Call functions and use arguments to change their default options.
+
+# Closing thoughts
+
+Remind students about homework due before next class
+
