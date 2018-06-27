@@ -50,7 +50,13 @@ Need to cover these learning objectives:
 
 ## Navigating RStudio
 
-* Open up R Studio, you should see 4 panes
+* Open up R Studio, you should see 4 panes, clockwise from top left.  **Does anyone not see four panes?**
+* **Source**.  This is where you will write and save your scripts.
+* **Environment and History**.  This is information about the data you are working with
+* **Help and Viewer**.  Shows graphs and the very important help panes.
+* **Console**.  If you open R without RStudio this is the only part you have.  This is where code is executed.
+
+
 
 Note from Meg
 
