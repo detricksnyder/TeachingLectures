@@ -261,20 +261,20 @@ dir.create(&quot;scripts&quot;)</code></pre>
 <li>I can assign that to a variable too. A note of caution, though, if I update my weight in kg the <code>weight_lbs</code> value will not update unless I redo that calculation.</li>
 </ul>
 <pre class="r"><code>weight_kg &lt;- 75
-weight_kg</code></pre>
+weight_kg # can retrive a variable</code></pre>
 <pre><code>## [1] 75</code></pre>
-<pre class="r"><code>weight_kg - 8 </code></pre>
+<pre class="r"><code>weight_kg - 8 # how much would i weigh if i lost 8 kg</code></pre>
 <pre><code>## [1] 67</code></pre>
-<pre class="r"><code>weight_kg * 2.20</code></pre>
+<pre class="r"><code>weight_kg * 2.20 # How much do I weigh in lbs (2.20 lbs/kg</code></pre>
 <pre><code>## [1] 165</code></pre>
-<pre class="r"><code>weight_lbs &lt;- weight_kg * 2.20
-weight_lbs</code></pre>
+<pre class="r"><code>weight_lbs &lt;- weight_kg * 2.20 #can assign that to a new variable
+weight_lbs # output the new variable</code></pre>
 <pre><code>## [1] 165</code></pre>
-<pre class="r"><code>weight_kg &lt;- 80
-weight_lbs</code></pre>
+<pre class="r"><code>weight_kg &lt;- 80 # what if my weight changes
+weight_lbs # note that the lbs do not change</code></pre>
 <pre><code>## [1] 165</code></pre>
-<pre class="r"><code>weight_lbs &lt;- weight_kg * 2.20
-weight_lbs</code></pre>
+<pre class="r"><code>weight_lbs &lt;- weight_kg * 2.20 # once i rerun this line
+weight_lbs # this is now correct</code></pre>
 <pre><code>## [1] 176</code></pre>
 </div>
 <div id="comments" class="section level2">
@@ -287,6 +287,38 @@ weight_lbs</code></pre>
 </li>
 <li>You can leave a comment by using the pound sign. Everything after that will be ignored.</li>
 </ul>
+<div id="challenge-1050" class="section level3">
+<h3>Challenge (10:50)</h3>
+<p>What are the values of <code>mass</code> and <code>age</code> after each of these after each statement. Before running them think what the answer is and see if what you get agrees</p>
+<pre class="r"><code>mass &lt;- 47.5            # mass?
+age  &lt;- 122             # age?
+mass &lt;- mass * 2.0      # mass?
+age  &lt;- age - 20        # age?
+mass_index &lt;- mass/age  # mass_index?</code></pre>
+</div>
+</div>
+<div id="functions" class="section level2">
+<h2>Functions</h2>
+<ul>
+<li>We already introduced <code>dir.create</code>. There are many built in functions in R and even more that you can write or install when needed. Lets look at square roots</li>
+</ul>
+<pre class="r"><code>mass #what do we have for hte mass value</code></pre>
+<pre><code>## [1] 95</code></pre>
+<pre class="r"><code>sqrt(mass) #what is the square root of the mass value</code></pre>
+<pre><code>## [1] 9.746794</code></pre>
+<pre class="r"><code>mass_sq &lt;- sqrt(mass) #lets save that as a variable
+round(mass_sq) # what do you think this does?  Turns out this command can take multiple arguments</code></pre>
+<pre><code>## [1] 10</code></pre>
+<pre class="r"><code>args(round) #shows the arguments for this function, lets see what digits does</code></pre>
+<pre><code>## function (x, digits = 0) 
+## NULL</code></pre>
+<pre class="r"><code>round(x=mass_sq, digits=2) #if you are lazy you can just enter the arguments in the specified order</code></pre>
+<pre><code>## [1] 9.75</code></pre>
+<pre class="r"><code>round(mass_sq, 2) # but if you name them, you can switch the order</code></pre>
+<pre><code>## [1] 9.75</code></pre>
+<pre class="r"><code>round(digits=2, x=mass_sq)</code></pre>
+<pre><code>## [1] 9.75</code></pre>
+<p><strong>What is a function that you might want to do, and lets see if we can find it?</strong></p>
 </div>
 </div>
 <div id="closing-thoughts" class="section level1">

@@ -131,15 +131,15 @@ Now look on your environment tab, see how it has saved that value for you.
 
 ```{r values}
 weight_kg <- 75
-weight_kg
-weight_kg - 8 
-weight_kg * 2.20
-weight_lbs <- weight_kg * 2.20
-weight_lbs
-weight_kg <- 80
-weight_lbs
-weight_lbs <- weight_kg * 2.20
-weight_lbs
+weight_kg # can retrive a variable
+weight_kg - 8 # how much would i weigh if i lost 8 kg
+weight_kg * 2.20 # How much do I weigh in lbs (2.20 lbs/kg
+weight_lbs <- weight_kg * 2.20 #can assign that to a new variable
+weight_lbs # output the new variable
+weight_kg <- 80 # what if my weight changes
+weight_lbs # note that the lbs do not change
+weight_lbs <- weight_kg * 2.20 # once i rerun this line
+weight_lbs # this is now correct
 ```
 
 ## Comments
@@ -151,6 +151,35 @@ While going through this, remind the students about the “your primary collabor
 * We use comments to tell us what we are doing.  
 * It may seem silly, because right now i totally know what i am doing, but five minutes from now i might forget.  
 * You can leave a comment by using the pound sign.  Everything after that will be ignored.
+
+### Challenge (10:50)
+
+What are the values of `mass` and `age` after each of these after each statement.  Before running them think what the answer is and see if what you get agrees
+
+```{r }
+mass <- 47.5            # mass?
+age  <- 122             # age?
+mass <- mass * 2.0      # mass?
+age  <- age - 20        # age?
+mass_index <- mass/age  # mass_index?
+```
+
+## Functions
+
+* We already introduced `dir.create`.  There are many built in functions in R and even more that you can write or install when needed.  Lets look at square roots
+
+```{r sqrt}
+mass #what do we have for hte mass value
+sqrt(mass) #what is the square root of the mass value
+mass_sq <- sqrt(mass) #lets save that as a variable
+round(mass_sq) # what do you think this does?  Turns out this command can take multiple arguments
+args(round) #shows the arguments for this function, lets see what digits does
+round(x=mass_sq, digits=2) #if you are lazy you can just enter the arguments in the specified order
+round(mass_sq, 2) # but if you name them, you can switch the order
+round(digits=2, x=mass_sq)
+```
+
+**What is a function that you might want to do, and lets see if we can find it?**
 
 # Closing thoughts
 
