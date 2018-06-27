@@ -82,9 +82,12 @@ But how do i know what I just did?
 * This can be helpful, but you are not tracking your code in a script, which would be better.  
 * Instead lets enter this R code in the top left panel where we keep scripts.
 * To run a script you can click on the line and hit CONTROL-ENTER, **do you see anything**.  This is a warning, everything is ok its just reminding you as a helpful note.  **If anyone has anything else, or did not see the directories in the file pane please raise your hand**
-* You can also select multiple lines and run them
+* You can also select multiple lines and run them.  
+* Note that what this did was move the lines from the top left scripts panel into the bottom left console panel.  We always want to work in the top left panel.
+* One last point, see how there is a `>` on the command line?  That means the console is ready to recieve a command.  If you see a `+` sign that means that it expects something else.  Often this is a missing quotation mark.  Very common mistake, I do this all the time!  To fix it, press ESCAPE
+ and try again.
 
-
+**IF AHEAD TRY LOOKING AT THE HELP CONSOLE.**  Should be 10:30 at this point.
 
 Note from Meg
 
@@ -100,6 +103,22 @@ Once you’ve covered those two objectives, move on to the “Introduction to R�
 * Use comments to inform script.
 * Solve simple arithmetic operations in R.
 * Call functions and use arguments to change their default options.
+
+## R as a calculator
+
+R can be used as a calculator, you can do several types of arithmetic.  Notice that when i run these, the output is the result
+
+```{r calculator}
+3+5 # add
+123-32 # subtract
+7*8 # multiply
+132/11 # divide
+3^4 # power
+12 == 3*4 # conditional
+12 != 3*4 # anticonditional
+12 >= 3*4 #greater than or equal to
+'my jokes' == 'funny' #can be done with text too
+```
 
 # Closing thoughts
 
