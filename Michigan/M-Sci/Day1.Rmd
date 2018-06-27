@@ -89,10 +89,6 @@ But how do i know what I just did?
 
 **IF AHEAD TRY LOOKING AT THE HELP CONSOLE.**  Should be 10:30 at this point.
 
-Note from Meg
-
-<quote>While going through this, remind the students about the “your primary collaborator is yourself 6 months from now, and your past self doesn’t answer email” axiom. Note that this is part of why using R makes sense (since having a script makes it much easier to figure out what they did in the past!),</quote> 
-
 # Introduction to R
 
 Once you’ve covered those two objectives, move on to the “Introduction to R” portion of the lesson.  This can be found at http://www.datacarpentry.org/R-ecology-lesson/01-intro-to-r.html. For this first day, focus on just the “Creating objects in R” section and associated learning objectives:
@@ -119,6 +115,42 @@ R can be used as a calculator, you can do several types of arithmetic.  Notice t
 12 >= 3*4 #greater than or equal to
 'my jokes' == 'funny' #can be done with text too
 ```
+
+More powerfully you can assign values to objects.  This uses the assignment operator it looks like an arrow.  You could use the equals sign too but this is more powerful because it gives a direction.
+
+```{r weight}
+weight_kg <- 75
+```
+
+Now look on your environment tab, see how it has saved that value for you.  
+
+* I can retrieve that variable
+* I can use that object in arithmetic, like how much would i weigh if i lost 8 kg
+* **How much do I weigh in lbs (2.20 lbs/kg)**
+* I can assign that to a variable too.  A note of caution, though, if I update my weight in kg the `weight_lbs` value will not update unless I redo that calculation.
+
+```{r values}
+weight_kg <- 75
+weight_kg
+weight_kg - 8 
+weight_kg * 2.20
+weight_lbs <- weight_kg * 2.20
+weight_lbs
+weight_kg <- 80
+weight_lbs
+weight_lbs <- weight_kg * 2.20
+weight_lbs
+```
+
+## Comments
+
+```
+While going through this, remind the students about the “your primary collaborator is yourself 6 months from now, and your past self doesn’t answer email” axiom. Note that this is part of why using R makes sense (since having a script makes it much easier to figure out what they did in the past!)
+``` 
+
+* We use comments to tell us what we are doing.  
+* It may seem silly, because right now i totally know what i am doing, but five minutes from now i might forget.  
+* You can leave a comment by using the pound sign.  Everything after that will be ignored.
 
 # Closing thoughts
 

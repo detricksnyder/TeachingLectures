@@ -217,8 +217,6 @@ dir.create(&quot;scripts&quot;)</code></pre>
 <li>One last point, see how there is a <code>&gt;</code> on the command line? That means the console is ready to recieve a command. If you see a <code>+</code> sign that means that it expects something else. Often this is a missing quotation mark. Very common mistake, I do this all the time! To fix it, press ESCAPE and try again.</li>
 </ul>
 <p><strong>IF AHEAD TRY LOOKING AT THE HELP CONSOLE.</strong> Should be 10:30 at this point.</p>
-<p>Note from Meg</p>
-<p><quote>While going through this, remind the students about the “your primary collaborator is yourself 6 months from now, and your past self doesn’t answer email” axiom. Note that this is part of why using R makes sense (since having a script makes it much easier to figure out what they did in the past!),</quote></p>
 </div>
 </div>
 <div id="introduction-to-r" class="section level1">
@@ -232,6 +230,64 @@ dir.create(&quot;scripts&quot;)</code></pre>
 <li>Solve simple arithmetic operations in R.</li>
 <li>Call functions and use arguments to change their default options.</li>
 </ul>
+<div id="r-as-a-calculator" class="section level2">
+<h2>R as a calculator</h2>
+<p>R can be used as a calculator, you can do several types of arithmetic. Notice that when i run these, the output is the result</p>
+<pre class="r"><code>3+5 # add</code></pre>
+<pre><code>## [1] 8</code></pre>
+<pre class="r"><code>123-32 # subtract</code></pre>
+<pre><code>## [1] 91</code></pre>
+<pre class="r"><code>7*8 # multiply</code></pre>
+<pre><code>## [1] 56</code></pre>
+<pre class="r"><code>132/11 # divide</code></pre>
+<pre><code>## [1] 12</code></pre>
+<pre class="r"><code>3^4 # power</code></pre>
+<pre><code>## [1] 81</code></pre>
+<pre class="r"><code>12 == 3*4 # conditional</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>12 != 3*4 # anticonditional</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>12 &gt;= 3*4 #greater than or equal to</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>'my jokes' == 'funny' #can be done with text too</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<p>More powerfully you can assign values to objects. This uses the assignment operator it looks like an arrow. You could use the equals sign too but this is more powerful because it gives a direction.</p>
+<pre class="r"><code>weight_kg &lt;- 75</code></pre>
+<p>Now look on your environment tab, see how it has saved that value for you.</p>
+<ul>
+<li>I can retrieve that variable</li>
+<li>I can use that object in arithmetic, like how much would i weigh if i lost 8 kg</li>
+<li><strong>How much do I weigh in lbs (2.20 lbs/kg)</strong></li>
+<li>I can assign that to a variable too. A note of caution, though, if I update my weight in kg the <code>weight_lbs</code> value will not update unless I redo that calculation.</li>
+</ul>
+<pre class="r"><code>weight_kg &lt;- 75
+weight_kg</code></pre>
+<pre><code>## [1] 75</code></pre>
+<pre class="r"><code>weight_kg - 8 </code></pre>
+<pre><code>## [1] 67</code></pre>
+<pre class="r"><code>weight_kg * 2.20</code></pre>
+<pre><code>## [1] 165</code></pre>
+<pre class="r"><code>weight_lbs &lt;- weight_kg * 2.20
+weight_lbs</code></pre>
+<pre><code>## [1] 165</code></pre>
+<pre class="r"><code>weight_kg &lt;- 80
+weight_lbs</code></pre>
+<pre><code>## [1] 165</code></pre>
+<pre class="r"><code>weight_lbs &lt;- weight_kg * 2.20
+weight_lbs</code></pre>
+<pre><code>## [1] 176</code></pre>
+</div>
+<div id="comments" class="section level2">
+<h2>Comments</h2>
+<pre><code>While going through this, remind the students about the “your primary collaborator is yourself 6 months from now, and your past self doesn’t answer email” axiom. Note that this is part of why using R makes sense (since having a script makes it much easier to figure out what they did in the past!)</code></pre>
+<ul>
+<li>We use comments to tell us what we are doing.<br />
+</li>
+<li>It may seem silly, because right now i totally know what i am doing, but five minutes from now i might forget.<br />
+</li>
+<li>You can leave a comment by using the pound sign. Everything after that will be ignored.</li>
+</ul>
+</div>
 </div>
 <div id="closing-thoughts" class="section level1">
 <h1>Closing thoughts</h1>
