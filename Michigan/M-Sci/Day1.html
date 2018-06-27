@@ -181,6 +181,38 @@ $(document).ready(function () {
 <li><strong>Help and Viewer</strong>. Shows graphs and the very important help panes.</li>
 <li><strong>Console</strong>. If you open R without RStudio this is the only part you have. This is where code is executed.</li>
 </ul>
+</div>
+<div id="getting-set-up-and-the-working-directory" class="section level2">
+<h2>Getting Set Up and the Working Directory</h2>
+<ul>
+<li>Under File click New Project, then Click New Directory, then New Project. Call it <strong>R for M-Sci</strong> and make it a subdirectory of your Desktop. This is where we are going to keep all your scripts, data and graphs for the next few days.</li>
+<li>The working directory is also a way to organize your data, you might want some folders in your working directory. We want to creat directories called data, data_output, documents, figure_output, scripts <strong>Write this on the board ad an image</strong>. You could do this in windows explorer or on the terminal but we can also do this within R. In the bottom left console enter these commands just as I type them.</li>
+</ul>
+<pre class="r"><code>dir.create(&quot;data&quot;)
+dir.create(&quot;data_output&quot;)
+dir.create(&quot;documents&quot;)
+dir.create(&quot;figure_output&quot;)
+dir.create(&quot;scripts&quot;)</code></pre>
+<p>Look in the Files pane on the bottom right, you should see a few new directories. Congratulations you just executed your first R code. Lets look at what you actually did. You called a <em>function</em> dir.create and you gave it an argument (the directory name). The function then did something to create that folder.</p>
+<ul>
+<li>Lets type dir.create and run that without an argument.<br />
+</li>
+<li>This tells us what the function is.<br />
+</li>
+<li>There are several arguments, some of which already have default values.<br />
+</li>
+<li>Dont worry about what these mean just yet, but you can see there are arguments for path, showWarnings, recursive and mode</li>
+</ul>
+<p>But how do i know what I just did?</p>
+<ul>
+<li>Look at the History tab it shows all the commands that you entered.<br />
+</li>
+<li>This can be helpful, but you are not tracking your code in a script, which would be better.<br />
+</li>
+<li>Instead lets enter this R code in the top left panel where we keep scripts.</li>
+<li>To run a script you can click on the line and hit CONTROL-ENTER, <strong>do you see anything</strong>. This is a warning, everything is ok its just reminding you as a helpful note. <strong>If anyone has anything else, or did not see the directories in the file pane please raise your hand</strong></li>
+<li>You can also select multiple lines and run them</li>
+</ul>
 <p>Note from Meg</p>
 <p><quote>While going through this, remind the students about the “your primary collaborator is yourself 6 months from now, and your past self doesn’t answer email” axiom. Note that this is part of why using R makes sense (since having a script makes it much easier to figure out what they did in the past!),</quote></p>
 </div>

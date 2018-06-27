@@ -56,6 +56,34 @@ Need to cover these learning objectives:
 * **Help and Viewer**.  Shows graphs and the very important help panes.
 * **Console**.  If you open R without RStudio this is the only part you have.  This is where code is executed.
 
+## Getting Set Up and the Working Directory
+
+* Under File click New Project, then Click New Directory, then New Project.  Call it **R for M-Sci** and make it a subdirectory of your Desktop.  This is where we are going to keep all your scripts, data and graphs for the next few days.
+* The working directory is also a way to organize your data, you might want some folders in your working directory. We want to creat directories called data, data_output, documents, figure_output, scripts **Write this on the board ad an image**.  You could do this in windows explorer or on the terminal but we can also do this within R.  In the bottom left console enter these commands just as I type them.
+
+```{r create-directories, warning=FALSE}
+dir.create("data")
+dir.create("data_output")
+dir.create("documents")
+dir.create("figure_output")
+dir.create("scripts")
+```
+
+Look in the Files pane on the bottom right, you should see a few new directories.  Congratulations you just executed your first R code.  Lets look at what you actually did.  You called a *function* dir.create and you gave it an argument (the directory name).  The function then did something to create that folder.  
+
+* Lets type dir.create and run that without an argument.  
+* This tells us what the function is.  
+* There are several arguments, some of which already have default values.  
+* Dont worry about what these mean just yet, but you can see there are arguments for path, showWarnings, recursive and mode
+
+But how do i know what I just did?  
+
+* Look at the History tab it shows all the commands that you entered.  
+* This can be helpful, but you are not tracking your code in a script, which would be better.  
+* Instead lets enter this R code in the top left panel where we keep scripts.
+* To run a script you can click on the line and hit CONTROL-ENTER, **do you see anything**.  This is a warning, everything is ok its just reminding you as a helpful note.  **If anyone has anything else, or did not see the directories in the file pane please raise your hand**
+* You can also select multiple lines and run them
+
 
 
 Note from Meg
