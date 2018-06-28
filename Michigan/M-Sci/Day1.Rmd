@@ -2,17 +2,20 @@
 title: "M-Sci Notes Lecture 1"
 author: "Dave Bridges"
 date: "6/27/2018"
-output: html_document
+output:
+  html_document:
+    toc: true
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Who Am I?
+# Who Am I? (9:30)
 
 * Professor in the department of Nutritional Sciences at the University of Michigan School of Public Health
 * Born in Canada, did my undergraduate degree in Biochemistry, was interested in medicine, then in science
+* I teach 
 
 ## Why are analytical skills important
 
@@ -28,7 +31,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Lesson is from http://www.datacarpentry.org/R-ecology-lesson/index.html
 
-# Before We Start
+# Before We Start (9:45)
 
 Follows the plan in http://www.datacarpentry.org/R-ecology-lesson/00-before-we-start.html
 
@@ -48,7 +51,7 @@ Need to cover these learning objectives:
 * How can you get help?  There are many places online such as stack overflow, mailing lists, or local meetup groups that people use to learn new skills.  R has a very open and welcoming community.  
 * `Write on the board`: R is free, open source, and cross platform.  **What do you think these mean, and why are they relevant?**
 
-## Navigating RStudio
+## Navigating RStudio (10:00)
 
 * Open up R Studio, you should see 4 panes, clockwise from top left.  **Does anyone not see four panes?**
 * **Source**.  This is where you will write and save your scripts.
@@ -89,7 +92,7 @@ But how do i know what I just did?
 
 **IF AHEAD TRY LOOKING AT THE HELP CONSOLE.**  Should be 10:30 at this point.
 
-# Introduction to R
+# Introduction to R (10:30)
 
 Once you’ve covered those two objectives, move on to the “Introduction to R” portion of the lesson.  This can be found at http://www.datacarpentry.org/R-ecology-lesson/01-intro-to-r.html. For this first day, focus on just the “Creating objects in R” section and associated learning objectives:
 
@@ -100,7 +103,7 @@ Once you’ve covered those two objectives, move on to the “Introduction to R�
 * Solve simple arithmetic operations in R.
 * Call functions and use arguments to change their default options.
 
-## R as a calculator
+## R as a Calculator
 
 R can be used as a calculator, you can do several types of arithmetic.  Notice that when i run these, the output is the result
 
@@ -164,7 +167,7 @@ age  <- age - 20        # age?
 mass_index <- mass/age  # mass_index?
 ```
 
-## Functions
+## Functions (11:15)
 
 * We already introduced `dir.create`.  There are many built in functions in R and even more that you can write or install when needed.  Lets look at square roots
 
