@@ -1,0 +1,100 @@
+---
+title: "Timing of Evaluations"
+author: "Dave Bridges"
+date: "July 17, 2018"
+output:
+  pdf_document:
+    highlight: tango
+    keep_tex: yes
+    number_sections: no
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+opts_chunk$set(echo = TRUE)
+
+opts_chunk$set(fig.path='figures/',
+               echo=TRUE, warning=FALSE, message=FALSE,dev=c('png','pdf'))
+options(scipen = 2, digits = 3)
+
+# sets maize and blue color scheme
+color.scheme <- c('#00274c', '#ffcb05')
+```
+
+## Data Import
+
+Exported **Assignment Type Summaries** from GradeCraft and imported.
+
+```{r data-import}
+library(readr)
+library(dplyr)
+library(tidyr)
+datafile <- 'Principles of Nutritional Sciences Submissions - 2018-07-17.csv'
+
+library(readr)
+dataset <- read_csv(datafile, col_types=
+                      cols(`Assignment Type` = col_factor(levels=NULL)))
+
+dropped.students <- c('dave.bridges','ajian','zhongyli')
+
+dataset <- separate(dataset, `Updated At`, sep=",", into=c('Day','Date','Time'))
+
+library(lubridate)
+#converted dates
+dataset$Date.Year <- paste(dataset$Date, ', 2017', sep="") 
+dataset$Date.Year <- mdy(dataset$Date.Year)
+
+#calculated cumulative sum of scores by date
+sum.scores <-
+  dataset %>%
+  group_by(Date.Year) %>%
+  summarize(Points.Awarded = sum(Score),
+            Assignments.Graded = length(Score)) %>%
+  mutate(Total.Points = cumsum(Points.Awarded))
+```
+
+## Assignments Graded Over Time
+
+```{r assignments-graded}
+library(ggplot2)
+
+ggplot(sum.scores, aes(y=Assignments.Graded,x=Date.Year)) +
+  geom_point() +
+  geom_smooth() +
+  labs(y="Assignments per Day",
+       x="Date",
+       title="Assignments Graded Over the Semester")
+
+summary(sum.scores$Assignments.Graded) %>% broom::tidy() %>% kable(caption="Summary Statistics for Assignments Graded Per Day")
+
+
+ggplot(sum.scores, aes(x=Assignments.Graded)) +
+  geom_density(fill='blue') +
+  labs(x="Assignments Graded Per Day")
+```
+
+## Points Earned Over Time
+
+```{r submitted-assignments}
+ggplot(sum.scores, aes(y=Points.Awarded,x=Date.Year)) +
+  geom_point() +
+  geom_smooth() +
+  labs(y="Cumulative Points Awarded",
+       x="Date",
+       title="Points Earned from Optional Assignments Over the Semester")
+
+ggplot(sum.scores, aes(y=Total.Points,x=Date.Year)) +
+  geom_point() +
+  geom_smooth() +
+  labs(y="Cumulative Points Awarded",
+       x="Date",
+       title="Cumulative Points Earned from Optional Assignments")
+
+```
+
+# Session Information
+
+```{r session-info}
+sessionInfo()
+```
