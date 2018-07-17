@@ -221,7 +221,7 @@ minimum & q1 & median & mean & q3 & maximum\tabularnewline
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{ggplot}\NormalTok{(sum.scores, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{y=}\NormalTok{Points.Awarded,}\DataTypeTok{x=}\NormalTok{Date.Year)) }\OperatorTok{+}
+\KeywordTok{ggplot}\NormalTok{(sum.scores, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{y=}\NormalTok{Points.Awarded}\OperatorTok{/}\DecValTok{51}\NormalTok{,}\DataTypeTok{x=}\NormalTok{Date.Year)) }\OperatorTok{+}
 \StringTok{  }\KeywordTok{geom_point}\NormalTok{() }\OperatorTok{+}
 \StringTok{  }\KeywordTok{geom_smooth}\NormalTok{() }\OperatorTok{+}
 \StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{y=}\StringTok{"Cumulative Points Awarded"}\NormalTok{,}
@@ -234,7 +234,7 @@ minimum & q1 & median & mean & q3 & maximum\tabularnewline
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{ggplot}\NormalTok{(sum.scores, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{y=}\NormalTok{Total.Points,}\DataTypeTok{x=}\NormalTok{Date.Year)) }\OperatorTok{+}
+\KeywordTok{ggplot}\NormalTok{(sum.scores, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{y=}\NormalTok{Total.Points}\OperatorTok{/}\DecValTok{51}\NormalTok{,}\DataTypeTok{x=}\NormalTok{Date.Year)) }\OperatorTok{+}
 \StringTok{  }\KeywordTok{geom_point}\NormalTok{() }\OperatorTok{+}
 \StringTok{  }\KeywordTok{geom_smooth}\NormalTok{() }\OperatorTok{+}
 \StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{y=}\StringTok{"Cumulative Points Awarded"}\NormalTok{,}
@@ -244,6 +244,46 @@ minimum & q1 & median & mean & q3 & maximum\tabularnewline
 \end{Shaded}
 
 \includegraphics{figures/submitted-assignments-2.png}
+
+\section{Including the Midterms}\label{including-the-midterms}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{midterm.}\DecValTok{1}\NormalTok{ <-}\StringTok{ }\KeywordTok{list}\NormalTok{(}\DataTypeTok{Date.Year=}\KeywordTok{as.Date}\NormalTok{(}\StringTok{'2017-10-17'}\NormalTok{), }\DataTypeTok{Score=}\DecValTok{51}\OperatorTok{*}\DecValTok{220}\NormalTok{)}
+\NormalTok{midterm.}\DecValTok{2}\NormalTok{ <-}\StringTok{ }\KeywordTok{list}\NormalTok{(}\DataTypeTok{Date.Year=}\KeywordTok{as.Date}\NormalTok{(}\StringTok{'2017-11-08'}\NormalTok{), }\DataTypeTok{Score=}\DecValTok{51}\OperatorTok{*}\DecValTok{262}\NormalTok{)}
+\NormalTok{midterm.}\DecValTok{3}\NormalTok{ <-}\StringTok{ }\KeywordTok{list}\NormalTok{(}\DataTypeTok{Date.Year=}\KeywordTok{as.Date}\NormalTok{(}\StringTok{'2017-12-11'}\NormalTok{), }\DataTypeTok{Score=}\DecValTok{51}\OperatorTok{*}\DecValTok{216}\NormalTok{)}
+
+
+\NormalTok{dataset.midterms <-}
+\StringTok{  }\NormalTok{dataset }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{bind_rows}\NormalTok{(midterm.}\DecValTok{1}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{bind_rows}\NormalTok{(midterm.}\DecValTok{2}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{bind_rows}\NormalTok{(midterm.}\DecValTok{3}\NormalTok{)}
+  
+
+\NormalTok{sum.scores.mt <-}
+\StringTok{  }\NormalTok{dataset.midterms }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{arrange}\NormalTok{(Date.Year) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{group_by}\NormalTok{(Date.Year) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{summarize}\NormalTok{(}\DataTypeTok{Points.Awarded =} \KeywordTok{sum}\NormalTok{(Score),}
+            \DataTypeTok{Assignments.Graded =} \KeywordTok{length}\NormalTok{(Score)) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{Total.Points =} \KeywordTok{cumsum}\NormalTok{(Points.Awarded))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ggplot}\NormalTok{(sum.scores.mt, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{y=}\NormalTok{Total.Points}\OperatorTok{/}\DecValTok{51}\NormalTok{,}\DataTypeTok{x=}\NormalTok{Date.Year)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_point}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_smooth}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_line}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{y=}\StringTok{"Points Awarded"}\NormalTok{,}
+       \DataTypeTok{x=}\StringTok{"Date"}\NormalTok{,}
+       \DataTypeTok{title=}\StringTok{"Cumulative Points Earned from All Assignments"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{figures/submitted-assignments-midterms-1.png}
 
 \section{Session Information}\label{session-information}
 

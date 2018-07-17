@@ -77,20 +77,53 @@ ggplot(sum.scores, aes(x=Assignments.Graded)) +
 ## Points Earned Over Time
 
 ```{r submitted-assignments}
-ggplot(sum.scores, aes(y=Points.Awarded,x=Date.Year)) +
+ggplot(sum.scores, aes(y=Points.Awarded/51,x=Date.Year)) +
   geom_point() +
   geom_smooth() +
   labs(y="Cumulative Points Awarded",
        x="Date",
        title="Points Earned from Optional Assignments Over the Semester")
 
-ggplot(sum.scores, aes(y=Total.Points,x=Date.Year)) +
+ggplot(sum.scores, aes(y=Total.Points/51,x=Date.Year)) +
   geom_point() +
   geom_smooth() +
   labs(y="Cumulative Points Awarded",
        x="Date",
        title="Cumulative Points Earned from Optional Assignments")
+```
 
+# Including the Midterms
+
+```{r midterm-adding}
+midterm.1 <- list(Date.Year=as.Date('2017-10-17'), Score=51*220)
+midterm.2 <- list(Date.Year=as.Date('2017-11-08'), Score=51*262)
+midterm.3 <- list(Date.Year=as.Date('2017-12-11'), Score=51*216)
+
+
+dataset.midterms <-
+  dataset %>%
+  bind_rows(midterm.1) %>%
+  bind_rows(midterm.2) %>%
+  bind_rows(midterm.3)
+  
+
+sum.scores.mt <-
+  dataset.midterms %>%
+  arrange(Date.Year) %>%
+  group_by(Date.Year) %>%
+  summarize(Points.Awarded = sum(Score),
+            Assignments.Graded = length(Score)) %>%
+  mutate(Total.Points = cumsum(Points.Awarded))
+```
+
+```{r submitted-assignments-midterms}
+ggplot(sum.scores.mt, aes(y=Total.Points/51,x=Date.Year)) +
+  geom_point() +
+  geom_smooth() +
+  geom_line() +
+  labs(y="Points Awarded",
+       x="Date",
+       title="Cumulative Points Earned from All Assignments")
 ```
 
 # Session Information
