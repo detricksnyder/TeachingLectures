@@ -46,7 +46,7 @@
 \maketitle% this prints the handout title, author, and date
 
 \begin{abstract}
-\noindent This lecture will cover glycolysis, the backbone of carbohydrate metabolism.  This pathway is especially important because it is the intersection of several pathways of carbohydrate metabolism (gluconeogenesis, glycogenesis, glycogenolysis and the TCA cycle) as well as both the source and result of amino acid synthesis and degradation.  An understanding of how glucose flows through glycolysis is also important for understanding how other monosaccharides such as fructose and galactose are metabolized.  We will focus on the regulation of glycolysis by energy status, metabolites and hormonal factors.  While most of the reactions are listed here, it is important that you focus on the key steps of control and how they are regulated.
+\noindent This lecture will cover glycolysis, the backbone of metabolism.  This pathway is especially important because it is the intersection of several pathways of carbohydrate metabolism (gluconeogenesis, glycogenesis, glycogenolysis and the TCA cycle) as well as both the source and result of amino acid synthesis and degradation.  An understanding of how glucose flows through glycolysis is also important for understanding how other monosaccharides such as fructose and galactose are metabolized.  We will cover the regulation of glycolysis by energy status, key metabolites and hormones.  While most of the reactions are listed here, focus on the key steps of control and how they are regulated.  
 \end{abstract}
 
 \tableofcontents
@@ -54,45 +54,71 @@
 \section{Learning Objectives}
 
 \begin{itemize}
-\item Define the role relative locations of of glycolysis, gluconeogenesis, the TCA cycle as nodes of carbohydrate metabolism metabolism.
+\item Define the role relative locations of of glycolysis, gluconeogenesis, the TCA cycle as nodes of carbohydrate metabolism.
 \item Assess the enzymatic differences and tissue distributions of glucokinase vs hexokinase and explain why this is important.
-\item Determine how much ATP is produced from glycolysis, and the efficiency of aerobic vs non-aerobic glycolysis
-\item Summarize the key points of regulation of glycolysis and what metabolites and hormones regulate these enzymes
-\item Evaluate the differences between how muscle and liver glycolysis are regulated.  Assess why this is relevant for the functions of these tissues
-\item Define the potential fates of pyruvate, and what enzyme activities dictate the next steps in its metabolism
+\item Calculate how much ATP is produced from glycolysis, and the relative efficiency of aerobic vs non-aerobic glycolysis.
+\item Summarize the key points of regulation of glycolysis and what metabolites and hormones regulate these enzymes.
+\item Evaluate the differences between how muscle and liver glycolysis are regulated.  Assess why this is relevant for the functions of these tissues.
+\item Describe the potential fates of pyruvate, and what enzyme activities dictate the next steps in its metabolism.  Given a particular cellular state, you should be able to predict which pathway pyruvate enters.
 \item Discriminate how non-glucose carbohydrates such as galactose and fructose enter glycolysis, and how their point of entry affects how they are regulated.
-\item Predict the effects of specific inborn errors in glucose, galactose and fructose metabolism based on the location of the affected mutated enzyme in the relevant pathways
-
-
+\item Predict the effects of specific inborn errors in glucose, galactose and fructose metabolism based on the location of the affected  enzyme in the relevant pathways.  Consider dietary treatments that may be useful in these individuals.
 
 \end{itemize}
+
+\section{Key Concepts, Abbreviations and Vocabulary}
+
+\begin{description}
+	\item[Concepts:] Glucose transport, glucose oxidation, negative feedback, feed-forward regulation, inborn errors of metabolism.  
+	\item[Key Enzymes and Proteins:] AMPK, PKA, GLUT2, GLUT4, GLUT5, Hexokinase (HK), Glucokinase (GK), Glucose-6-Phosphatase (G6Pase), Phosphofructokinase 1 and 2 (PFK1/2), Pyruvate Kinase (PK), Alanine Aminotransferase (ALT), Pyruvate Dehydrogenase (PDH\sidenote{covered in detail next lecture.}).  You should be able to locate the relative location of these enzymes, and how they are regulated by metabolites and hormones.
+	\item[Important Metabolites:] Glucose-6-Phosphate (G6P), Fructose-1,6-bisphosphate (F16bP), Fructose-2,6-bisphosphate (F26bP), ATP, AMP, Alanine.
+
+\end{description}
 
 \pagebreak
 
 \section{Glycolysis converts glucose to pyruvate}
 
-Glycolysis is the process by which glucose is catabolized to pyruvate.  It is the first step to full oxidation of glucose to carbon dioxide, or can end with pyruvate being released as lactate.  This is the backbone of metabolism, and as most carboydrate, amino acid and lipid metabolic pathways involve glycolysis in one way or another.  For a refresher on glycolysis, I recommend the textbooks on reserve at the Shapiro library \citep{Berg2013,Ferrier2017}\sidenote{The relevant chapter of Berg is also available free here: \url{https://www.ncbi.nlm.nih.gov/books/NBK22395/}.}.
+Glycolysis is the process by which glucose is catabolized to pyruvate.  It can the first step to full oxidation of glucose to carbon dioxide, or can end with pyruvate being released as lactate.  This is the backbone of metabolism, and as most carboydrate, amino acid and lipid metabolic pathways involve glycolysis in one way or another.  For a refresher on glycolysis, we recommend the textbooks on reserve at the Shapiro library \citep{Berg2013,Ferrier2017}\sidenote{The relevant chapter of Berg is also available free here: \url{https://www.ncbi.nlm.nih.gov/books/NBK22395/}.}.  We start with glucose, because under most conditions, it is the preferred fuel for most tissues.  There are three stages to glycolysis, an energy consuming "charging" step, a splitting step, and energy producing steps resulting in two molecules of pyruvate for each molecule of glucose.  Overall glycolysis to the point of pyruvate follows this stoichiometry:
+
+\begin{equation}\label{eq:overall}
+Glucose + 2NAD^+ + 2AMP + 2Pi \rightarrow 2Pyruvate + 2NADH + 2ATP + 2H^+ +2H_2O
+\end{equation}
+
+ATP can be used directly for energy, while NADH is used for energy (generating 2.5 ATP/NADH in aerobic glycolysis) or for converting pyruvate to lactate (for anaerobic glycolysis).
 
 \subsection{How does glucose enter cells?}
 
-Glucose, much like amino acids, lactate and glycerol is normally impermeable to the plasma membrane of cells.  Therefore, in order to enter the cell, specific transporters are required.  In the case of glucose, two transporters are the most relevant;  GLUT2 and GLUT4.  These are passive transporters that only allow glucose to follow its concentration gradient.  In the liver, GLUT2 is typically expressed and present at the membrane of the hepatocyte.  This allows glucose to enter the hepatocyte (for example after a meal) or to exit the cell (for example during glycogenolysis or gluconeogenesis\sidenote{The production of glucose from precursors such as alanine, lactate or glutamate}).
+Glucose is impermeable to the plasma membrane of cells.  Therefore, in order to enter the cell, specific transporters are required.  In the case of glucose, two transporters are the most particularly;  GLUT2 and GLUT4.  These are passive transporters that only allow glucose to follow its concentration gradient.  In the liver, GLUT2 is typically expressed and present at the membrane of the hepatocyte.  This allows glucose to enter the hepatocyte (for example after a meal) or to exit the cell (for example during glycogenolysis or gluconeogenesis\sidenote{The production of glucose from precursors such as alanine, lactate or glycerol}).
 
-GLUT4 on the other hand is the main transporter in muscle and adipocyte cells.  GLUT4 is normally present on intracellular vesicles within the cell and is therefore unable to conduct glucose into the cell.  When insulin is present, these vesicles fuse with the plasma membrane of these cells, placing GLUT4 transporters on the plasma membrane, and allowing for glucose to enter down its concentration gradient.  GLUT4 trafficking is the first regulated step for glucose oxidation and storage in muscle and fat cells.  For more details on how GLUT4 trafficking is regulated see \citet{Leto2013}.
+\begin{marginfigure}
+\includegraphics{figures/GLUT4-Trafficking.pdf}
+\caption{Regulation of glucose uptake in muscle and adipocytes.  In these cells, glucose cannot enter unless insulin or AMPK stimulates the translocation of GLUT4 from intracellular GLUT4 storage vesicles to the plasma membrane.}
+\label{fig:GLUT4-Trafficking}
+\end{marginfigure}
 
 
-\newthought{Glycolysis occurs in the cytoplasm of cells.}  All of glycolysis occurs in the cytoplasm of cells, unlike the TCA cycle or the electron transport chain, which require mitochondria.  As we will discuss later in the semester, mitochondria are also required for the oxidation of fatty acids and some amino acids.  This means that cells with little or few mitochondria (fast-twitch muscle fibers, or red blood cells for example) are highly dependent on glycolysis to generate ATP.
+GLUT4 on the other hand is the main transporter in muscle and adipocyte cells.  GLUT4 is normally present on intracellular vesicles within the cell and is therefore unable to conduct glucose into the cell.  When insulin is present, these vesicles fuse with the plasma membrane of these cells, placing GLUT4 transporters on the plasma membrane, and allowing for glucose to enter down its concentration gradient (see Figure \ref{fig:GLUT4-Trafficking}.  GLUT4 trafficking is the first regulated step for glucose oxidation and storage in muscle and fat cells.  For more details on how GLUT4 trafficking is regulated see \citet{Leto2013}.  GLUT4 translocation in muscle cells is also stimulated by exercise.  This is dependent on a protein kinase called AMPK, which is activated with AMP levels are high (or energy is low).  Improving glucose disposal rates, by allowing glucose into muscle is one major advantage of exercise in type 2 diabetics, who are resistant to the effects of insulin.  For more details on exercise-induced glucose uptake see \citet{Richter2013}.
+
+
+\newthought{Glycolysis occurs in the cytoplasm of cells.}  All of glycolysis occurs in the cytoplasm of cells, unlike the TCA cycle or the electron transport chain, which require mitochondria.  As we will discuss later in the semester, mitochondria are also required for the oxidation of fatty acids and some amino acids.  This means that cells with few or no mitochondria (fast-twitch muscle fibers, or red blood cells for example) are highly dependent on glycolysis to generate ATP.
 
 \subsection{The conversion of glucose to glucose-6-phosphate}
 
-\newthought{There are two enzymes that catalyse the first step after glucose enters the cell.}   This step phosphorylates glucose at the 6 position, generating glucose-6-phosphate (G6P):
+\newthought{There are two enzymes that catalyse the first step after glucose enters the cell.}   This step phosphorylates glucose at the 6 position, generating glucose-6-phosphate (G6P).  This is the first of two ATP consuming steps in glycolysis:
 
 \begin{equation}\label{eq:glucokinase}
-Glucose + ATP \rightarrow Glucose-6-Phosphate
+Glucose + ATP \rightarrow G6P
 \end{equation}
 
-In liver cells\sidenote{also known as hepatocytes.} and pancreas cells, this is done by an enzyme called \emph{glucokinase}.  This is a co-operative enzyme\sidenote{If you forget what this means, review the metabolic control systems handout.} that has a very high maximal catalytic rate (V$_{max}$).  This means that at low levels of glucose, very little glucose is phosphorylated but at high levels of glucose, G6P can be produced at high rates. 
+In liver cells\sidenote{also known as hepatocytes.} and pancreas cells, this is done by an enzyme called \emph{glucokinase}.  This is a co-operative enzyme\sidenote{If you forget what this means, review the metabolic control systems handout.} that has a very high maximal catalytic rate (V$_{max}$).  This means that at low levels of glucose, very little glucose is phosphorylated but at high levels of glucose, G6P can be produced at high rates. Another way to think about this, is that the co-operativity of glucokinase means that its activity is dependent on glucose levels in the cell.  This means that glucokinase can serve as an intracellular glucose sensor.
 
-\newthought{Hexokinase is a high affinity enzyme} that catalyzes the same reaction in most other cells, for example muscle and adipose cells.  This means that it is very efficient at low glucose concentrations, but does not have as high of a maximum rate\sidenote{It is important that you understand the differences in glucose affinity and V$_{max}$ between glucokinase and hexokinase and what this means.}.  Hexokinase is regulated by negative feedback from its product G6P.  In contrast to hexokinase, there is no allosteric regulation of glucokinase.  Think about the differences in how glucose enters these cells, in contrast to liver cells and how the kinetics relate to the regulation of glucose uptake.  The differences between glucokinase and hexokinase are summarized in Table \ref{tab:glucokinase}.
+\begin{marginfigure}
+\includegraphics{figures/gk-hk-kinetics.pdf}
+\caption{Schematic of the kinetics of glucokinase (GK) and hexokinase (HK).  Not the differences in K$_m$, V$_max$ and co-operativity between these enzymes.}
+\label{fig:gk-hk-kinetics}
+\end{marginfigure}
+
+\newthought{Hexokinase is a high affinity enzyme} that catalyzes the same reaction in most other cells, for example muscle and adipose cells.  This means that it is very efficient even at low glucose concentrations, but does not have as high of a maximum rate\sidenote{It is important that you understand the differences in glucose affinity and V$_{max}$ between glucokinase and hexokinase and the consequences of these differences.}.  This is illustrated in Figure \ref{fig: gk-hk-kinetics}.  Hexokinase is regulated by negative feedback from its product G6P.  In contrast to hexokinase, there is no allosteric regulation of glucokinase.  Think about the differences in how glucose enters these cells, in contrast to liver cells and how the kinetics relate to the regulation of glucose uptake.  The differences between glucokinase and hexokinase are summarized in Table \ref{tab:glucokinase}.
 
 \begin{table}
 \centering
@@ -109,21 +135,21 @@ Glucokinase & Co-operative & & Pancreas/Liver\\
 \end{tabular}
 \end{table}
 
-\newthought{Conversion of G6P to glucose primarily occurs in the liver.}  This is because most cells do not express Glucose-6-phosphatase, the enzyme that converts G6P back to glucose.  In the liver, this allows for dephosphorylated glucose to be released back into the blood, the last step in gluconeogenesis.\sidenote{Which will be discussed three lectures from now.}  This is relevant because in non-hepatic cells, the phosphorylation of glucose is \emph{irreversible} and traps glucose within the cell\sidenote{Think about why the co-operative properties of glucokinase works in tandem with the ability to dephosphorylate glucose in liver cells.}.
+\newthought{The reverse reaction of GK is the dephosphorylation of G6P to glucose, and primarily occurs in the liver.}  This is because most cells do not express Glucose-6-phosphatase (G6Pase), the enzyme that converts G6P back to glucose.  In the liver, G6Pase allows for dephosphorylated glucose to be released back into the blood, the last step in gluconeogenesis or hepatic glycogenolysis.\sidenote{Which will be discussed three lectures from now.}  This is relevant because in non-hepatic cells, the phosphorylation of glucose is \emph{irreversible} and traps glucose within the cell\sidenote{Think about why the co-operative properties of glucokinase works in tandem with the ability to dephosphorylate glucose in liver cells.}.
 
 \subsection{What are the fates of glucose-6-phosphate?}
 
-Once phosphorylated, G6P can enter four separate pathways (3 in non-hepatic tissues), depending on the relative activities of the rate limiting steps in these pathways.  If glycogen synthase activity is elevated glucose can become stored as glycogen.  If G6P Dehydrogenase (G6PDH) activity is elevated, glucose will flow through the pentose phosphate shunt.  Glycolysis will proceed if phosphofructokinase-1 (PFK1) is active.  These routes are summarized in Figure \ref{fig:g6p-fates}.
+Phosphorylated glucose (G6P) can enter four separate pathways (3 in non-hepatic tissues), depending on the relative activities of the rate limiting steps in these pathways.  If glycogen synthase (GS) activity is elevated glucose can become stored as glycogen.  If G6P Dehydrogenase (G6PDH) activity is elevated, glucose will flow through the pentose phosphate shunt (PPS).  Glycolysis will proceed if phosphofructokinase-1 (PFK1) is active.  These routes are summarized in Figure \ref{fig:g6p-fates}.
 
 \begin{marginfigure}
 \includegraphics{figures/g6p-fates.pdf}
-\caption{Fates of phosphorylated glucose.}
+\caption{Fates of phosphorylated glucose and key rate limiting enzymes of each pathway.  Details of each pathway will be discussed in forthcoming lectures.}
 \label{fig:g6p-fates}
 \end{marginfigure}
 
 \subsection{The first committed step of glycolysis is catalysed by PFK1}
 
-The most important regulatory step that controls flow through glycolysis is catalyzed by PFK1\sidenote{For all these reactions G indicates Glucose, F indicates Fructose, GA indicates Glyceraldehyde and PG indicates Phosphoglycerate.}.  This is the first committed step of glycolysis and catalyzes the third step in glycolysis\sidenote{Reaction \ref{eq:pgm}, catalyzed by Phosphoglucose isomerase is a reversible, equillibrium reaction}:
+The most important regulatory step that controls flow through glycolysis is catalyzed by PFK1\sidenote{For all these reactions G indicates Glucose, F indicates Fructose, GA indicates Glyceraldehyde and PG indicates Phosphoglycerate.}.  This is the second ATP consuming step, and the first committed step of glycolysis.  \sidenote{Reaction \ref{eq:pgm}, catalyzed by Phosphoglucose isomerase is a reversible, equillibrium reaction}:
 
 \begin{equation}\label{eq:pgm}
 G6P \rightleftharpoons F6P
@@ -222,9 +248,9 @@ Oxaloacetate & High Acetyl-CoA & Pyruvate Carboxylase \\
 Glycolysis occurs in three phases:
 
 \begin{enumerate}
-\item An investment phase, which uses two molecules of ATP (see steps \ref{eq:glucokinase} and \ref{eq:pfk1}) are consumed.  This "charges" the glucose molecule, providing it with enough energy to be split into two-3 carbon molecules.  \textbf{At this stage there is a net usage of two ATP molecules per molecule of glucose.}
-\item The cleavage step, performed by aldolase A, immediately after the highly regulated PFK1 step (see step \ref{eq:aldolase-a}).  This is a very energetically costly step, as breaking a carbon-carbon bond is quite difficult\sidenote{The standard free energy of this step is +28 kcal/mol, making it highly endothermic.  For more details on how Fructose-1,6-bisphosphate buildup allows this difficult reaction to occur, see \url{http://sandwalk.blogspot.com/2007/10/aldolase-reaction-and-steady-state.html}}.  This cleavage means that one glucose molecule will eventually generate \textbf{two} Pyruvate molecules.
-\item The catabolism of each molecule of glyceraldehyde-3-phosphate (GA3P) to pyruvate generates two molecules of ATP via substrate-level phosphorylation\sidenote{Substrate level phosphorylation is the production of ATP by direct transfer from another phosphorylated compound.} (see steps \ref{eq:pgk} and \ref{eq:pk}).  There is also the reduction of one NAD+ molecule into NADH (see step \ref{eq:g3pdh}).  NADH, as we will discuss in the unit on the electron transport chain is equivalent to 2.5 ATP molecules.  Therefore this phase produces a total of 4.5 ATP molecules per GA3P, or \textbf{9 molecules per glucose molecule}.
+\item An investment phase, which uses two molecules of ATP (see reactions \ref{eq:glucokinase} and \ref{eq:pfk1}) are consumed.  This "charges" the glucose molecule, providing it with enough energy to be split into two-3 carbon molecules.  \textbf{At this stage there is a net usage of two ATP molecules per molecule of glucose.}
+\item The cleavage step, performed by aldolase A, immediately after the highly regulated PFK1 step (see reaction \ref{eq:aldolase-a}).  This is a very energetically costly step, as breaking a carbon-carbon bond is quite difficult\sidenote{The standard free energy of this step is +28 kcal/mol, making it highly endothermic.  For more details on how Fructose-1,6-bisphosphate buildup allows this difficult reaction to occur, see \url{http://sandwalk.blogspot.com/2007/10/aldolase-reaction-and-steady-state.html}}.  This cleavage means that one glucose molecule will eventually generate \textbf{two} Pyruvate molecules.
+\item The catabolism of each molecule of glyceraldehyde-3-phosphate (GA3P) to pyruvate generates two molecules of ATP via substrate-level phosphorylation\sidenote{Substrate level phosphorylation is the production of ATP by direct transfer from another phosphorylated compound.} (see reactions \ref{eq:pgk} and \ref{eq:pk}).  There is also the reduction of one NAD+ molecule into NADH (see reaction \ref{eq:g3pdh}).  NADH, as we will discuss in the unit on the electron transport chain is equivalent to 2.5 ATP molecules.  Therefore this phase produces a total of 4.5 ATP molecules per GA3P, or \textbf{9 molecules per glucose molecule}.
 \end{enumerate}
 
 Glycolysis down to the level of pyruvate therefore uses up two ATP molecules, and generates the equivalent of 9 ATP molecules for a \textbf{net gain of 7 molecules of ATP per molecule of glucose.}  Full oxidation of glucose to CO\textsubscript{2} will eventually produce 32 molecules of ATP/glucose so at this stage there is quite a lot of energy remaining in pyruvate.
