@@ -1,0 +1,160 @@
+---
+title: "Summary Graphs of NUTR630 Intake"
+author: "Dave Bridges, Liv Anderson and Rina Hisamatsu"
+date: "2017-09-03"
+output:
+  pdf_document:
+    highlight: tango
+    keep_tex: yes
+    number_sections: no
+    toc: yes
+---
+
+```{r global_options, include=FALSE}
+library(knitr)
+#figures makde will go to directory called figures, will make them as both png and pdf files 
+opts_chunk$set(fig.path='figures/',
+               echo=TRUE, warning=FALSE, message=FALSE,dev=c('png','pdf'))
+options(scipen = 2, digits = 3)
+# set echo and message to TRUE if you want to display code blocks and code output respectively
+
+knitr::knit_hooks$set(inline = function(x) {
+  knitr:::format_sci(x, 'md')
+})
+
+
+superpose.eb <- function (x, y, ebl, ebu = ebl, length = 0.08, ...)
+  arrows(x, y + ebu, x, y - ebl, angle = 90, code = 3,
+  length = length, ...)
+
+  
+se <- function(x) sd(x, na.rm=T)/sqrt(length(x))
+
+#load these packages, nearly always needed
+library(tidyr)
+library(dplyr)
+
+# sets maize and blue color scheme
+color.scheme <- c('#00274c', '#ffcb05')
+```
+
+
+```{r data-input}
+library(readr)
+filename <- 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSDRxu3Ur53iZVsg5Gg9nArNiKY2-xguRzoeWl-wQ5Ky8qxRGnuXXMWSReSF1tR_SU6dmcBTgb-cQiY/pub?gid=830256665&single=true&output=csv'
+data <- read_csv(filename)
+```
+
+These data can be found in `r getwd()` in a file named `r filename`.  This script was most recently updated on `r date()`.
+
+# Analysis
+
+## What Majors
+
+```{r majors-summary}
+library(forcats)
+#grouped with most common 4
+
+count.majors <-
+  data %>%
+  mutate(`Which discipline most closely matches your undergraduate degree?` = fct_lump(as.factor(data$`Which discipline most closely matches your undergraduate degree?`), n=4)) %>%
+  mutate(`Which discipline most closely matches your undergraduate degree?` = 
+           fct_recode(`Which discipline most closely matches your undergraduate degree?`, 
+                      "Neuroscience" = "Psychology-related (Psychology, Neuroscience, etc.)",
+                      "Nutrition" = "Food Quality & Safety",
+                      "Nutrition" = "Nutrition & dietetics (minor in biology)",
+                      "Nutrition" = "Dietetics",
+                      "Biological Sciences" = "Biochemistry")) %>%
+  group_by(`Which discipline most closely matches your undergraduate degree?`) %>%
+  count() %>%
+  arrange(desc(n)) 
+  
+with(count.majors, barplot(n,
+                          las=1,
+                          cex.names=0.75,
+                          main="What was your major?",
+                          col=color.scheme,
+                          names.arg=`Which discipline most closely matches your undergraduate degree?`))
+
+library(ggplot2)
+ggplot(count.majors,aes(y=n,x=reorder(`Which discipline most closely matches your undergraduate degree?`,-n))) +
+         geom_bar(stat='identity') +
+  labs(y="Number of Students",
+       title="Which discipline most closely matches your undergraduate degree?",
+       x="")
+```
+  
+  
+## What Topics are Students Interested In?
+
+```{r student-interests}
+library(sjPlot)
+
+student.interest.data <- 
+  data %>%
+  select(starts_with('Please answer these questions about your interests')) %>%
+  rename("Biochemistry - Interest" = "Please answer these questions about your interests [Macronutrient biochemistry is of interest to me.]",
+         "Biochemistry - Important" = "Please answer these questions about your interests [Macronutrient biochemistry is important for my career interests.]",
+         "Digestion - Interest" = "Please answer these questions about your interests [Comprehensive understanding of the digestive tract is of interest to me.]",
+         "Digestion - Important" = "Please answer these questions about your interests [Comprehensive understanding of the digestive tract is important for my career interests.]") %>%
+  mutate(`Biochemistry - Interest`= fct_recode(`Biochemistry - Interest`, 
+                                                 '1'="Strongly Agree",
+                                                 '2'="Agree",
+                                                 '3'="Neutral",
+                                                 '4'="Disagree",
+                                                 '5'="Strongly Disagree")) %>%
+  mutate(`Biochemistry - Important`= fct_recode(`Biochemistry - Important`, 
+                                                 '1'="Strongly Agree",
+                                                 '2'="Agree",
+                                                 '3'="Neutral",
+                                                 '4'="Disagree",
+                                                 '5'="Strongly Disagree")) %>%
+    mutate(`Digestion - Interest`= fct_recode(`Digestion - Interest`, 
+                                                 '1'="Strongly Agree",
+                                                 '2'="Agree",
+                                                 '3'="Neutral",
+                                                 '4'="Disagree",
+                                                 '5'="Strongly Disagree")) %>%
+      mutate(`Digestion - Important`= fct_recode(`Digestion - Important`, 
+                                                 '1'="Strongly Agree",
+                                                 '2'="Agree",
+                                                 '3'="Neutral",
+                                                 '4'="Disagree",
+                                                 '5'="Strongly Disagree")) %>%
+  mutate(`Biochemistry - Interest`=as.numeric(as.character(`Biochemistry - Interest`))) %>%
+  mutate(`Biochemistry - Important`=as.numeric(as.character(`Biochemistry - Important`))) %>%
+  mutate(`Digestion - Interest`=as.numeric(as.character(`Digestion - Interest`))) %>%
+  mutate(`Digestion - Important`=as.numeric(as.character(`Digestion - Important`))) 
+
+plot_likert(student.interest.data,
+           sort.frq=NULL,
+           values='hide',
+           reverse.colors=TRUE,
+           show.legend=FALSE,
+           show.n=FALSE)
+```
+
+
+# GradeCraft Familiarity
+
+```{r gradecraft}
+gradecraft <- 
+  data %>%
+  group_by(`Are you familiar with GradeCraft?`) %>%
+  count()
+
+with(gradecraft, barplot(n,
+                          las=1,
+                          ylab="Responses",
+                          main="Are you familiar with GradeCraft?",
+                          col=color.scheme,
+                          names.arg=`Are you familiar with GradeCraft?`))
+```
+
+Only `r gradecraft$n[2]` out of `r gradecraft$n[2]+gradecraft$n[1]` students were familiar with GradeCraft.
+
+# Session Information
+
+```{r session-information, echo=T}
+sessionInfo()
+```
