@@ -71,14 +71,14 @@ count.majors <-
   
 with(count.majors, barplot(n,
                           las=1,
-                          cex.names=0.75,
+                          cex.names=0.66,
                           main="What was your major?",
                           col=color.scheme,
                           names.arg=`Which discipline most closely matches your undergraduate degree?`))
 
 library(ggplot2)
 ggplot(count.majors,aes(y=n,x=reorder(`Which discipline most closely matches your undergraduate degree?`,-n))) +
-         geom_bar(stat='identity') +
+         geom_bar(stat='identity',fill=color.scheme[1]) +
   labs(y="Number of Students",
        title="Which discipline most closely matches your undergraduate degree?",
        x="")
@@ -134,8 +134,45 @@ plot_likert(student.interest.data,
            show.n=FALSE)
 ```
 
+# Student Experience Data
 
-# GradeCraft Familiarity
+```{r student-experience}
+student.exp.data <-
+  data %>%
+  select(`I have previously written a literature review for a class.`,
+`In college, have you ever done an in-class presentation?`,`Have you ever been asked to review a peer's presentation?`,`Have you ever been asked to evaluate a news article for class?`,`Have you ever written review questions based on material you were taught?`)
+
+countYes = function(v){length(v[v=="Yes"])}
+student.exp.data.summary <- sapply(student.exp.data,countYes) 
+student.exp.data.summary <- as_tibble(student.exp.data.summary)
+student.exp.data.summary$Question <- rownames(student.exp.data.summary) 
+
+ggplot(student.exp.data.summary, aes(x=reorder(Question,value),y=value/dim(student.exp.data)[1]*100)) +
+  geom_bar(stat='identity',fill=color.scheme[1]) + coord_flip() +
+  labs(x="",y="Percent",title="Student Experiences")
+```
+
+## Online Resources
+
+```{r online-resources}
+online.data <-
+  data %>%
+  select(starts_with("Which of the following online resources do you use for learning about nutrition?  Have you ever shared nutrition content in them?"))
+colnames(online.data) <- gsub(".*\\[|\\]", "", colnames(online.data))
+
+online.data.summary <-
+  gather(online.data,key="Tool",value="Use") %>% 
+  group_by(Tool) %>% 
+  count(Use) %>%
+  na.omit
+  
+ggplot(online.data.summary, aes(y=n,x=reorder(Tool,n))) +
+  geom_bar(stat='identity',fill=color.scheme[1]) +
+  facet_grid(Use~.) +
+  labs(y="Number of Students",x="",title="Use of Online Resources")
+```
+
+## GradeCraft Familiarity
 
 ```{r gradecraft}
 gradecraft <- 

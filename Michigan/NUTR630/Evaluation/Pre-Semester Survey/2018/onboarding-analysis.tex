@@ -144,7 +144,7 @@ These data can be found in
 /Users/davebrid/Documents/GitHub/TeachingLectures/Michigan/NUTR630/Evaluation/Pre-Semester
 Survey/2018 in a file named
 \url{https://docs.google.com/spreadsheets/d/e/2PACX-1vSDRxu3Ur53iZVsg5Gg9nArNiKY2-xguRzoeWl-wQ5Ky8qxRGnuXXMWSReSF1tR_SU6dmcBTgb-cQiY/pub?gid=830256665\&single=true\&output=csv}.
-This script was most recently updated on Mon Sep 3 10:49:39 2018.
+This script was most recently updated on Mon Sep 3 12:11:30 2018.
 
 \section{Analysis}\label{analysis}
 
@@ -171,7 +171,7 @@ This script was most recently updated on Mon Sep 3 10:49:39 2018.
   
 \KeywordTok{with}\NormalTok{(count.majors, }\KeywordTok{barplot}\NormalTok{(n,}
                           \DataTypeTok{las=}\DecValTok{1}\NormalTok{,}
-                          \DataTypeTok{cex.names=}\FloatTok{0.75}\NormalTok{,}
+                          \DataTypeTok{cex.names=}\FloatTok{0.66}\NormalTok{,}
                           \DataTypeTok{main=}\StringTok{"What was your major?"}\NormalTok{,}
                           \DataTypeTok{col=}\NormalTok{color.scheme,}
                           \DataTypeTok{names.arg=}\StringTok{`}\DataTypeTok{Which discipline most closely matches your undergraduate degree?}\StringTok{`}\NormalTok{))}
@@ -185,7 +185,7 @@ This script was most recently updated on Mon Sep 3 10:49:39 2018.
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{ggplot}\NormalTok{(count.majors,}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{y=}\NormalTok{n,}\DataTypeTok{x=}\KeywordTok{reorder}\NormalTok{(}\StringTok{`}\DataTypeTok{Which discipline most closely matches your undergraduate degree?}\StringTok{`}\NormalTok{,}\OperatorTok{-}\NormalTok{n))) }\OperatorTok{+}
-\StringTok{         }\KeywordTok{geom_bar}\NormalTok{(}\DataTypeTok{stat=}\StringTok{'identity'}\NormalTok{) }\OperatorTok{+}
+\StringTok{         }\KeywordTok{geom_bar}\NormalTok{(}\DataTypeTok{stat=}\StringTok{'identity'}\NormalTok{,}\DataTypeTok{fill=}\NormalTok{color.scheme[}\DecValTok{1}\NormalTok{]) }\OperatorTok{+}
 \StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{y=}\StringTok{"Number of Students"}\NormalTok{,}
        \DataTypeTok{title=}\StringTok{"Which discipline most closely matches your undergraduate degree?"}\NormalTok{,}
        \DataTypeTok{x=}\StringTok{""}\NormalTok{)}
@@ -248,7 +248,53 @@ In?}\label{what-topics-are-students-interested-in}
 
 \includegraphics{figures/student-interests-1.png}
 
-\section{GradeCraft Familiarity}\label{gradecraft-familiarity}
+\section{Student Experience Data}\label{student-experience-data}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{student.exp.data <-}
+\StringTok{  }\NormalTok{data }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{select}\NormalTok{(}\StringTok{`}\DataTypeTok{I have previously written a literature review for a class.}\StringTok{`}\NormalTok{,}
+\StringTok{`}\DataTypeTok{In college, have you ever done an in-class presentation?}\StringTok{`}\NormalTok{,}\StringTok{`}\DataTypeTok{Have you ever been asked to review a peer's presentation?}\StringTok{`}\NormalTok{,}\StringTok{`}\DataTypeTok{Have you ever been asked to evaluate a news article for class?}\StringTok{`}\NormalTok{,}\StringTok{`}\DataTypeTok{Have you ever written review questions based on material you were taught?}\StringTok{`}\NormalTok{)}
+
+\NormalTok{countYes =}\StringTok{ }\ControlFlowTok{function}\NormalTok{(v)\{}\KeywordTok{length}\NormalTok{(v[v}\OperatorTok{==}\StringTok{"Yes"}\NormalTok{])\}}
+\NormalTok{student.exp.data.summary <-}\StringTok{ }\KeywordTok{sapply}\NormalTok{(student.exp.data,countYes) }
+\NormalTok{student.exp.data.summary <-}\StringTok{ }\KeywordTok{as_tibble}\NormalTok{(student.exp.data.summary)}
+\NormalTok{student.exp.data.summary}\OperatorTok{$}\NormalTok{Question <-}\StringTok{ }\KeywordTok{rownames}\NormalTok{(student.exp.data.summary) }
+
+\KeywordTok{ggplot}\NormalTok{(student.exp.data.summary, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x=}\KeywordTok{reorder}\NormalTok{(Question,value),}\DataTypeTok{y=}\NormalTok{value}\OperatorTok{/}\KeywordTok{dim}\NormalTok{(student.exp.data)[}\DecValTok{1}\NormalTok{]}\OperatorTok{*}\DecValTok{100}\NormalTok{)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_bar}\NormalTok{(}\DataTypeTok{stat=}\StringTok{'identity'}\NormalTok{,}\DataTypeTok{fill=}\NormalTok{color.scheme[}\DecValTok{1}\NormalTok{]) }\OperatorTok{+}\StringTok{ }\KeywordTok{coord_flip}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{x=}\StringTok{""}\NormalTok{,}\DataTypeTok{y=}\StringTok{"Percent"}\NormalTok{,}\DataTypeTok{title=}\StringTok{"Student Experiences"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{figures/student-experience-1.png}
+
+\subsection{Online Resources}\label{online-resources}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{online.data <-}
+\StringTok{  }\NormalTok{data }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{select}\NormalTok{(}\KeywordTok{starts_with}\NormalTok{(}\StringTok{"Which of the following online resources do you use for learning about nutrition?  Have you ever shared nutrition content in them?"}\NormalTok{))}
+\KeywordTok{colnames}\NormalTok{(online.data) <-}\StringTok{ }\KeywordTok{gsub}\NormalTok{(}\StringTok{".*}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{[|}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{]"}\NormalTok{, }\StringTok{""}\NormalTok{, }\KeywordTok{colnames}\NormalTok{(online.data))}
+
+\NormalTok{online.data.summary <-}
+\StringTok{  }\KeywordTok{gather}\NormalTok{(online.data,}\DataTypeTok{key=}\StringTok{"Tool"}\NormalTok{,}\DataTypeTok{value=}\StringTok{"Use"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{group_by}\NormalTok{(Tool) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{count}\NormalTok{(Use) }\OperatorTok{%>%}
+\StringTok{  }\NormalTok{na.omit}
+  
+\KeywordTok{ggplot}\NormalTok{(online.data.summary, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{y=}\NormalTok{n,}\DataTypeTok{x=}\KeywordTok{reorder}\NormalTok{(Tool,n))) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_bar}\NormalTok{(}\DataTypeTok{stat=}\StringTok{'identity'}\NormalTok{,}\DataTypeTok{fill=}\NormalTok{color.scheme[}\DecValTok{1}\NormalTok{]) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{facet_grid}\NormalTok{(Use}\OperatorTok{~}\NormalTok{.) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{y=}\StringTok{"Number of Students"}\NormalTok{,}\DataTypeTok{x=}\StringTok{""}\NormalTok{,}\DataTypeTok{title=}\StringTok{"Use of Online Resources"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{figures/online-resources-1.png}
+
+\subsection{GradeCraft Familiarity}\label{gradecraft-familiarity}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -321,11 +367,11 @@ Only 3 out of 30 students were familiar with GradeCraft.
 ## [61] rlang_0.2.2        grid_3.5.0         nloptr_1.0.4      
 ## [64] ggridges_0.5.0     labeling_0.3       rmarkdown_1.10    
 ## [67] gtable_0.2.0       codetools_0.2-15   sjstats_0.17.0    
-## [70] curl_3.2           sjmisc_2.7.4       R6_2.2.2          
-## [73] zoo_1.8-3          pwr_1.2-2          bindr_0.1.1       
-## [76] rprojroot_1.3-2    modeltools_0.2-22  stringi_1.2.4     
-## [79] parallel_3.5.0     Rcpp_0.12.18       tidyselect_0.2.4  
-## [82] coda_0.19-1
+## [70] curl_3.2           reshape2_1.4.3     sjmisc_2.7.4      
+## [73] R6_2.2.2           zoo_1.8-3          pwr_1.2-2         
+## [76] bindr_0.1.1        rprojroot_1.3-2    modeltools_0.2-22 
+## [79] stringi_1.2.4      parallel_3.5.0     Rcpp_0.12.18      
+## [82] tidyselect_0.2.4   coda_0.19-1
 \end{verbatim}
 
 
