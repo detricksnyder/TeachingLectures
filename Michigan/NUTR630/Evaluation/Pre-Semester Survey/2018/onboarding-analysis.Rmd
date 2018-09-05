@@ -1,7 +1,7 @@
 ---
 title: "Summary Graphs of NUTR630 Intake"
-author: "Dave Bridges, Liv Anderson and Rina Hisamatsu"
-date: "2017-09-03"
+author: "Dave Bridges, Liv Anderson and Noura El Habbal"
+date: "Septembe 3, 2018"
 output:
   pdf_document:
     highlight: tango
@@ -64,7 +64,10 @@ count.majors <-
                       "Nutrition" = "Food Quality & Safety",
                       "Nutrition" = "Nutrition & dietetics (minor in biology)",
                       "Nutrition" = "Dietetics",
-                      "Biological Sciences" = "Biochemistry")) %>%
+                      "Nutrition" = "Nutrition and Food Science",
+                      "Nutrition" = "Food & Nutritional Sciences",
+                      "Biological Sciences" = "Biochemistry",
+                      "Humanities" = "English Lit and Commuications, years later I took biochem pre-reqs for my program")) %>%
   group_by(`Which discipline most closely matches your undergraduate degree?`) %>%
   count() %>%
   arrange(desc(n)) 
@@ -134,6 +137,57 @@ plot_likert(student.interest.data,
            show.n=FALSE)
 ```
 
+### What Topic are you Most Interested In?
+
+```{r qualitative-interests}
+library(stringr)
+topic.interest <- 
+  data %>%
+  select(`After reading the syllabus, which topic are you most excited to learn about?`) %>%
+  mutate(Interest = `After reading the syllabus, which topic are you most excited to learn about?`) %>%
+  mutate(Microbiome = ifelse(str_detect(Interest, "Microbiome|microbiome"), TRUE, FALSE),
+         Fiber = ifelse(str_detect(Interest, "Fiber|fibre"), TRUE, FALSE),
+         Balance = ifelse(str_detect(Interest, "balance|Balance"), TRUE, FALSE),
+         Digestion = ifelse(str_detect(Interest, "digest|Digest"), TRUE, FALSE),
+         Biochem = ifelse(str_detect(Interest, "biochem|Biochem"), TRUE, FALSE)) %>%
+  select(Microbiome,Fiber,Balance,Digestion,Biochem) %>%
+  gather(key=Interest, value=Response) %>%
+  filter(Response==TRUE) %>%
+  count(Interest)
+
+ggplot(topic.interest, aes(y=n,x=reorder(Interest,n))) +
+  geom_bar(stat='identity',fill=color.scheme[1]) +
+  coord_flip() +
+  labs(y='Number of Students',
+       x="",
+       title="")
+```
+
+## Applications of Course Content
+
+```{r applications-content}
+library(stringr)
+application.data <- 
+  data %>%
+  select(`What applications of this course content are you interested in?  Select all that apply.`) %>%
+  rename(Applications = `What applications of this course content are you interested in?  Select all that apply.`)
+
+application.results = str_split(application.data$Applications, pattern=', ', simplify =F) %>% unlist() 
+
+application.summary <-
+  as.data.frame(application.results) %>%
+  rename(Results = application.results) %>%
+  count(Results) %>%
+  arrange(n)
+
+ggplot(application.summary, aes(y=n,x=reorder(Results,n))) +
+  geom_bar(stat='identity',fill=color.scheme[1]) +
+  coord_flip() +
+  labs(y='Number of Students',
+       x="",
+       title="")
+```
+
 # Student Experience Data
 
 ```{r student-experience}
@@ -149,7 +203,7 @@ student.exp.data.summary$Question <- rownames(student.exp.data.summary)
 
 ggplot(student.exp.data.summary, aes(x=reorder(Question,value),y=value/dim(student.exp.data)[1]*100)) +
   geom_bar(stat='identity',fill=color.scheme[1]) + coord_flip() +
-  labs(x="",y="Percent",title="Student Experiences")
+  labs(x="",y="Percent",title="Assignment Experiences")
 ```
 
 ## Online Resources
@@ -164,9 +218,9 @@ online.data.summary <-
   gather(online.data,key="Tool",value="Use") %>% 
   group_by(Tool) %>% 
   count(Use) %>%
-  na.omit
+  na.omit 
   
-ggplot(online.data.summary, aes(y=n,x=reorder(Tool,n))) +
+ggplot(filter(online.data.summary, Use != "Contributor"), aes(y=n,x=reorder(Tool,n))) +
   geom_bar(stat='identity',fill=color.scheme[1]) +
   facet_grid(Use~.) +
   labs(y="Number of Students",x="",title="Use of Online Resources")

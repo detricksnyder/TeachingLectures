@@ -25,7 +25,7 @@
 \usepackage{hyperref}
 \hypersetup{unicode=true,
             pdftitle={Summary Graphs of NUTR630 Intake},
-            pdfauthor={Dave Bridges, Liv Anderson and Rina Hisamatsu},
+            pdfauthor={Dave Bridges, Liv Anderson and Noura El Habbal},
             pdfborder={0 0 0},
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
@@ -117,12 +117,12 @@
   \title{Summary Graphs of NUTR630 Intake}
     \pretitle{\vspace{\droptitle}\centering\huge}
   \posttitle{\par}
-    \author{Dave Bridges, Liv Anderson and Rina Hisamatsu}
+    \author{Dave Bridges, Liv Anderson and Noura El Habbal}
     \preauthor{\centering\large\emph}
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2017-09-03}
+    \date{Septembe 3, 2018}
 
 
 \begin{document}
@@ -144,7 +144,7 @@ These data can be found in
 /Users/davebrid/Documents/GitHub/TeachingLectures/Michigan/NUTR630/Evaluation/Pre-Semester
 Survey/2018 in a file named
 \url{https://docs.google.com/spreadsheets/d/e/2PACX-1vSDRxu3Ur53iZVsg5Gg9nArNiKY2-xguRzoeWl-wQ5Ky8qxRGnuXXMWSReSF1tR_SU6dmcBTgb-cQiY/pub?gid=830256665\&single=true\&output=csv}.
-This script was most recently updated on Mon Sep 3 12:11:30 2018.
+This script was most recently updated on Wed Sep 5 10:24:41 2018.
 
 \section{Analysis}\label{analysis}
 
@@ -164,7 +164,10 @@ This script was most recently updated on Mon Sep 3 12:11:30 2018.
                       \StringTok{"Nutrition"}\NormalTok{ =}\StringTok{ "Food Quality & Safety"}\NormalTok{,}
                       \StringTok{"Nutrition"}\NormalTok{ =}\StringTok{ "Nutrition & dietetics (minor in biology)"}\NormalTok{,}
                       \StringTok{"Nutrition"}\NormalTok{ =}\StringTok{ "Dietetics"}\NormalTok{,}
-                      \StringTok{"Biological Sciences"}\NormalTok{ =}\StringTok{ "Biochemistry"}\NormalTok{)) }\OperatorTok{%>%}
+                      \StringTok{"Nutrition"}\NormalTok{ =}\StringTok{ "Nutrition and Food Science"}\NormalTok{,}
+                      \StringTok{"Nutrition"}\NormalTok{ =}\StringTok{ "Food & Nutritional Sciences"}\NormalTok{,}
+                      \StringTok{"Biological Sciences"}\NormalTok{ =}\StringTok{ "Biochemistry"}\NormalTok{,}
+                      \StringTok{"Humanities"}\NormalTok{ =}\StringTok{ "English Lit and Commuications, years later I took biochem pre-reqs for my program"}\NormalTok{)) }\OperatorTok{%>%}
 \StringTok{  }\KeywordTok{group_by}\NormalTok{(}\StringTok{`}\DataTypeTok{Which discipline most closely matches your undergraduate degree?}\StringTok{`}\NormalTok{) }\OperatorTok{%>%}
 \StringTok{  }\KeywordTok{count}\NormalTok{() }\OperatorTok{%>%}
 \StringTok{  }\KeywordTok{arrange}\NormalTok{(}\KeywordTok{desc}\NormalTok{(n)) }
@@ -248,6 +251,67 @@ In?}\label{what-topics-are-students-interested-in}
 
 \includegraphics{figures/student-interests-1.png}
 
+\subsubsection{What Topic are you Most Interested
+In?}\label{what-topic-are-you-most-interested-in}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(stringr)}
+\NormalTok{topic.interest <-}\StringTok{ }
+\StringTok{  }\NormalTok{data }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{select}\NormalTok{(}\StringTok{`}\DataTypeTok{After reading the syllabus, which topic are you most excited to learn about?}\StringTok{`}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{Interest =} \StringTok{`}\DataTypeTok{After reading the syllabus, which topic are you most excited to learn about?}\StringTok{`}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{Microbiome =} \KeywordTok{ifelse}\NormalTok{(}\KeywordTok{str_detect}\NormalTok{(Interest, }\StringTok{"Microbiome|microbiome"}\NormalTok{), }\OtherTok{TRUE}\NormalTok{, }\OtherTok{FALSE}\NormalTok{),}
+         \DataTypeTok{Fiber =} \KeywordTok{ifelse}\NormalTok{(}\KeywordTok{str_detect}\NormalTok{(Interest, }\StringTok{"Fiber|fibre"}\NormalTok{), }\OtherTok{TRUE}\NormalTok{, }\OtherTok{FALSE}\NormalTok{),}
+         \DataTypeTok{Balance =} \KeywordTok{ifelse}\NormalTok{(}\KeywordTok{str_detect}\NormalTok{(Interest, }\StringTok{"balance|Balance"}\NormalTok{), }\OtherTok{TRUE}\NormalTok{, }\OtherTok{FALSE}\NormalTok{),}
+         \DataTypeTok{Digestion =} \KeywordTok{ifelse}\NormalTok{(}\KeywordTok{str_detect}\NormalTok{(Interest, }\StringTok{"digest|Digest"}\NormalTok{), }\OtherTok{TRUE}\NormalTok{, }\OtherTok{FALSE}\NormalTok{),}
+         \DataTypeTok{Biochem =} \KeywordTok{ifelse}\NormalTok{(}\KeywordTok{str_detect}\NormalTok{(Interest, }\StringTok{"biochem|Biochem"}\NormalTok{), }\OtherTok{TRUE}\NormalTok{, }\OtherTok{FALSE}\NormalTok{)) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{select}\NormalTok{(Microbiome,Fiber,Balance,Digestion,Biochem) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{gather}\NormalTok{(}\DataTypeTok{key=}\NormalTok{Interest, }\DataTypeTok{value=}\NormalTok{Response) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(Response}\OperatorTok{==}\OtherTok{TRUE}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{count}\NormalTok{(Interest)}
+
+\KeywordTok{ggplot}\NormalTok{(topic.interest, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{y=}\NormalTok{n,}\DataTypeTok{x=}\KeywordTok{reorder}\NormalTok{(Interest,n))) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_bar}\NormalTok{(}\DataTypeTok{stat=}\StringTok{'identity'}\NormalTok{,}\DataTypeTok{fill=}\NormalTok{color.scheme[}\DecValTok{1}\NormalTok{]) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{coord_flip}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{y=}\StringTok{'Number of Students'}\NormalTok{,}
+       \DataTypeTok{x=}\StringTok{""}\NormalTok{,}
+       \DataTypeTok{title=}\StringTok{""}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{figures/qualitative-interests-1.png}
+
+\subsection{Applications of Course
+Content}\label{applications-of-course-content}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(stringr)}
+\NormalTok{application.data <-}\StringTok{ }
+\StringTok{  }\NormalTok{data }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{select}\NormalTok{(}\StringTok{`}\DataTypeTok{What applications of this course content are you interested in?  Select all that apply.}\StringTok{`}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{rename}\NormalTok{(}\DataTypeTok{Applications =} \StringTok{`}\DataTypeTok{What applications of this course content are you interested in?  Select all that apply.}\StringTok{`}\NormalTok{)}
+
+\NormalTok{application.results =}\StringTok{ }\KeywordTok{str_split}\NormalTok{(application.data}\OperatorTok{$}\NormalTok{Applications, }\DataTypeTok{pattern=}\StringTok{', '}\NormalTok{, }\DataTypeTok{simplify =}\NormalTok{F) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{unlist}\NormalTok{() }
+
+\NormalTok{application.summary <-}
+\StringTok{  }\KeywordTok{as.data.frame}\NormalTok{(application.results) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{rename}\NormalTok{(}\DataTypeTok{Results =}\NormalTok{ application.results) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{count}\NormalTok{(Results) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{arrange}\NormalTok{(n)}
+
+\KeywordTok{ggplot}\NormalTok{(application.summary, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{y=}\NormalTok{n,}\DataTypeTok{x=}\KeywordTok{reorder}\NormalTok{(Results,n))) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_bar}\NormalTok{(}\DataTypeTok{stat=}\StringTok{'identity'}\NormalTok{,}\DataTypeTok{fill=}\NormalTok{color.scheme[}\DecValTok{1}\NormalTok{]) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{coord_flip}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{y=}\StringTok{'Number of Students'}\NormalTok{,}
+       \DataTypeTok{x=}\StringTok{""}\NormalTok{,}
+       \DataTypeTok{title=}\StringTok{""}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{figures/applications-content-1.png}
+
 \section{Student Experience Data}\label{student-experience-data}
 
 \begin{Shaded}
@@ -264,7 +328,7 @@ In?}\label{what-topics-are-students-interested-in}
 
 \KeywordTok{ggplot}\NormalTok{(student.exp.data.summary, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x=}\KeywordTok{reorder}\NormalTok{(Question,value),}\DataTypeTok{y=}\NormalTok{value}\OperatorTok{/}\KeywordTok{dim}\NormalTok{(student.exp.data)[}\DecValTok{1}\NormalTok{]}\OperatorTok{*}\DecValTok{100}\NormalTok{)) }\OperatorTok{+}
 \StringTok{  }\KeywordTok{geom_bar}\NormalTok{(}\DataTypeTok{stat=}\StringTok{'identity'}\NormalTok{,}\DataTypeTok{fill=}\NormalTok{color.scheme[}\DecValTok{1}\NormalTok{]) }\OperatorTok{+}\StringTok{ }\KeywordTok{coord_flip}\NormalTok{() }\OperatorTok{+}
-\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{x=}\StringTok{""}\NormalTok{,}\DataTypeTok{y=}\StringTok{"Percent"}\NormalTok{,}\DataTypeTok{title=}\StringTok{"Student Experiences"}\NormalTok{)}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{x=}\StringTok{""}\NormalTok{,}\DataTypeTok{y=}\StringTok{"Percent"}\NormalTok{,}\DataTypeTok{title=}\StringTok{"Assignment Experiences"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -283,9 +347,9 @@ In?}\label{what-topics-are-students-interested-in}
 \StringTok{  }\KeywordTok{gather}\NormalTok{(online.data,}\DataTypeTok{key=}\StringTok{"Tool"}\NormalTok{,}\DataTypeTok{value=}\StringTok{"Use"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
 \StringTok{  }\KeywordTok{group_by}\NormalTok{(Tool) }\OperatorTok{%>%}\StringTok{ }
 \StringTok{  }\KeywordTok{count}\NormalTok{(Use) }\OperatorTok{%>%}
-\StringTok{  }\NormalTok{na.omit}
+\StringTok{  }\NormalTok{na.omit }
   
-\KeywordTok{ggplot}\NormalTok{(online.data.summary, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{y=}\NormalTok{n,}\DataTypeTok{x=}\KeywordTok{reorder}\NormalTok{(Tool,n))) }\OperatorTok{+}
+\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{filter}\NormalTok{(online.data.summary, Use }\OperatorTok{!=}\StringTok{ "Contributor"}\NormalTok{), }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{y=}\NormalTok{n,}\DataTypeTok{x=}\KeywordTok{reorder}\NormalTok{(Tool,n))) }\OperatorTok{+}
 \StringTok{  }\KeywordTok{geom_bar}\NormalTok{(}\DataTypeTok{stat=}\StringTok{'identity'}\NormalTok{,}\DataTypeTok{fill=}\NormalTok{color.scheme[}\DecValTok{1}\NormalTok{]) }\OperatorTok{+}
 \StringTok{  }\KeywordTok{facet_grid}\NormalTok{(Use}\OperatorTok{~}\NormalTok{.) }\OperatorTok{+}
 \StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{y=}\StringTok{"Number of Students"}\NormalTok{,}\DataTypeTok{x=}\StringTok{""}\NormalTok{,}\DataTypeTok{title=}\StringTok{"Use of Online Resources"}\NormalTok{)}
@@ -314,7 +378,7 @@ In?}\label{what-topics-are-students-interested-in}
 
 \includegraphics{figures/gradecraft-1.png}
 
-Only 3 out of 30 students were familiar with GradeCraft.
+Only 3 out of 55 students were familiar with GradeCraft.
 
 \section{Session Information}\label{session-information}
 
@@ -340,8 +404,9 @@ Only 3 out of 30 students were familiar with GradeCraft.
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-## [1] sjPlot_2.6.0   ggplot2_3.0.0  bindrcpp_0.2.2 forcats_0.3.0 
-## [5] readr_1.1.1    dplyr_0.7.6    tidyr_0.8.1    knitr_1.20    
+## [1] stringr_1.3.1  sjPlot_2.6.0   ggplot2_3.0.0  bindrcpp_0.2.2
+## [5] forcats_0.3.0  readr_1.1.1    dplyr_0.7.6    tidyr_0.8.1   
+## [9] knitr_1.20    
 ## 
 ## loaded via a namespace (and not attached):
 ##  [1] splines_3.5.0      carData_3.0-1      modelr_0.1.2      
@@ -362,16 +427,16 @@ Only 3 out of 30 students were familiar with GradeCraft.
 ## [46] crayon_1.3.4       estimability_1.3   evaluate_0.11     
 ## [49] nlme_3.1-137       MASS_7.3-50        foreign_0.8-71    
 ## [52] tools_3.5.0        data.table_1.11.4  hms_0.4.2         
-## [55] multcomp_1.4-8     stringr_1.3.1      munsell_0.5.0     
-## [58] prediction_0.3.6   ggeffects_0.5.0    compiler_3.5.0    
-## [61] rlang_0.2.2        grid_3.5.0         nloptr_1.0.4      
-## [64] ggridges_0.5.0     labeling_0.3       rmarkdown_1.10    
-## [67] gtable_0.2.0       codetools_0.2-15   sjstats_0.17.0    
-## [70] curl_3.2           reshape2_1.4.3     sjmisc_2.7.4      
-## [73] R6_2.2.2           zoo_1.8-3          pwr_1.2-2         
-## [76] bindr_0.1.1        rprojroot_1.3-2    modeltools_0.2-22 
-## [79] stringi_1.2.4      parallel_3.5.0     Rcpp_0.12.18      
-## [82] tidyselect_0.2.4   coda_0.19-1
+## [55] multcomp_1.4-8     munsell_0.5.0      prediction_0.3.6  
+## [58] ggeffects_0.5.0    compiler_3.5.0     rlang_0.2.2       
+## [61] grid_3.5.0         nloptr_1.0.4       ggridges_0.5.0    
+## [64] labeling_0.3       rmarkdown_1.10     gtable_0.2.0      
+## [67] codetools_0.2-15   sjstats_0.17.0     curl_3.2          
+## [70] reshape2_1.4.3     sjmisc_2.7.4       R6_2.2.2          
+## [73] zoo_1.8-3          pwr_1.2-2          bindr_0.1.1       
+## [76] rprojroot_1.3-2    modeltools_0.2-22  stringi_1.2.4     
+## [79] parallel_3.5.0     Rcpp_0.12.18       tidyselect_0.2.4  
+## [82] coda_0.19-1
 \end{verbatim}
 
 
