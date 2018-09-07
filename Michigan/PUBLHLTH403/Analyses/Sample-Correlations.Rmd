@@ -1,0 +1,124 @@
+---
+title: "Sample Correlation Coefficient Representations"
+author: "Dave Bridges"
+date: "2018-09-06"
+output:
+  pdf_document:
+    highlight: tango
+    keep_tex: yes
+    number_sections: yes
+    toc: yes
+  html_document:
+    highlight: tango
+    keep_md: yes
+    number_sections: yes
+    toc: yes
+---
+
+```{r global_options, include=FALSE}
+library(knitr)
+#figures makde will go to directory called figures, will make them as both png and pdf files 
+opts_chunk$set(fig.path='figures/',
+               echo=FALSE, warning=FALSE, message=FALSE,dev=c('png','pdf'))
+options(scipen = 2, digits = 3)
+# set echo and message to TRUE if you want to display code blocks and code output respectively
+
+knitr::knit_hooks$set(inline = function(x) {
+  knitr:::format_sci(x, 'md')
+})
+
+
+superpose.eb <- function (x, y, ebl, ebu = ebl, length = 0.08, ...)
+  arrows(x, y + ebu, x, y - ebl, angle = 90, code = 3,
+  length = length, ...)
+
+  
+se <- function(x) sd(x, na.rm=T)/sqrt(length(x))
+
+#load these packages, nearly always needed
+library(tidyr)
+library(dplyr)
+
+# sets maize and blue color scheme
+color.scheme <- c('#00274c', '#ffcb05')
+```
+
+# Purpose
+
+Generate plots of a given correlation coefficient
+
+```{r data-input}
+require(MASS)
+
+#generates fake datasets with these data
+current.bmi <- 28.6
+parent.bmi <- 25.4
+samples <- 500
+
+out.0 <- as.data.frame(mvrnorm(samples, mu = c(current.bmi,parent.bmi), Sigma = matrix(c(1,0,0,1), ncol = 2),
+               empirical = TRUE))
+colnames(out.0) <- c("Parent BMI", "Child BMI")
+
+out.10 <- as.data.frame(mvrnorm(samples, mu = c(current.bmi,parent.bmi), Sigma = matrix(c(1,0.1,0.1,1), ncol = 2),
+               empirical = TRUE))
+colnames(out.10) <- c("Parent BMI", "Child BMI")
+
+out.20 <- as.data.frame(mvrnorm(samples, mu = c(current.bmi,parent.bmi), Sigma = matrix(c(1,0.2,0.2,1), ncol = 2),
+               empirical = TRUE))
+colnames(out.20) <- c("Parent BMI", "Child BMI")
+
+out.50 <- as.data.frame(mvrnorm(samples, mu = c(current.bmi,parent.bmi), Sigma = matrix(c(1,0.5,0.5,1), ncol = 2),
+               empirical = TRUE))
+colnames(out.50) <- c("Parent BMI", "Child BMI")
+
+out.77 <- as.data.frame(mvrnorm(samples, mu = c(current.bmi,parent.bmi), Sigma = matrix(c(1,0.77,0.77,1), ncol = 2),
+               empirical = TRUE))
+colnames(out.77) <- c("Parent BMI", "Child BMI")
+
+out.90 <- as.data.frame(mvrnorm(samples, mu = c(current.bmi,parent.bmi), Sigma = matrix(c(1,0.9,0.9,1), ncol = 2),
+               empirical = TRUE))
+colnames(out.90) <- c("Parent BMI", "Child BMI")
+
+out.100 <- as.data.frame(mvrnorm(samples, mu = c(current.bmi,parent.bmi), Sigma = matrix(c(1,1,1,1), ncol = 2),
+               empirical = TRUE))
+colnames(out.100) <- c("Parent BMI", "Child BMI")
+
+```
+
+
+```{r plots-examples}
+
+library(ggplot2)
+library(gridExtra)
+p.0 <- ggplot(out.0, aes(y=`Child BMI`, x=`Parent BMI`)) + geom_point(alpha=0.25) + geom_smooth(method="lm",se=F) + labs(title="H2 = 0")
+p.50 <- ggplot(out.50, aes(y=`Child BMI`, x=`Parent BMI`)) + geom_point(alpha=0.25) + geom_smooth(method="lm",se=F) + labs(title="H2 = 50")
+p.100 <- ggplot(out.100, aes(y=`Child BMI`, x=`Parent BMI`)) + geom_point(alpha=0.25) + geom_smooth(method="lm",se=F) + labs(title="H2 = 100")
+
+grid.arrange(p.0,p.50,p.100,ncol=3)
+```
+
+```{r plots-quiz}
+
+p.10 <- ggplot(out.20, aes(y=`Child BMI`, x=`Parent BMI`)) + geom_point(alpha=0.25) + geom_smooth(method="lm",se=F) + labs(title="A")
+p.50 <- ggplot(out.50, aes(y=`Child BMI`, x=`Parent BMI`)) + geom_point(alpha=0.25) + geom_smooth(method="lm",se=F) + labs(title="B")
+p.77 <- ggplot(out.77, aes(y=`Child BMI`, x=`Parent BMI`)) + geom_point(alpha=0.25) + geom_smooth(method="lm",se=F) + labs(title="C")
+p.90 <- ggplot(out.90, aes(y=`Child BMI`, x=`Parent BMI`)) + geom_point(alpha=0.25) + geom_smooth(method="lm",se=F) + labs(title="D")
+
+grid.arrange(p.10,p.50,p.77,p.90,ncol=2)
+```
+
+```{r plots-blank}
+
+library(ggplot2)
+library(gridExtra)
+ggplot(out.0, aes(y=`Child BMI`, x=`Parent BMI`)) + geom_blank() + theme_bw()
+```
+
+These data can be found in **`r getwd()`**.  This script was most recently updated on **`r date()`**.
+
+
+# Session Information
+
+```{r session-information, echo=T}
+sessionInfo()
+```
