@@ -166,6 +166,62 @@ p + geom_bar(stat='identity', aes(fill=Assignment)) +
     geom_hline(aes(yintercept=1000), color="black", linetype="dashed", size=0.5) 
 ```
 
+#### Student Level Paths
+
+```{r correlations-all}
+assignment.matrix <- assessment.dataset %>% spread(Assignment,Points)
+assignment.matrix.names <- assignment.matrix$Username
+
+assignment.matrix <- 
+  assignment.matrix %>% 
+  select(-Username) %>% 
+  as.matrix()
+
+library(RColorBrewer)
+library(gplots)
+heatmap.2(assignment.matrix, 
+        scale='col',
+        labRow=NA,
+        cexCol = 0.3,
+        col=brewer.pal(9,"Blues"),
+        density.info='none', trace='none')
+
+heatmap.2(assignment.matrix, 
+        scale='col',
+        labRow=NA,
+        Colv=NA,
+        cexCol = 0.3,
+        col=brewer.pal(9,"Blues"),
+        density.info='none', trace='none')
+```
+
+# Among Students with an A
+
+```{r correlations-a-only}
+assignment.matrix.a <- assessment.dataset %>% spread(Assignment,Points)
+assignment.matrix.a$Total <- rowSums(assignment.matrix.a %>% select(-Username))
+
+assignment.matrix.a <- 
+  assignment.matrix.a %>% 
+  filter(Total>1000) %>%
+  select(-Username, -Total) %>% 
+  as.matrix()
+
+heatmap.2(assignment.matrix.a, 
+        scale='col',
+        labRow=NA,
+        cexCol = 0.3,
+        col=brewer.pal(9,"Blues"),
+        density.info='none', trace='none')
+
+heatmap.2(assignment.matrix.a, 
+        scale='col',
+        labRow=NA,
+        Colv=NA,
+        cexCol = 0.3,
+        col=brewer.pal(9,"Blues"),
+        density.info='none', trace='none')
+```
 
 ```{r required-optional-correlations}
 assessment.dataset.required <-
@@ -174,7 +230,8 @@ assessment.dataset.required <-
   group_by(Username, Required) %>%
   summarise(Points = sum(Points)) %>%
   spread(Required, Points) %>%
-  mutate(Total.Points = Required + Optional)
+  mutate(Total.Points = Required + Optional) %>%
+  mutate(A.Grade = Total.Points>1000)
   
 lm.points <- lm(Optional ~ Required, data=assessment.dataset.required)  
 par(mfrow=c(2,2))
@@ -207,6 +264,36 @@ p + geom_point() +
   geom_hline(yintercept = 1000, lty=2,col="red") +
   geom_rug(alpha=0.5)
 ```
+
+
+# Likelyhood of an A Grade
+
+```{r logistic-a, fig.cap="Logistic regression for points required to get an A"}
+glm.a.grade <- glm(A.Grade ~ Optional, data=assessment.dataset.required, family="binomial")
+
+tidy(glm.a.grade) %>% kable(caption="Logistic regression of optional assinments vs grade")
+#coef as logit
+
+predict.data <- data.frame(Optional=seq(0,400),by=5)
+predict.data$Logit <- predict(glm.a.grade, newdata=predict.data)
+predict.data <-
+  predict.data %>%
+  mutate(Odds = exp(Logit)) %>%
+  mutate(Probability = Odds/(1+Odds))
+
+ggplot(predict.data, aes(y=Probability,x=Optional)) +
+  geom_line(color='cadetblue') +
+  labs(y="Probability of getting an A",
+       x="Amount of optional points",
+       title="Logistic regression of 2018 student data")
+
+beta.a.grade <- coef(glm.a.grade)['Optional'] #coef as logit
+odds.a.grade <- exp(beta.a.grade) #coef as odds
+prob.a.grade <- odds.a.grade/(1 + odds.a.grade)
+```
+
+
+Based on last year, 
 
 # Session Information
 
