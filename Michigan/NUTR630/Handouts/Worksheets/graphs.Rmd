@@ -1,0 +1,120 @@
+---
+title: "Informative title"
+author: "Authors"
+date: "Date script was first written"
+output:
+  pdf_document:
+    highlight: tango
+    keep_tex: yes
+    number_sections: yes
+    toc: yes
+  html_document:
+    highlight: tango
+    keep_md: yes
+    number_sections: yes
+    toc: yes
+---
+
+```{r global_options, include=FALSE}
+library(knitr)
+#figures makde will go to directory called figures, will make them as both png and pdf files 
+opts_chunk$set(fig.path='figures/',
+               echo=FALSE, warning=FALSE, message=FALSE,dev=c('png','pdf'))
+options(scipen = 2, digits = 3)
+# set echo and message to TRUE if you want to display code blocks and code output respectively
+
+knitr::knit_hooks$set(inline = function(x) {
+  knitr:::format_sci(x, 'md')
+})
+
+
+superpose.eb <- function (x, y, ebl, ebu = ebl, length = 0.08, ...)
+  arrows(x, y + ebu, x, y - ebl, angle = 90, code = 3,
+  length = length, ...)
+
+  
+se <- function(x) sd(x, na.rm=T)/sqrt(length(x))
+
+#load these packages, nearly always needed
+library(tidyr)
+library(dplyr)
+
+# sets maize and blue color scheme
+color.scheme <- c('#00274c', '#ffcb05')
+```
+
+# Purpose
+
+Graphs for NUTR630
+
+## Effects of LCHF RCT on Cholesterol Levels
+
+```{r ldl-c-rct}
+ldl.data.foster <- data.frame(Treatment=c("LCHF","HCLF"), LDL=c(5.4,-7.4), LDL.CI=c(19.2,16.6)) %>% #from Foster NEJM 2003
+  mutate(LDL.SE = LDL.CI/1.96)
+
+library(ggplot2)
+ggplot(ldl.data.foster, aes(y=LDL,
+                     x=Treatment,
+                     ymin=LDL-LDL.CI,
+                     ymax=LDL+LDL.CI)) +
+  geom_bar(stat='identity') +
+  geom_errorbar(width=0.5) +
+  geom_hline(yintercept=0, lty=2) +
+  labs(y="Change in LDL-Cholesterol",
+       title="Effects of High or Low Carbohydrate Diet on LDL-Cholesterol",
+       subtitle="From Foster et al JAMA 2018")
+
+
+data.gardner <- data.frame(Treatment=c("LCHF","HCLF"), 
+                               LDL=c(3.62,-2.12), 
+                               LDL.CI=c(6.19-3.62,4.7-2.12),
+                               HDL=c(2.64,0.40),
+                               HDL.CI=c(1.18-0.4,3.41-2.64)) %>% #from Gardner et al JAMA 2018
+  mutate(LDL.SE = LDL.CI/1.96,
+         HDL.SE=HDL.CI/1.96,
+         TC=HDL+LDL,
+         TC.SE=sqrt(LDL.SE^2+HDL.SE^2))
+
+ggplot(data.gardner, aes(y=LDL,
+                     x=Treatment,
+                     ymin=LDL-LDL.CI,
+                     ymax=LDL+LDL.CI)) +
+  geom_bar(stat='identity') +
+  geom_errorbar(width=0.5) +
+  geom_hline(yintercept=0, lty=2) +
+  labs(y="Change in LDL-Cholesterol",
+       title="Effects of High or Low Carbohydrate Diet on LDL-Cholesterol",
+       subtitle="From Gardner et al JAMA 2018")
+
+ggplot(data.gardner, aes(y=TC,
+                     x=Treatment,
+                     ymin=TC-TC.SE,
+                     ymax=TC+TC.SE)) +
+  geom_bar(stat='identity') +
+  geom_errorbar(width=0.5) +
+  geom_hline(yintercept=0, lty=2) +
+  labs(y="Change in Blood Cholesterol",
+       title="Effects of High or Low Carbohydrate Diet on Cholesterol",
+       subtitle="From Gardner et al JAMA 2018")
+```
+
+This script was most recently updated on **`r date()`**.
+
+# Analysis
+
+Describe the analysis as you intersperse code chunks
+
+# Interpretation
+
+A brief summary of what the interpretation of these results were
+
+# Session Information
+
+```{r session-information, echo=T}
+sessionInfo()
+```
+
+# References
+
+If needed, using Rmarkdown citation tools (see this link for more information: http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html)
