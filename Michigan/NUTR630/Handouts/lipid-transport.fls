@@ -305,9 +305,9 @@ INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/palatino/pplrij8r.tfm
 INPUT figures/Angptl4-PPARa.pdf
 INPUT ./figures/Angptl4-PPARa.pdf
 INPUT ./figures/Angptl4-PPARa.pdf
-INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/palatino/pplri9d.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/vf/public/mathpazo/zplmr7m.vf
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
+INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/palatino/pplri9d.tfm
 INPUT lipid-transport.bbl
 INPUT lipid-transport.bbl
 INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/bera/t1fvm.fd
